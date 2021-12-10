@@ -1,17 +1,22 @@
-const express = require('express');
-const dashboardRoute = require('./dashboard.route');
-const loginRoute = require('./login.route');
+const express = require("express");
+const dashboardRoute = require("./dashboard.route");
+const loginRoute = require("./login.route");
+const productRoute = require("./product.route");
 
 const router = express.Router();
 
 const defaultRoutes = [
   {
-    path: '/',
+    path: "/",
     route: dashboardRoute,
   },
   {
-    path: '/login',
+    path: "/login",
     route: loginRoute,
+  },
+  {
+    path: "/product",
+    route: productRoute,
   },
 ];
 
@@ -20,3 +25,4 @@ defaultRoutes.forEach((route) => {
 });
 
 module.exports = router;
+
