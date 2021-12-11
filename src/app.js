@@ -7,6 +7,7 @@ const cors = require('cors');
 const passport = require('passport');
 const httpStatus = require('http-status');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
 const { jwtStrategy } = require('./config/passport');
@@ -18,6 +19,8 @@ const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
 
 const app = express();
+
+app.use(cookieParser());
 
 if (config.env !== 'test') {
   // app.use(morgan.successHandler);

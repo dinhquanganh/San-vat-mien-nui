@@ -12,4 +12,5 @@ router
     });
   })
   .post("/", validate(authValidation.login), authController.login);
+
 module.exports = router;

@@ -13,11 +13,30 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "operator-linebreak": [2, "before", { "overrides": { "?": "after" } }],
     "no-console": "error",
     "func-names": "off",
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "linebreak-style": 0,
     "no-underscore-dangle": "off",
     "consistent-return": "off",
     "jest/expect-expect": "off",
-    "security/detect-object-injection": "off"
+    "security/detect-object-injection": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ]
   }
 }
