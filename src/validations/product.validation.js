@@ -1,21 +1,20 @@
-const Joi = require("joi");
-const { objectId } = require("./custom.validation");
+const Joi = require('joi');
+const { objectId } = require('./custom.validation');
 
 const create = {
   body: Joi.object().keys({
     name: Joi.string().required(),
     price: Joi.number().required(),
     description: Joi.string(),
+    show: Joi.string(),
     category: Joi.string().required(),
-    show: Joi.required(),
   }),
+  files: Joi.object(),
 };
 
 const getProducts = {
   query: Joi.object().keys({
     name: Joi.string(),
-    role: Joi.string(),
-    sortBy: Joi.string(),
   }),
 };
 
@@ -26,16 +25,14 @@ const getProduct = {
 };
 
 const updateProduct = {
-  params: Joi.object().keys({
-    productId: Joi.required().custom(objectId),
+  body: Joi.object().keys({
+    name: Joi.string(),
+    price: Joi.number(),
+    description: Joi.string(),
+    category: Joi.string(),
+    show: Joi.string(),
   }),
-  body: Joi.object()
-    .keys({
-      name: Joi.string(),
-      price: Joi.number(),
-      show: Joi.boolean(),
-    })
-    .min(1),
+  files: Joi.object(),
 };
 
 const deleteProduct = {

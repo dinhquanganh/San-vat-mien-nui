@@ -8,6 +8,7 @@ const passport = require('passport');
 const httpStatus = require('http-status');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const fileUpload = require('express-fileupload');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
 const { jwtStrategy } = require('./config/passport');
@@ -35,9 +36,13 @@ app.use('/admin', express.static(path.join(__dirname, '/views/admin')));
 
 // set security HTTP headers
 app.use(helmet());
+// console.log(helmet.contentSecurityPolicy());
 
 // parse json request body
 app.use(express.json());
+
+// parse files
+app.use(fileUpload({ useTempFiles: true }));
 
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema(
   {
@@ -11,29 +11,29 @@ const productSchema = mongoose.Schema(
     },
     price: {
       type: Number,
-      required: true,
       unique: true,
-      trim: true,
+      default: 0,
     },
     description: {
       type: String,
       required: false,
       trim: true,
-      default: "",
-      minlength: 0,
+      default: '',
       maxlength: 200,
     },
     category: {
       type: String,
       required: true,
+      default: 'tea',
       trim: true,
-    },
-    typeProductId: {
-      type: mongoose.ObjectId,
     },
     show: {
       type: String,
-      default: "on",
+      default: '',
+    },
+    images: {
+      type: Array,
+      default: [],
     },
   },
   {
@@ -44,6 +44,6 @@ const productSchema = mongoose.Schema(
 /**
  * @typedef Product
  */
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
