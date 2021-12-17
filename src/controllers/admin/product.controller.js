@@ -64,6 +64,7 @@ const getProduct = catchAsync(async (req, res) => {
     res.render('product', {
       title: 'Chỉnh sửa sản phẩm',
       product,
+      id: product._id.toString(),
       categoryList: [
         {
           name: 'Trà',
