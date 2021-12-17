@@ -123,7 +123,7 @@ const update = catchAsync(async (req, res) => {
 
     console.log(product.images);
 
-    res.redirect(req.get('referer'));
+    res.redirect('/admin/product/' + req.params.productId);
   } else {
     res.redirect('/admin/product');
   }
