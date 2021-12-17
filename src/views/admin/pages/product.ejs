@@ -262,8 +262,6 @@
         let $dropzonePreview = $('.dz-preview');
 
         function init($this) {
-          // console.log(`<%= product.images%>`);
-          // let images = '<%= product.images%>';
           // let images = JSON.parse('<%= product.images%>');
           let multiple =
             $this.data('dropzone-multiple') !== undefined ? true : false;
@@ -289,12 +287,8 @@
             init: async function () {
               let myDropzone = this;
 
-              let images = await fetch('/admin/product/api/<%= id %>')
-                .then((res) => res.json())
-                .then((data) => {
-                  return data.images;
-                });
-              console.log(images);
+              let images = JSON.parse(`<%- JSON.stringify(product.images)%>`);
+
               // Add existing images
               if (images.length) {
                 images.forEach(function (image) {
@@ -344,7 +338,6 @@
             },
           };
 
-          console.log(options);
           // Clear preview html
           preview.html('');
 

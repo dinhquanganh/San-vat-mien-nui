@@ -3,7 +3,6 @@ const { productService } = require('../../services');
 const cloudinary = require('../../config/cloudinary');
 
 const uploadImageToCloudinary = async (listFile) => {
-  console.log(listFile);
   try {
     const multiplePicturePromise = listFile.map((picture) =>
       cloudinary.uploader.upload(picture.tempFilePath, {
@@ -43,6 +42,7 @@ const getProducts = catchAsync(async (req, res) => {
     totalShowProduct,
   });
 });
+
 const getProductAPI = catchAsync(async (req, res) => {
   if (req?.params?.productId) {
     const product = await productService.getProductById(req.params.productId);
@@ -53,6 +53,7 @@ const getProductAPI = catchAsync(async (req, res) => {
 const getProduct = catchAsync(async (req, res) => {
   if (req?.params?.productId) {
     const product = await productService.getProductById(req.params.productId);
+    console.log('🚩 : getProduct : product', product);
     // console.log(Array(...product.images));
     // console.log(typeof product.images);
 
@@ -113,17 +114,17 @@ const update = catchAsync(async (req, res) => {
     if (req.files) {
       const listFile = Object.values(req.files);
       imageList = await uploadImageToCloudinary(listFile);
+      console.log('🚩 : update : req.files', req.files);
+
+      const product = await productService.updateProductById(
+        req.params.productId,
+        req.body,
+        imageList
+      );
+      const productData = product.data;
+      console.log('🚩 : update : productData', productData);
+      res.redirect(`/admin/product/${productData._id}`);
     }
-
-    const product = await productService.updateProductById(
-      req.params.productId,
-      req.body,
-      imageList
-    );
-
-    console.log(product.images);
-
-    res.redirect('/admin/product/' + req.params.productId);
   } else {
     res.redirect('/admin/product');
   }
