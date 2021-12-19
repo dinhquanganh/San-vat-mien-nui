@@ -162,11 +162,12 @@
                               href="/admin/product/<%= product._id.toString()%>"
                               >Chỉnh sửa</a
                             >
-                            <a
+                            <div
                               class="dropdown-item"
-                              href="/admin/product/<%= product._id.toString()%>"
-                              >Xóa</a
+                              onclick="deleteProduct('<%= product._id.toString()%>')"
                             >
+                              Xóa
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -193,8 +194,84 @@
     <script src="/admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
     <script src="/admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="/admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+    <script src="/admin/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
+
     <!-- Argon Scripts -->
     <%- include("../layouts/argon-script.ejs") -%>
+    <script>
+      function getCookie(cname) {
+        let name = cname + '=';
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return '';
+      }
+
+      function deleteProduct(id) {
+        swal({
+          title: 'Xóa sản phẩm?',
+          text: 'Lưu ý: Không thể hoàn tác hành động này!',
+          type: 'warning',
+          showCancelButton: !0,
+          buttonsStyling: !1,
+          confirmButtonClass: 'btn btn-danger',
+          confirmButtonText: 'Xóa',
+          cancelButtonClass: 'btn btn-secondary',
+          cancelButtonText: 'Hủy',
+        }).then((t) => {
+          fetch(`/admin/product/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${getCookie('accessToken')}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status == 'success') {
+                swal({
+                  title: 'Thành công!',
+                  text: 'Sản phẩm đã được xóa!',
+                  type: 'success',
+                  buttonsStyling: !1,
+                  confirmButtonClass: 'btn btn-success',
+                  confirmButtonText: 'Đóng',
+                }).then((t) => {
+                  location.reload();
+                });
+              } else {
+                swal({
+                  title: 'Thất bại!',
+                  text: 'Có lỗi xảy ra!',
+                  type: 'error',
+                  buttonsStyling: !1,
+                  confirmButtonClass: 'btn btn-danger',
+                  confirmButtonText: 'Đóng',
+                });
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+              swal({
+                title: 'Thất bại!',
+                text: 'Có lỗi xảy ra, vui lòng thử lại sau!',
+                type: 'error',
+                buttonsStyling: !1,
+                confirmButtonClass: 'btn btn-danger',
+                confirmButtonText: 'OK',
+              });
+            });
+        });
+      }
+    </script>
     <!-- <script src="/admin/assets/js/product.js"></script> -->
   </body>
 </html>

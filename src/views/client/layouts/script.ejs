@@ -2,25 +2,37 @@
 <!-- JS ============================================ -->
 
 <!--====== Vendors js ======-->
-<script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-<script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+<script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
+<script src="/assets/js/vendor/modernizr-3.7.1.min.js"></script>
 
 <!--====== Plugins js ======-->
-<script src="assets/js/plugins/bootstrap.min.js"></script>
-<script src="assets/js/plugins/popper.min.js"></script>
-<script src="assets/js/plugins/meanmenu.js"></script>
-<script src="assets/js/plugins/owl-carousel.js"></script>
-<script src="assets/js/plugins/jquery.nice-select.js"></script>
-<script src="assets/js/plugins/countdown.js"></script>
-<script src="assets/js/plugins/elevateZoom.js"></script>
-<script src="assets/js/plugins/jquery-ui.min.js"></script>
-<script src="assets/js/plugins/slick.js"></script>
-<script src="assets/js/plugins/scrollup.js"></script>
-<script src="assets/js/plugins/range-script.js"></script>
+<script src="/assets/js/plugins/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/popper.min.js"></script>
+<script src="/assets/js/plugins/meanmenu.js"></script>
+<script src="/assets/js/plugins/owl-carousel.js"></script>
+<script src="/assets/js/plugins/jquery.nice-select.js"></script>
+<script src="/assets/js/plugins/countdown.js"></script>
+<script src="/assets/js/plugins/elevateZoom.js"></script>
+<script src="/assets/js/plugins/jquery-ui.min.js"></script>
+<script src="/assets/js/plugins/slick.js"></script>
+<script src="/assets/js/plugins/scrollup.js"></script>
+<script src="/assets/js/plugins/range-script.js"></script>
 
 <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 
-<!-- <script src="assets/js/plugins.min.js"></script> -->
+<!-- <script src="/assets/js/plugins.min.js"></script> -->
 
 <!-- Main Activation JS -->
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
+<script>
+  function convertNumber(number) {
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  }
+
+  if (document.querySelectorAll('.price-cv'))
+    document.querySelectorAll('.price-cv').forEach(function (item) {
+      item.innerHTML = convertNumber(item.innerHTML);
+    });
+</script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

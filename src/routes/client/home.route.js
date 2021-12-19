@@ -1,10 +1,8 @@
 const express = require('express');
+const homeController = require('../../controllers/client/home.controller');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Trang chủ',
-  });
-});
+router.get('/', homeController.getDataHome);
+
 module.exports = router;

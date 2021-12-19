@@ -19,8 +19,8 @@ const create = async (productBody) => {
  * Query for products
  * @returns {Promise<QueryResult>}
  */
-const queryProducts = async () => {
-  const products = await Product.find({});
+const queryProducts = async (filters = {}) => {
+  const products = await Product.find(filters);
 
   return products;
 };
@@ -39,37 +39,37 @@ const getProductById = async (id) => Product.findById(id);
  * @returns {Promise<Product>}
  */
 const updateProductById = async (productId, updateBody, imagelist) => {
-  // const product = await getProductById(productId);
-  // if (!product) {
-  //   return {
-  //     error: 'Product not found',
-  //     data: {},
-  //   };
-  // }
-  let newBody = {};
-  if (imagelist.length) {
-    newBody = {
-      ...updateBody,
-      // eslint-disable-next-line no-prototype-builtins
-      show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
+  const product = await getProductById(productId);
+  if (!product) {
+    return {
+      error: 'Product not found',
+      data: {},
     };
   }
+  // let newBody = {};
+  // if (imagelist.length) {
+  //   newBody = {
+  //     ...updateBody,
+  //     // eslint-disable-next-line no-prototype-builtins
+  //     show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
+  //   };
+  // }
 
-  // Object.assign(product, {
-  //   ...updateBody,
-  //   // eslint-disable-next-line no-prototype-builtins
-  //   show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
-  //   images: imagelist.length
-  //     ? [...product.images, ...imagelist]
-  //     : product.images,
-  // });
-  // await product.save();
+  Object.assign(product, {
+    ...updateBody,
+    // eslint-disable-next-line no-prototype-builtins
+    show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
+    images: imagelist.length
+      ? [...product.images, ...imagelist]
+      : product.images,
+  });
+  await product.save();
 
-  const product = await Product.findByIdAndUpdate(
-    productId,
-    { ...newBody, $push: { images: imagelist } },
-    { new: true }
-  ).exec();
+  // const product = await Product.findByIdAndUpdate(
+  //   productId,
+  //   { ...newBody, $push: { images: imagelist } },
+  //   { new: true }
+  // ).exec();
 
   return {
     error: '',
@@ -84,13 +84,14 @@ const updateProductById = async (productId, updateBody, imagelist) => {
  */
 const deleteProductById = async (productId) => {
   const product = await getProductById(productId);
+  let error = '';
 
   if (!product) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'Product not found');
+    error = 'product not found';
   }
   await product.remove();
 
-  return product;
+  return { error, product };
 };
 
 module.exports = {

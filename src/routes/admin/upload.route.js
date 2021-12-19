@@ -1,11 +1,10 @@
 const express = require('express');
 // const fs = require('fs');
+// upload file to cloudinary
+const cloudinary = require('cloudinary').v2;
 const auth = require('../../middlewares/admin/auth');
 
 const router = express.Router();
-
-// upload file to cloudinary
-const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
   cloud_name: 'pu',

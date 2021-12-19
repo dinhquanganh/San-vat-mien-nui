@@ -1,3 +1,4 @@
+const httpStatus = require('http-status');
 const catchAsync = require('../../utils/catchAsync');
 const { productService } = require('../../services');
 const cloudinary = require('../../config/cloudinary');
@@ -27,8 +28,12 @@ const uploadImageToCloudinary = async (listFile) => {
 };
 
 const getProducts = catchAsync(async (req, res) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+  );
+
   const products = await productService.queryProducts();
-  // console.log(products);
   let totalShowProduct = 0;
   products.forEach((product) => {
     if (product.show == 'on') {
@@ -53,9 +58,6 @@ const getProductAPI = catchAsync(async (req, res) => {
 const getProduct = catchAsync(async (req, res) => {
   if (req?.params?.productId) {
     const product = await productService.getProductById(req.params.productId);
-    console.log('🚩 : getProduct : product', product);
-    // console.log(Array(...product.images));
-    // console.log(typeof product.images);
 
     res.setHeader(
       'Content-Security-Policy',
@@ -94,7 +96,7 @@ const create = catchAsync(async (req, res) => {
   const product = await productService.create(req.body);
 
   if (product) {
-    res.redirect('/admin/product/create');
+    res.redirect('/admin/product/' + product._id.toString());
   } else {
     res.render('/admin/product/create', {
       title: 'Tạo mới sản phẩm',
@@ -111,23 +113,47 @@ const update = catchAsync(async (req, res) => {
     );
 
     let imageList = [];
+    let product = {};
+
     if (req.files) {
+      console.log(true);
       const listFile = Object.values(req.files);
       imageList = await uploadImageToCloudinary(listFile);
-      console.log('🚩 : update : req.files', req.files);
-
-      const product = await productService.updateProductById(
-        req.params.productId,
-        req.body,
-        imageList
-      );
-      const productData = product.data;
-      console.log('🚩 : update : productData', productData);
-      res.redirect(`/admin/product/${productData._id}`);
     }
-  } else {
-    res.redirect('/admin/product');
+
+    product = await productService.updateProductById(
+      req.params.productId,
+      req.body,
+      imageList
+    );
+    console.log('🚩 : update : product', product);
+
+    return res.redirect(req.originalUrl);
   }
+
+  return res.redirect('/admin/product');
+});
+
+const deleteProduct = catchAsync(async (req, res) => {
+  if (req.params?.productId) {
+    let { error, product } = await productService.deleteProductById(
+      req.params.productId
+    );
+
+    console.log(product);
+    if (error)
+      return res.status(httpStatus.NOT_FOUND).send({
+        error,
+      });
+
+    return res.send({
+      status: 'success',
+    });
+  }
+
+  return res.status(httpStatus.NOT_FOUND).send({
+    error: 'Not found',
+  });
 });
 
 module.exports = {
@@ -136,4 +162,5 @@ module.exports = {
   create,
   update,
   getProductAPI,
+  deleteProduct,
 };
