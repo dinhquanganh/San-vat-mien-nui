@@ -67,15 +67,11 @@
                 <div class="pricing-meta">
                   <ul>
                     <li class="old-price not-cut price-cv">
-                      <%= product.price%>
+                      <%= product.price%> VND
                     </li>
                   </ul>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm
-                  tempor incidid ut labore et dolore magna aliqua. Ut enim ad
-                  minim venialo quis nostrud exercitation ullamco
-                </p>
+                <p><%- product.description%></p>
                 <div class="pro-details-list">
                   <ul>
                     <li>- 0.5 mm Dail</li>
@@ -170,6 +166,7 @@
     <%- include("../layouts/script.ejs") -%>
     <script>
       let product = '<%- JSON.stringify(product) %>';
+      product = product.replaceAll(`//endofline**n`, `\\n`);
       console.log(JSON.parse(product));
     </script>
   </body>
