@@ -22,30 +22,34 @@
                   <div class="zoompro-border zoompro-span">
                     <img
                       class="zoompro"
-                      src="<%= product.images[0].url%>"
-                      data-zoom-image="<%= product.images[0].url%>"
+                      src="<%= product?.images[0]?.url || 'https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg' %>"
+                      data-zoom-image="<%= product?.images[0]?.url || 'https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg'%>"
                       alt=""
                     />
                   </div>
                 </div>
                 <div id="gallery" class="product-dec-slider-2">
-                  <% product.images.forEach(function(image,index) { %> <%
-                  if(index == 0) { %>
+                  <% if (product.images.length > 1) { %> <%
+                  product?.images.forEach(function(image,index) { %>
                   <a
-                    data-image="<%= image.url%>"
-                    data-zoom-image="<%= image.url%>"
+                    data-image="<%= image?.url %>"
+                    data-zoom-image="<%= image?.url %>"
+                    class="<%= index==0 ? 'active' : '' %>"
+                  >
+                    <img src="<%= image?.url %>" alt="product" />
+                  </a>
+                  <% }) %> <% } else { %>
+                  <a
+                    data-image="https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg"
+                    data-zoom-image="https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg"
                     class="active"
                   >
-                    <img src="<%= image.url%>" alt="" />
+                    <img
+                      src="https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg"
+                      alt="product"
+                    />
                   </a>
-                  <% } else { %>
-                  <a
-                    data-image="<%= image.url%>"
-                    data-zoom-image="<%= image.url%>"
-                  >
-                    <img src="<%= image.url%>" alt="" />
-                  </a>
-                  <% } %> <% }) %>
+                  <% } %>
                 </div>
               </div>
             </div>

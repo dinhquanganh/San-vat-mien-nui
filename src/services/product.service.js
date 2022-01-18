@@ -77,6 +77,10 @@ const updateProductById = async (productId, updateBody, imagelist) => {
   };
 };
 
+const updateAllProduct = async () => {
+  await Product.updateMany({}, { show: 'on' });
+};
+
 /**
  * Delete product by id
  * @param {ObjectId} productId
@@ -100,4 +104,5 @@ module.exports = {
   getProductById,
   updateProductById,
   deleteProductById,
+  updateAllProduct,
 };

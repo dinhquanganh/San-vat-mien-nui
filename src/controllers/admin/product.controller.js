@@ -35,6 +35,7 @@ const getProducts = catchAsync(async (req, res) => {
 
   const products = await productService.queryProducts();
   let totalShowProduct = 0;
+
   products.forEach((product) => {
     if (product.show == 'on') {
       totalShowProduct++;
@@ -128,7 +129,8 @@ const update = catchAsync(async (req, res) => {
     );
     console.log('🚩 : update : product', product);
 
-    return res.redirect(req.originalUrl);
+    return res.redirect('/admin/product/create');
+    // return res.redirect(req.originalUrl);
   }
 
   return res.redirect('/admin/product');

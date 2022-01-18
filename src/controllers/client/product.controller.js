@@ -13,28 +13,14 @@ function replaceAll(str, match, replacement) {
 }
 
 const getProduct = catchAsync(async (req, res) => {
-  if (req?.params?.id) {
+  await res.setHeader(
+    'Content-Security-Policy',
+    "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+  );
+
+  if (req.params?.id) {
     let { name, description, _id, images, price, category } =
       await productService.getProductById(req.params.id);
-
-    console.log(name);
-
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-    );
-
-    // let product = {
-    //   name,
-    //   description: new QuillDeltaToHtmlConverter(
-    //     JSON.parse(replaceAll(description, '//endofline**n', `\\n`)),
-    //     {}
-    //   ),
-    //   _id,
-    //   images,
-    //   price,
-    //   category,
-    // };
 
     let product = {
       name,

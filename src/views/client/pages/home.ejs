@@ -13,40 +13,28 @@
         <div class="slider-active-3 owl-carousel slider-hm8 owl-dot-style">
           <!-- Slider Single Item Start -->
           <div
-            class="
-              slider-height-6
-              d-flex
-              align-items-start
-              justify-content-start
-              bg-img
-            "
+            class="slider-height-6 d-flex align-items-start justify-content-start bg-img"
             style="
-              background-image: url(assets/images/slider-image/sample-7.jpg);
+              background-image: url(assets/images/banner-image/banner1.png);
             "
           >
             <div class="container">
               <div class="slider-content-5 slider-animated-1 text-left">
-                <span class="animated">100% NATURAL</span>
+                <span class="animated">100% Tự nhiên</span>
                 <h1 class="animated">
-                  Fresh Vegetables<br />
-                  And Fruits
+                  Các loại sản vật<br />
+                  từ miền núi
                 </h1>
-                <a href="shop-4-column.html" class="shop-btn animated"
-                  >SHOP NOW</a
-                >
+                <a href="shop-4-column.html" class="shop-btn animated">
+                  Xem ngay
+                </a>
               </div>
             </div>
           </div>
           <!-- Slider Single Item End -->
           <!-- Slider Single Item Start -->
           <div
-            class="
-              slider-height-6
-              d-flex
-              align-items-start
-              justify-content-start
-              bg-img
-            "
+            class="slider-height-6 d-flex align-items-start justify-content-start bg-img"
             style="
               background-image: url(assets/images/slider-image/sample-8.jpg);
             "
@@ -91,11 +79,7 @@
               <!-- Static Single Item Start -->
               <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
                 <div
-                  class="
-                    single-static
-                    pb-res-md-0 pb-res-sm-0 pb-res-xs-0
-                    pt-res-xs-20
-                  "
+                  class="single-static pb-res-md-0 pb-res-sm-0 pb-res-xs-0 pt-res-xs-20"
                 >
                   <img
                     src="/assets/images/icons/static-icons-2.png"
@@ -112,12 +96,7 @@
               <!-- Static Single Item Start -->
               <div class="col-lg-3 col-xs-12 col-md-6 col-sm-6">
                 <div
-                  class="
-                    single-static
-                    pt-res-md-30
-                    pb-res-sm-30 pb-res-xs-0
-                    pt-res-xs-20
-                  "
+                  class="single-static pt-res-md-30 pb-res-sm-30 pb-res-xs-0 pt-res-xs-20"
                 >
                   <img
                     src="/assets/images/icons/static-icons-3.png"
@@ -159,16 +138,22 @@
           <div class="row">
             <div class="col-md-3 col-xs-12">
               <div class="banner-wrapper">
-                <a href="shop-4-column.html"
-                  ><img src="/assets/images/banner-image/8.jpg" alt=""
-                /></a>
+                <a href="shop-4-column.html">
+                  <img
+                    src="/assets/images/banner-image/sale-banner2.png"
+                    alt="banner sale"
+                  />
+                </a>
               </div>
             </div>
             <div class="col-md-6 col-xs-12 mt-res-sx-30px">
               <div class="banner-wrapper">
-                <a href="shop-4-column.html"
-                  ><img src="/assets/images/banner-image/9.jpg" alt=""
-                /></a>
+                <a href="shop-4-column.html">
+                  <img
+                    src="/assets/images/banner-image/sale-banner1.png"
+                    alt="banner sale"
+                  />
+                </a>
               </div>
             </div>
             <div class="col-md-3 col-xs-12 mt-res-sx-30px">
@@ -1890,7 +1875,7 @@
           </div>
           <!-- Feature Slider Start -->
           <div class="feature-slider owl-carousel owl-nav-style">
-            <% tea.forEach(function(item){ %>
+            <% tea.forEach(function(item) { %>
             <!-- Single Item -->
             <div class="feature-slider-item">
               <article class="list-product">
@@ -1901,12 +1886,12 @@
                   >
                     <img
                       class="first-img"
-                      src="<%= item.images[0].url%>"
+                      src="<%= item?.images[0]?.url|| 'https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg'%>"
                       alt="Tea"
                     />
                     <img
                       class="second-img"
-                      src="<%= item.images[0].url%>"
+                      src="<%= item?.images[0]?.url|| 'https://dhb3yazwboecu.cloudfront.net/1007//10142_ChristmasTeaBlack_418x418_m.jpg'%>"
                       alt="Tea"
                     />
                   </a>
@@ -1925,9 +1910,12 @@
                     ><span><%= item.category%></span></a
                   >
                   <h2>
-                    <a href="single-product.html" class="product-link"
-                      ><%= item.name%>.</a
+                    <a
+                      href="/product/<%= item._id.toString()%>"
+                      class="product-link"
                     >
+                      <%= item.name%>
+                    </a>
                   </h2>
                   <div class="rating-product">
                     <i class="ion-android-star"></i>
