@@ -4,8 +4,8 @@
   "description": "",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
-  "repository": "https://github.com/ryderdinh/San-vat-mien-nui.git",
-  "author": "Ryder Dinh <dinhquanganh>",
+  "repository": "https://github.com/ryderdinh/san-vat-mien-nui.git",
+  "author": "Ryder Dinh <ryderdinh>",
   "license": "MIT",
   "engines": {
     "node": ">=12.0.0"

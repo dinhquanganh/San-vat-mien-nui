@@ -5,6 +5,7 @@ const create = {
   body: Joi.object().keys({
     name: Joi.string().required(),
     price: Joi.number().required(),
+    unit: Joi.string(),
     description: Joi.string(),
     show: Joi.string(),
     category: Joi.string().required(),
@@ -28,6 +29,7 @@ const updateProduct = {
   body: Joi.object().keys({
     name: Joi.string(),
     price: Joi.number(),
+    unit: Joi.string(),
     description: Joi.string(),
     category: Joi.string(),
     show: Joi.string(),

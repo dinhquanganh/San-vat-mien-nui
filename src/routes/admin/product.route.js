@@ -10,7 +10,7 @@ router.route('/').get(auth('manageProduct'), productController.getProducts);
 
 router
   .route('/create')
-  .get((req, res) => {
+  .get(auth('manageProduct'), (req, res) => {
     res.setHeader(
       'Content-Security-Policy',
       "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"

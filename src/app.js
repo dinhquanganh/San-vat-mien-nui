@@ -35,8 +35,11 @@ app.use('/', express.static(path.join(__dirname, '/views/client')));
 app.use('/admin', express.static(path.join(__dirname, '/views/admin')));
 
 // set security HTTP headers
-app.use(helmet());
-// console.log(helmet.contentSecurityPolicy());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 // parse json request body
 app.use(express.json());

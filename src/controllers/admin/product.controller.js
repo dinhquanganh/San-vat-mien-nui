@@ -32,8 +32,7 @@ const getProducts = catchAsync(async (req, res) => {
     'Content-Security-Policy',
     "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
   );
-
-  const products = await productService.queryProducts();
+  const products = await productService.queryProducts(req.query);
   let totalShowProduct = 0;
 
   products.forEach((product) => {
@@ -85,6 +84,16 @@ const getProduct = catchAsync(async (req, res) => {
         {
           name: 'Mật ong / Dược liệu',
           value: 'honey-medicine',
+        },
+      ],
+      unitList: [
+        {
+          name: '1kg',
+          value: 'kg',
+        },
+        {
+          name: '100g',
+          value: '100g',
         },
       ],
     });

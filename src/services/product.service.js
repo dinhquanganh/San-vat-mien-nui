@@ -20,7 +20,7 @@ const create = async (productBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryProducts = async (filters = {}) => {
-  const products = await Product.find(filters);
+  const products = await Product.find(filters)
 
   return products;
 };
@@ -78,7 +78,7 @@ const updateProductById = async (productId, updateBody, imagelist) => {
 };
 
 const updateAllProduct = async () => {
-  await Product.updateMany({}, { show: 'on' });
+  await Product.updateMany({}, { unit: '100g' });
 };
 
 /**

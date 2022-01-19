@@ -13,6 +13,10 @@ const productSchema = mongoose.Schema(
       type: Number,
       default: 0,
     },
+    unit: {
+      type: String,
+      default: '100g',
+    },
     description: {
       type: String,
       required: false,
