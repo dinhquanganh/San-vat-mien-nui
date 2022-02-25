@@ -16,18 +16,28 @@ const register = catchAsync(async (req, res) => {
 const login = catchAsync(async (req, res) => {
   const { email, password } = req.body;
   const user = await authService.loginUserWithEmailAndPassword(email, password);
+
+  if (!user) {
+    return res.render('login', {
+      title: 'Đăng nhập',
+      error: 'Sai tên đăng nhập hoặc mật khẩu',
+    });
+  }
+
   const tokens = await tokenService.generateAuthTokens(user);
 
   if (tokens) {
     const accessToken = tokens.access.token;
     res.cookie('accessToken', accessToken);
-    res.redirect('/admin');
+    return res.redirect('/admin');
   }
 });
 
 const logout = catchAsync(async (req, res) => {
-  await authService.logout(req.body.refreshToken);
-  res.status(httpStatus.NO_CONTENT).send();
+  // await authService.logout(req.body.refreshToken);
+  res.clearCookie('accessToken');
+  res.redirect('/admin/login');
+  // res.status(httpStatus.NO_CONTENT).send();
 });
 
 const refreshTokens = catchAsync(async (req, res) => {

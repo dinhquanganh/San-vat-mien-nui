@@ -28,10 +28,11 @@ const uploadImageToCloudinary = async (listFile) => {
 };
 
 const getProducts = catchAsync(async (req, res) => {
-  res.setHeader(
-    'Content-Security-Policy',
-    "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-  );
+  // res.setHeader(
+  //   'Content-Security-Policy',
+  //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+  // );
+
   const products = await productService.queryProducts(req.query);
   let totalShowProduct = 0;
 
@@ -59,10 +60,10 @@ const getProduct = catchAsync(async (req, res) => {
   if (req?.params?.productId) {
     const product = await productService.getProductById(req.params.productId);
 
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-    );
+    // res.setHeader(
+    //   'Content-Security-Policy',
+    //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+    // );
 
     res.render('product', {
       title: 'Chỉnh sửa sản phẩm',
@@ -95,6 +96,10 @@ const getProduct = catchAsync(async (req, res) => {
           name: '100g',
           value: '100g',
         },
+        {
+          name: '1 lít',
+          value: '1liter',
+        },
       ],
     });
   } else {
@@ -110,39 +115,37 @@ const create = catchAsync(async (req, res) => {
   } else {
     res.render('/admin/product/create', {
       title: 'Tạo mới sản phẩm',
-      notification: 'Lỗi',
+      notification: '',
     });
   }
 });
 
 const update = catchAsync(async (req, res) => {
   if (req.params?.productId) {
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-    );
+    // res.setHeader(
+    //   'Content-Security-Policy',
+    //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+    // );
 
     let imageList = [];
     let product = {};
 
     if (req.files) {
-      console.log(true);
       const listFile = Object.values(req.files);
       imageList = await uploadImageToCloudinary(listFile);
     }
+
+    console.log(req.body);
 
     product = await productService.updateProductById(
       req.params.productId,
       req.body,
       imageList
     );
-    console.log('🚩 : update : product', product);
 
-    return res.redirect('/admin/product/create');
+    res.redirect('/admin/product/' + req.params.productId);
     // return res.redirect(req.originalUrl);
   }
-
-  return res.redirect('/admin/product');
 });
 
 const deleteProduct = catchAsync(async (req, res) => {

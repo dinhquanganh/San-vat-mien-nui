@@ -84,7 +84,7 @@
                         <select
                           class="form-control"
                           data-toggle="select"
-                          name="category"
+                          name="unit"
                         >
                           <!-- prettier-ignore-->
                           <% unitList.forEach((item) => { %>
@@ -228,13 +228,15 @@
                     <br />
                     <br />
                     <br />
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox mb-3">
+                    <div class="form-row ml-4">
+                      <div
+                        class="col-12 col-md-6 col-xl-3 custom-control custom-checkbox mb-3"
+                      >
                         <% if (product.show=='on') { %>
                         <input
                           class="custom-control-input"
                           name="show"
-                          id="invalidCheck2"
+                          id="show"
                           type="checkbox"
                           checked
                         />
@@ -242,13 +244,85 @@
                         <input
                           class="custom-control-input"
                           name="show"
-                          id="invalidCheck2"
+                          id="show"
                           type="checkbox"
                         />
                         <% } %>
-                        <label class="custom-control-label" for="invalidCheck2"
+                        <label class="custom-control-label" for="show"
                           >Hiển thị sản phẩm</label
                         >
+                      </div>
+                      <div
+                        class="col-12 col-md-6 col-xl-3 custom-control custom-checkbox mb-3"
+                      >
+                        <% if (product.bestSeller=='on') { %>
+                        <input
+                          class="custom-control-input"
+                          name="bestSeller"
+                          id="bestSeller"
+                          type="checkbox"
+                          checked
+                        />
+                        <% } else { %>
+                        <input
+                          class="custom-control-input"
+                          name="bestSeller"
+                          id="bestSeller"
+                          type="checkbox"
+                        />
+                        <% } %>
+                        <label class="custom-control-label" for="bestSeller"
+                          >Bán chạy nhất</label
+                        >
+                      </div>
+                      <div
+                        class="col-12 col-md-6 col-xl-3 custom-control custom-checkbox mb-3"
+                      >
+                        <% if (product.featuredProduct=='on') { %>
+                        <input
+                          class="custom-control-input"
+                          name="featuredProduct"
+                          id="featuredProduct"
+                          type="checkbox"
+                          checked
+                        />
+                        <% } else { %>
+                        <input
+                          class="custom-control-input"
+                          name="featuredProduct"
+                          id="featuredProduct"
+                          type="checkbox"
+                        />
+                        <% } %>
+                        <label
+                          class="custom-control-label"
+                          for="featuredProduct"
+                        >
+                          Sản Phẩm Nổi Bật
+                        </label>
+                      </div>
+                      <div
+                        class="col-12 col-md-6 col-xl-3 custom-control custom-checkbox mb-3"
+                      >
+                        <% if (product.newProduct=='on') { %>
+                        <input
+                          class="custom-control-input"
+                          name="newProduct"
+                          id="newProduct"
+                          type="checkbox"
+                          checked
+                        />
+                        <% } else { %>
+                        <input
+                          class="custom-control-input"
+                          name="newProduct"
+                          id="newProduct"
+                          type="checkbox"
+                        />
+                        <% } %>
+                        <label class="custom-control-label" for="newProduct">
+                          Sản Phẩm Mới
+                        </label>
                       </div>
                     </div>
                     <button class="btn btn-primary" type="submit">

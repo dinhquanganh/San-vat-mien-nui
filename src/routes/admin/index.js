@@ -1,6 +1,7 @@
 const express = require('express');
 const dashboardRoute = require('./dashboard.route');
 const loginRoute = require('./login.route');
+const logoutRoute = require('./logout.route');
 const productRoute = require('./product.route');
 const orderRoute = require('./order.route');
 const uploadRoute = require('./upload.route');
@@ -17,6 +18,10 @@ const defaultRoutes = [
     route: loginRoute,
   },
   {
+    path: '/logout',
+    route: logoutRoute,
+  },
+  {
     path: '/product',
     route: productRoute,
   },
@@ -31,10 +36,6 @@ const defaultRoutes = [
   {
     path: '*',
     route: (req, res) => {
-      res.setHeader(
-        'Content-Security-Policy',
-        "default-src *; script-src *; img-src *; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-      );
       res.render('404');
     },
   },

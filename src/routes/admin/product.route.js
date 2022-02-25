@@ -11,12 +11,40 @@ router.route('/').get(auth('manageProduct'), productController.getProducts);
 router
   .route('/create')
   .get(auth('manageProduct'), (req, res) => {
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-    );
     res.render('create-product', {
       title: 'Tạo mới sản phẩm',
+      categoryList: [
+        {
+          name: 'Trà',
+          value: 'tea',
+        },
+        {
+          name: 'Đồ ăn / Gia vị',
+          value: 'food-spice',
+        },
+        {
+          name: 'Hạt / Hoa quả sấy',
+          value: 'seed-fruit',
+        },
+        {
+          name: 'Mật ong / Dược liệu',
+          value: 'honey-medicine',
+        },
+      ],
+      unitList: [
+        {
+          name: '1kg',
+          value: 'kg',
+        },
+        {
+          name: '100g',
+          value: '100g',
+        },
+        {
+          name: '1 lít',
+          value: '1liter',
+        },
+      ],
     });
   })
   .post(
@@ -24,6 +52,8 @@ router
     validate(productValidation.create),
     productController.create
   );
+
+router.route('/api/:productId').get(productController.getProductAPI);
 
 router
   .route('/:productId')
@@ -34,7 +64,5 @@ router
     productController.update
   )
   .delete(auth('manageProduct'), productController.deleteProduct);
-
-router.route('/api/:productId').get(productController.getProductAPI);
 
 module.exports = router;

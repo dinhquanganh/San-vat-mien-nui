@@ -9,6 +9,7 @@ router
   .get('/', (req, res) => {
     res.render('login', {
       title: 'Đăng nhập',
+      error: '',
     });
   })
   .post('/', validate(authValidation.login), authController.login);

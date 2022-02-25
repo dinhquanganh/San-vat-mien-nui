@@ -10,6 +10,12 @@ const verifyCallback =
       res.redirect('/admin/login');
       return;
     }
+
+    if (!err && !info && user && req.url.includes('/admin/login')) {
+      res.redirect('/admin/');
+      return;
+    }
+
     req.user = user;
 
     if (requiredRights.length) {

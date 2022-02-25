@@ -34,6 +34,18 @@ const productSchema = mongoose.Schema(
       type: String,
       default: '',
     },
+    bestSeller: {
+      type: String,
+      default: '',
+    },
+    featuredProduct: {
+      type: String,
+      default: '',
+    },
+    newProduct: {
+      type: String,
+      default: '',
+    },
     images: {
       type: Array,
       default: [],

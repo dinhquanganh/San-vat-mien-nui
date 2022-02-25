@@ -39,6 +39,17 @@ const getProduct = catchAsync(async (req, res) => {
   return res.redirect('/');
 });
 
+const searchProducts = catchAsync(async (req, res) => {
+  let ids = req.query.id;
+  console.log(ids);
+  let productList = await productService.queryProducts({
+    _id: ids,
+  });
+
+  res.json(productList);
+});
+
 module.exports = {
   getProduct,
+  searchProducts,
 };

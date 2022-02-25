@@ -171,11 +171,13 @@
         let cart = JSON.parse(localStorage.getItem('cart'));
         if (cart == null) {
           cart = [];
-          cart.push({ productId, quantity: 1 });
+          cart.push({ productId, quantity: Number(quantityValue.value) });
           localStorage.setItem('cart', JSON.stringify(cart));
         } else {
+          let check = false;
           for (let item of cart) {
             if (item.productId == productId) {
+              check = true;
               if (item.quantity < 100) {
                 item.quantity =
                   Number(item.quantity) + Number(quantityValue.value);
@@ -186,6 +188,11 @@
               localStorage.setItem('cart', JSON.stringify(cart));
               break;
             }
+          }
+
+          if (!check) {
+            cart.push({ productId, quantity: Number(quantityValue.value) });
+            localStorage.setItem('cart', JSON.stringify(cart));
           }
         }
 

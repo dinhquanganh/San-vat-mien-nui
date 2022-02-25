@@ -1,6 +1,5 @@
-const httpStatus = require('http-status');
+/* eslint-disable no-prototype-builtins */
 const { Product } = require('../models');
-const ApiError = require('../utils/ApiError');
 
 /**
  * Create a product
@@ -20,7 +19,7 @@ const create = async (productBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryProducts = async (filters = {}) => {
-  const products = await Product.find(filters)
+  const products = await Product.find(filters);
 
   return products;
 };
@@ -46,30 +45,22 @@ const updateProductById = async (productId, updateBody, imagelist) => {
       data: {},
     };
   }
-  // let newBody = {};
-  // if (imagelist.length) {
-  //   newBody = {
-  //     ...updateBody,
-  //     // eslint-disable-next-line no-prototype-builtins
-  //     show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
-  //   };
-  // }
 
   Object.assign(product, {
     ...updateBody,
-    // eslint-disable-next-line no-prototype-builtins
-    show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
+    show: updateBody.show ? updateBody.show : '',
+    bestSeller: updateBody.bestSeller ? updateBody.bestSeller : '',
+    featuredProduct: updateBody.featuredProduct
+      ? updateBody.featuredProduct
+      : '',
+    newProduct: updateBody.newProduct ? updateBody.newProduct : '',
     images: imagelist.length
       ? [...product.images, ...imagelist]
       : product.images,
   });
-  await product.save();
 
-  // const product = await Product.findByIdAndUpdate(
-  //   productId,
-  //   { ...newBody, $push: { images: imagelist } },
-  //   { new: true }
-  // ).exec();
+  console.log(product);
+  await product.save();
 
   return {
     error: '',
@@ -78,7 +69,14 @@ const updateProductById = async (productId, updateBody, imagelist) => {
 };
 
 const updateAllProduct = async () => {
-  await Product.updateMany({}, { unit: '100g' });
+  await Product.updateMany(
+    {},
+    {
+      bestSeller: 'on',
+      featuredProduct: 'on',
+      newProduct: 'on',
+    }
+  );
 };
 
 /**

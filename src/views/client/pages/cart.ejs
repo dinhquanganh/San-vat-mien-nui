@@ -31,8 +31,8 @@
                         <th>Hành động</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody class="cart-list">
+                      <tr class="cart-item">
                         <td class="product-thumbnail">
                           <a href="#"
                             ><img
@@ -57,35 +57,6 @@
                           </div>
                         </td>
                         <td class="product-subtotal">$70.00</td>
-                        <td class="product-remove">
-                          <a href="#"><i class="fa fa-times"></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="product-thumbnail">
-                          <a href="#"
-                            ><img
-                              src="/assets/images/product-image/mini-cart/2.jpg"
-                              alt=""
-                          /></a>
-                        </td>
-                        <td class="product-name">
-                          <a href="#">Product Name</a>
-                        </td>
-                        <td class="product-price-cart">
-                          <span class="amount">$50.00</span>
-                        </td>
-                        <td class="product-quantity">
-                          <div class="cart-plus-minus">
-                            <input
-                              class="cart-plus-minus-box"
-                              type="text"
-                              name="qtybutton"
-                              value="1"
-                            />
-                          </div>
-                        </td>
-                        <td class="product-subtotal">$80.00</td>
                         <td class="product-remove">
                           <a href="#"><i class="fa fa-times"></i></a>
                         </td>
@@ -189,12 +160,7 @@
                 <!-- Thumbnail Image End -->
                 <div class="quickview-wrap mt-15">
                   <div
-                    class="
-                      quickview-slide-active
-                      owl-carousel
-                      nav
-                      owl-nav-style owl-nav-style-2
-                    "
+                    class="quickview-slide-active owl-carousel nav owl-nav-style owl-nav-style-2"
                     role="tablist"
                   >
                     <a class="active" data-toggle="tab" href="#pro-1"
@@ -311,5 +277,24 @@
     </div>
     <!-- Modal end -->
     <%- include("../layouts/script.ejs") -%>
+    <script>
+      async function getCartData(query) {
+        let data = await fetch(`/product/search?${query}`);
+        data = await data.json();
+        console.log(data);
+      }
+
+      let cartListItem = JSON.parse(localStorage.getItem('cart'));
+      let queryProducts = '';
+      if (cartListItem) {
+        cartListItem.forEach((item) => {
+          queryProducts += `id=${item.productId}&`;
+        });
+        getCartData(queryProducts);
+      }
+
+      let cartList = document.querySelector('.cart-list');
+      
+    </script>
   </body>
 </html>
