@@ -1,6 +1,28 @@
 const catchAsync = require('../../utils/catchAsync');
 const { productService } = require('../../services');
 
+function shuffle(arr) {
+  let currentIndex = arr.length;
+  let randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    // eslint-disable-next-line no-plusplus
+    currentIndex--;
+
+    // And swap it with the current element.
+    // eslint-disable-next-line no-param-reassign
+    [arr[currentIndex], arr[randomIndex]] = [
+      arr[randomIndex],
+      arr[currentIndex],
+    ];
+  }
+
+  return arr;
+}
+
 const getDataHome = catchAsync(async (req, res) => {
   // res.setHeader(
   //   'Content-Security-Policy',
@@ -38,6 +60,7 @@ const getDataHome = catchAsync(async (req, res) => {
     price: product.price,
     images: product.images,
     category: product.category,
+    newProduct: product.newProduct,
   });
 
   tea.map(mapProduct);
@@ -52,7 +75,7 @@ const getDataHome = catchAsync(async (req, res) => {
     foodSpice,
     seedFruit,
     honeyMedicine,
-    newProduct,
+    newProduct: shuffle(newProduct),
   });
 });
 
