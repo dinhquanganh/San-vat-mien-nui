@@ -1,6 +1,6 @@
 const httpStatus = require('http-status');
 const catchAsync = require('../../utils/catchAsync');
-const { productService } = require('../../services');
+const { productService, emailService } = require('../../services');
 const cloudinary = require('../../config/cloudinary');
 
 const uploadImageToCloudinary = async (listFile) => {

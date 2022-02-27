@@ -1,18 +1,20 @@
 const nodemailer = require('nodemailer');
 const config = require('../config/config');
 const logger = require('../config/logger');
+const typeTransport = 'mailService';
 
-const transport = nodemailer.createTransport(config.email.smtp);
+const transport = nodemailer.createTransport(config.email[typeTransport]);
+
 /* istanbul ignore next */
 if (config.env !== 'test') {
   transport
     .verify()
     .then(() => logger.info('Connected to email server'))
-    .catch(() =>
+    .catch(() => {
       logger.warn(
-        'Unable to connect to email server. Make sure you have configured the SMTP options in .env'
-      )
-    );
+        `Unable to connect to email server. Make sure you have configured the ${typeTransport} options in .env`
+      );
+    });
 }
 
 /**
@@ -22,12 +24,13 @@ if (config.env !== 'test') {
  * @param {string} text
  * @returns {Promise}
  */
-const sendEmail = async (to, subject, text) => {
+const sendEmail = async (to, subject, text, html) => {
   const msg = {
     from: config.email.from,
     to,
     subject,
     text,
+    html,
   };
   await transport.sendMail(msg);
 };

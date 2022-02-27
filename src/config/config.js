@@ -28,6 +28,9 @@ const envVarsSchema = Joi.object()
     SMTP_PORT: Joi.number().description('port to connect to the email server'),
     SMTP_USERNAME: Joi.string().description('username for email server'),
     SMTP_PASSWORD: Joi.string().description('password for email server'),
+    MAIL_SERVICE: Joi.string().description('name service'),
+    MAIL_USERNAME: Joi.string().description('username for email server'),
+    MAIL_PASSWORD: Joi.string().description('password for email server'),
     EMAIL_FROM: Joi.string().description(
       'the from field in the emails sent by the app'
     ),
@@ -68,6 +71,13 @@ module.exports = {
       auth: {
         user: envVars.SMTP_USERNAME,
         pass: envVars.SMTP_PASSWORD,
+      },
+    },
+    mailService: {
+      service: envVars.MAIL_SERVICE,
+      auth: {
+        user: envVars.MAIL_USERNAME,
+        pass: envVars.MAIL_PASSWORD,
       },
     },
     from: envVars.EMAIL_FROM,
