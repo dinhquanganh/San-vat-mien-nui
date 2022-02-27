@@ -27,8 +27,6 @@ const getProduct = catchAsync(async (req, res) => {
       unit,
     };
 
-    console.log(product);
-
     res.render('product-detail', {
       title: product.name,
       page: 'product',

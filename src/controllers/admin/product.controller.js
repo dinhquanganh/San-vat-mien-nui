@@ -128,14 +128,12 @@ const update = catchAsync(async (req, res) => {
     // );
 
     let imageList = [];
-    let product = {};
+    let product;
 
     if (req.files) {
       const listFile = Object.values(req.files);
       imageList = await uploadImageToCloudinary(listFile);
     }
-
-    console.log(req.body);
 
     product = await productService.updateProductById(
       req.params.productId,
@@ -154,7 +152,6 @@ const deleteProduct = catchAsync(async (req, res) => {
       req.params.productId
     );
 
-    console.log(product);
     if (error)
       return res.status(httpStatus.NOT_FOUND).send({
         error,
@@ -170,6 +167,32 @@ const deleteProduct = catchAsync(async (req, res) => {
   });
 });
 
+const deleteLinkImage = catchAsync(async (req, res) => {
+  if (req.params?.productId) {
+    const product = await productService.getProductById(req.params.productId);
+    let imagesListProduct = product.images;
+    let check = false;
+
+    for (let item of imagesListProduct) {
+      if (item.id == req.body.idImage) {
+        imagesListProduct.splice(imagesListProduct.indexOf(item), 1);
+        check = true;
+        break;
+      }
+    }
+
+    if (!check) return res.status(httpStatus.NOT_FOUND).json('Not found image');
+
+    await productService.updateProductById(
+      req.params.productId,
+      product,
+      imagesListProduct
+    );
+
+    return res.status(httpStatus.OK).json('Deleted');
+  }
+});
+
 module.exports = {
   getProducts,
   getProduct,
@@ -177,4 +200,5 @@ module.exports = {
   update,
   getProductAPI,
   deleteProduct,
+  deleteLinkImage,
 };

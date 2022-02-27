@@ -9,13 +9,18 @@ const orderSchema = mongoose.Schema(
       minlength: 1,
       maxlength: 30,
     },
-    date: {
-      type: Date,
-    },
     price: {
       type: Number,
       trim: true,
-      default: 0,
+    },
+    email: {
+      type: String,
+      trim: true,
+    },
+    deliveryAddress: {
+      type: String,
+      trim: true,
+      required: true,
     },
     phoneNumber: {
       type: String,
@@ -25,6 +30,12 @@ const orderSchema = mongoose.Schema(
     productList: {
       type: Array,
       required: true,
+    },
+    status: {
+      type: Boolean,
+    },
+    note: {
+      type: String,
     },
   },
   {

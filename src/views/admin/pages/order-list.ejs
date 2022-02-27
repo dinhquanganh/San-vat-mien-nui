@@ -31,13 +31,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-red
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
                         >
                           <i class="ni ni-active-40"></i>
                         </div>
@@ -65,13 +59,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-orange
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow"
                         >
                           <i class="ni ni-chart-pie-35"></i>
                         </div>
@@ -99,13 +87,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-green
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-green text-white rounded-circle shadow"
                         >
                           <i class="ni ni-money-coins"></i>
                         </div>
@@ -133,13 +115,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-info
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-info text-white rounded-circle shadow"
                         >
                           <i class="ni ni-chart-bar-32"></i>
                         </div>
@@ -166,7 +142,7 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header">
-                <h3 class="mb-0"><%= title%></h3>
+                <h3 class="mb-0"><%= title %></h3>
                 <p class="text-sm mb-0"></p>
               </div>
               <div class="table-responsive py-4">
@@ -182,18 +158,18 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <% orderList.forEach(orderItem =>{ %>
                     <tr>
-                      <% orderList.forEach((orderItem)=>{ %>
-                      <td><%= orderItem.createAt%></td>
-                      <td><%= orderItem.name%></td>
-                      <td><%= orderItem.phoneNumber%></td>
+                      <td><%= orderItem.createAt %></td>
+                      <td><%= orderItem.name %></td>
+                      <td><%= orderItem.phoneNumber %></td>
                       <td>
                         <span class="badge badge-dot mr-4">
                           <i class="bg-success"></i>
                           <span class="status">đã gửi</span>
                         </span>
                       </td>
-                      <td><%= orderItem.price%></td>
+                      <td><%= orderItem.price %></td>
                       <td class="text-right">
                         <div class="dropdown">
                           <a
@@ -207,27 +183,23 @@
                             <i class="fas fa-ellipsis-v"></i>
                           </a>
                           <div
-                            class="
-                              dropdown-menu
-                              dropdown-menu-right
-                              dropdown-menu-arrow
-                            "
+                            class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
                           >
                             <a
                               class="dropdown-item"
-                              href="/admin/order-list/<%= orderItem.id%>"
+                              href="/admin/order-list/<%= orderItem._id.toString() %>"
                               >Chỉnh sửa</a
                             >
                             <a
                               class="dropdown-item"
-                              href="/admin/order-list/delete/<%= orderItem.id%>"
+                              href="/admin/order-list/delete/<%= orderItem._id.toString() %>"
                               >Xóa</a
                             >
                           </div>
                         </div>
                       </td>
-                      <%})%>
                     </tr>
+                    <%})%>
                   </tbody>
                 </table>
               </div>

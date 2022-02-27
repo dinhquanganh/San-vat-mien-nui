@@ -1,17 +1,17 @@
 const { Order } = require('../models');
 
-// /**
-//  * Create a order
-//  * @param {Object} orderBody
-//  * @returns {Promise<Order>}
-//  */
-// const create = async (orderBody) => {
-//   if (!orderBody) {
-//     return { error: 'Order body is required' };
-//   }
+/**
+ * Create a order
+ * @param {Object} orderBody
+ * @returns {Promise<Order>}
+ */
+const create = async (orderBody) => {
+  if (!orderBody) {
+    return { error: 'Order body is required' };
+  }
 
-//   return Order.create(orderBody);
-// };
+  return Order.create(orderBody);
+};
 
 /**
  * Query for orders
@@ -75,4 +75,4 @@ const queryOrders = async () => {
 //   return order;
 // };
 
-module.exports = { queryOrders };
+module.exports = { create, queryOrders };

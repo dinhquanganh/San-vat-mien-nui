@@ -29,10 +29,12 @@
     return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   }
 
-  if (document.querySelectorAll('.price-cv'))
-    document.querySelectorAll('.price-cv').forEach(function (item) {
-      item.innerHTML = convertNumber(item.innerHTML);
-    });
+  setInterval(() => {
+    if (document.querySelectorAll('.price-cv'))
+      document.querySelectorAll('.price-cv').forEach(function (item) {
+        item.innerHTML = convertNumber(item.innerHTML);
+      });
+  }, 3000);
 </script>
 
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

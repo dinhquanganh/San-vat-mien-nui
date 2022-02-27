@@ -213,6 +213,7 @@
                                         href="#"
                                         class="dropdown-item"
                                         data-dz-remove
+                                        onclick="removeImage()"
                                       >
                                         Remove
                                       </a>
@@ -345,7 +346,8 @@
     <script src="/admin/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="/admin/assets/vendor/nouislider/distribute/nouislider.min.js"></script>
     <script src="/admin/assets/vendor/quill/dist/quill.min.js"></script>
-    <script src="/admin/assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <!-- <script src="/admin/assets/vendor/dropzone/dist/min/dropzone.min.js"></script> -->
+    <script src="/admin/assets/vendor/dropzone/dist/dropzone.js"></script>
     <script src="/admin/assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <script src="/admin/assets/js/validation-form.js"></script>
     <script src="/admin/assets/js/quill-custom.js"></script>
@@ -380,7 +382,6 @@
             autoProcessQueue: false,
             withCredentials: true,
             accept: function (file, done) {
-              console.log(file);
               if (file.size == 0) {
                 done('Empty files will not be uploaded.');
               } else done();
@@ -388,7 +389,7 @@
 
             init: async function () {
               let myDropzone = this;
-
+              console.log($this);
               let images = JSON.parse(`<%- JSON.stringify(product.images)%>`);
 
               // Add existing images
@@ -469,6 +470,11 @@
           });
         }
       })();
+    </script>
+    <script>
+      function removeImage() {
+        console.log('removed');
+      }
     </script>
   </body>
 </html>

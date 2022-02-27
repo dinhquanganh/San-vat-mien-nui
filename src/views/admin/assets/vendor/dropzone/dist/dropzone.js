@@ -777,7 +777,7 @@ var Dropzone = function (_Emitter) {
 
               node.innerHTML = this.filesize(file.size);
             }
-
+            console.log(this.options);
             if (this.options.addRemoveLinks) {
               file._removeLink = Dropzone.createElement("<a class=\"dz-remove\" href=\"javascript:undefined;\" data-dz-remove>" + this.options.dictRemoveFile + "</a>");
               file.previewElement.appendChild(file._removeLink);

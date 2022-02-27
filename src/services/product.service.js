@@ -59,7 +59,6 @@ const updateProductById = async (productId, updateBody, imagelist) => {
       : product.images,
   });
 
-  console.log(product);
   await product.save();
 
   return {

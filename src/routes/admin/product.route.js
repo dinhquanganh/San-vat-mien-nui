@@ -53,6 +53,10 @@ router
     productController.create
   );
 
+router
+  .route('/api/removeImage/:productId')
+  .post(productController.deleteLinkImage);
+
 router.route('/api/:productId').get(productController.getProductAPI);
 
 router
