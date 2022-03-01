@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 .container-inner {
   padding: 10px 30px;
 }
@@ -55,6 +59,16 @@
   object-fit: cover;
   object-position: center;
 }
+
+.testimonial-area {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  margin-bottom: 0 !important;
+}
+
+.feature-area-2 {
+  background-image: url(../images/more/bg_feature.jpg);
+}
+
 @media only screen and (max-width: 991px) and (min-width: 768px) {
   .home-4 .logo {
     margin-top: 10px;

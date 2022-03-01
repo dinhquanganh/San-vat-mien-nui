@@ -25,30 +25,9 @@
                   Các loại sản vật<br />
                   từ miền núi
                 </h1>
-                <a href="shop-4-column.html" class="shop-btn animated">
+                <a href="#before-tea-section" class="shop-btn animated">
                   Xem ngay
                 </a>
-              </div>
-            </div>
-          </div>
-          <!-- Slider Single Item End -->
-          <!-- Slider Single Item Start -->
-          <div
-            class="slider-height-6 d-flex align-items-start justify-content-start bg-img"
-            style="
-              background-image: url(assets/images/slider-image/sample-8.jpg);
-            "
-          >
-            <div class="container">
-              <div class="slider-content-5 slider-animated-1 text-left">
-                <span class="animated">BEST OFFER SALE !</span>
-                <h1 class="animated">
-                  Up To 70% Off <br />
-                  Fresh Juice
-                </h1>
-                <a href="shop-4-column.html" class="shop-btn animated"
-                  >SHOP NOW</a
-                >
               </div>
             </div>
           </div>
@@ -138,7 +117,7 @@
           <div class="row">
             <div class="col-md-3 col-xs-12">
               <div class="banner-wrapper">
-                <a href="shop-4-column.html">
+                <a href="#">
                   <img
                     src="/assets/images/banner-image/sale-banner2.png"
                     alt="banner sale"
@@ -148,7 +127,7 @@
             </div>
             <div class="col-md-6 col-xs-12 mt-res-sx-30px">
               <div class="banner-wrapper">
-                <a href="shop-4-column.html">
+                <a href="#">
                   <img
                     src="/assets/images/banner-image/sale-banner1.png"
                     alt="banner sale"
@@ -158,7 +137,7 @@
             </div>
             <div class="col-md-3 col-xs-12 mt-res-sx-30px">
               <div class="banner-wrapper">
-                <a href="shop-4-column.html">
+                <a href="#">
                   <img
                     src="/assets/images/banner-image/sale-banner3.png"
                     alt=""
@@ -207,7 +186,10 @@
                     />
                   </a>
                   <div class="quick-view">
-                    <a class="quick_view" href="#">
+                    <a
+                      class="quick_view"
+                      href="/product/<%= item._id.toString()%>"
+                    >
                       <i class="ion-ios-search-strong"></i>
                     </a>
                   </div>
@@ -216,7 +198,10 @@
                   <li class="new">New</li>
                 </ul>
                 <div class="product-decs">
-                  <a class="inner-link" href="shop-4-column.html">
+                  <a
+                    class="inner-link"
+                    href="/product/<%= item._id.toString()%>"
+                  >
                     <span> <%= item.category%> </span>
                   </a>
                   <h2>
@@ -233,7 +218,9 @@
                   </div>
                   <div class="pricing-meta">
                     <ul>
-                      <li class="old-price not-cut"><%= item.price%> VND</li>
+                      <li class="old-price not-cut price-cv">
+                        <%= item.price%> VND
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -253,7 +240,8 @@
         </div>
       </section>
       <!-- Best Sell Area End -->
-      <!-- Feature Area 2 Start -->
+
+      <!-- Featured Products Area Start -->
       <section class="feature-area-2">
         <div class="container">
           <div class="row">
@@ -261,7 +249,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
               <div class="feature-left">
                 <img
-                  src="/assets/images/feature-bg/1.png"
+                  src="/assets/images/more/png-clipart-honey-desktop-jar-graphy-jar-honey-bee-natural-foods.png"
                   alt=""
                   class="img-responsive"
                 />
@@ -278,42 +266,49 @@
               <!-- Feature slide 2 start -->
               <div class="feature-slider-2 owl-carousel owl-nav-style">
                 <!-- slngle item -->
+                <% featuredProducts.forEach((listItem) => { %>
                 <div class="feature-slider-item">
+                  <% listItem.forEach((item) => { %>
                   <article class="list-product">
                     <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
+                      <a
+                        href="/product/<%= item._id.toString()%>"
+                        class="thumbnail"
+                      >
                         <img
                           class="first-img"
-                          src="/assets/images/product-image/organic/product-18.jpg"
-                          alt=""
+                          src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                          alt="<%= item.name%>"
                         />
                         <img
                           class="second-img"
-                          src="/assets/images/product-image/organic/product-18.jpg"
-                          alt=""
+                          src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                          alt="<%= item.name%>"
                         />
                       </a>
                       <div class="quick-view">
                         <a
                           class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
+                          href="/product/<%= item._id.toString()%>"
                         >
                           <i class="ion-ios-search-strong"></i>
                         </a>
                       </div>
                     </div>
                     <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
+                      <a
+                        class="inner-link"
+                        href="/product/<%= item._id.toString()%>"
                       >
+                        <span><%= item.category%></span>
+                      </a>
                       <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Juicy Couture Solid...</a
+                        <a
+                          href="/product/<%= item._id.toString()%>"
+                          class="product-link"
                         >
+                          <%= item.name%>
+                        </a>
                       </h2>
                       <div class="rating-product">
                         <i class="ion-android-star"></i>
@@ -324,851 +319,24 @@
                       </div>
                       <div class="pricing-meta">
                         <ul>
-                          <li class="old-price not-cut">VND29.90</li>
+                          <li class="old-price not-cut">
+                            <%= item.price%> VND
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-19.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-20.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >New Balance Fresh...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND29.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
+                  <% }) %>
                 </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Originals Kaval Win...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND23.90</li>
-                          <li class="current-price">VND21.51</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-11.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-12.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Originals Kaval Win...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND23.90</li>
-                          <li class="current-price">VND21.51</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-2.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-15.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Juicy Couture Juicy...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND35.90</li>
-                          <li class="current-price">VND34.11</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Juicy Couture Juicy...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND35.90</li>
-                          <li class="current-price">VND34.11</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-2.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-23.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >New Balance Fresh...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND18.90</li>
-                          <li class="current-price">VND15.12</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-18.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-18.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >New Balance Fresh...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND29.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-5.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-5.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>GRAPHIC CORNER</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Juicy Couture Trico...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND9.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-7.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-8.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>GRAPHIC CORNER</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Fila Locker Room V...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND9.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-17.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-16.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Trans-Weight Hood...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND18.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-10.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >New Luxury Men's...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND11.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-22.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-15.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>GRAPHIC CORNER</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Calvin Klein Jeans...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND29.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-9.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-9.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Water and Wind R...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND11.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-14.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-14.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>GRAPIC CORNER</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Madden by Steve...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND11.90</li>
-                          <li class="current-price">VND10.12</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-4.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-3.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Brixton Patrol All T...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price not-cut">VND18.90</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
-                <div class="feature-slider-item">
-                  <article class="list-product">
-                    <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
-                        <img
-                          class="first-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                        <img
-                          class="second-img"
-                          src="/assets/images/product-image/organic/product-1.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <div class="quick-view">
-                        <a
-                          class="quick_view"
-                          href="#"
-                          data-link-action="quickview"
-                          title="Quick view"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                        >
-                          <i class="ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"
-                        ><span>STUDIO DESIGN</span></a
-                      >
-                      <h2>
-                        <a href="single-product.html" class="product-link"
-                          >Juicy Couture Juicy...</a
-                        >
-                      </h2>
-                      <div class="rating-product">
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                        <i class="ion-android-star"></i>
-                      </div>
-                      <div class="pricing-meta">
-                        <ul>
-                          <li class="old-price">VND18.90</li>
-                          <li class="current-price">VND34.21</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!-- slngle item -->
+                <% }) %>
               </div>
               <!-- Feature slide 2 End -->
             </div>
           </div>
         </div>
       </section>
-      <!-- Feature Area end -->
+      <!-- Featured Products Area end -->
+
       <!-- New Product Area Start -->
       <section class="recent-add-area">
         <div class="container">
@@ -1217,7 +385,10 @@
                 </ul>
                 <% } %>
                 <div class="product-decs">
-                  <a class="inner-link" href="shop-4-column.html">
+                  <a
+                    class="inner-link"
+                    href="/product/<%= item._id.toString()%>"
+                  >
                     <span> <%= item.category%> </span>
                   </a>
                   <h2>
@@ -1234,7 +405,9 @@
                   </div>
                   <div class="pricing-meta">
                     <ul>
-                      <li class="old-price not-cut"><%= item.price%> VND</li>
+                      <li class="old-price not-cut price-cv">
+                        <%= item.price%> VND
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -1253,24 +426,24 @@
           <!-- Recent product slider end -->
         </div>
       </section>
-      <!-- Recent product area end -->
+      <!-- New Product area end -->
+
       <!-- Banner Area 2 Start -->
-      <div class="banner-area-2">
+      <div class="banner-area-2" id="before-tea-section">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <div class="banner-inner">
-                <a href="shop-4-column.html"
-                  ><img src="/assets/images/banner-image/4.jpg" alt=""
-                /></a>
+                <a href="#"><img src="/assets/images/more/4_1.jpg" alt="" /></a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <!-- Banner Area 2 end -->
+
       <!-- Tea Area Start -->
-      <section class="feature-area">
+      <section class="feature-area" id="tea-section">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -1318,7 +491,7 @@
               </ul>
               <% } %>
               <div class="product-decs">
-                <a class="inner-link" href="shop-4-column.html">
+                <a class="inner-link" href="/product/<%= item._id.toString()%>">
                   <span> <%= item.category%> </span>
                 </a>
                 <h2>
@@ -1335,7 +508,9 @@
                 </div>
                 <div class="pricing-meta">
                   <ul>
-                    <li class="old-price not-cut"><%= item.price%> VND</li>
+                    <li class="old-price not-cut price-cv">
+                      <%= item.price%> VND
+                    </li>
                     <!-- <li class="old-price"><%= item.price%> VND</li>
                     <li class="current-price"><%= item.price%> VND</li>
                     <li class="discount-price">-10%</li> -->
@@ -1406,7 +581,7 @@
               </ul>
               <% } %>
               <div class="product-decs">
-                <a class="inner-link" href="shop-4-column.html">
+                <a class="inner-link" href="/product/<%= item._id.toString()%>">
                   <span> <%= item.category%> </span>
                 </a>
                 <h2>
@@ -1423,7 +598,9 @@
                 </div>
                 <div class="pricing-meta">
                   <ul>
-                    <li class="old-price not-cut"><%= item.price%> VND</li>
+                    <li class="old-price not-cut price-cv">
+                      <%= item.price%> VND
+                    </li>
                     <!-- <li class="old-price"><%= item.price%> VND</li>
                     <li class="current-price"><%= item.price%> VND</li>
                     <li class="discount-price">-10%</li> -->
@@ -1494,7 +671,7 @@
               </ul>
               <% } %>
               <div class="product-decs">
-                <a class="inner-link" href="shop-4-column.html">
+                <a class="inner-link" href="/product/<%= item._id.toString()%>">
                   <span> <%= item.category%> </span>
                 </a>
                 <h2>
@@ -1511,7 +688,9 @@
                 </div>
                 <div class="pricing-meta">
                   <ul>
-                    <li class="old-price not-cut"><%= item.price%> VND</li>
+                    <li class="old-price not-cut price-cv">
+                      <%= item.price%> VND
+                    </li>
                     <!-- <li class="old-price"><%= item.price%> VND</li>
                     <li class="current-price"><%= item.price%> VND</li>
                     <li class="discount-price">-10%</li> -->
@@ -1582,7 +761,7 @@
               </ul>
               <% } %>
               <div class="product-decs">
-                <a class="inner-link" href="shop-4-column.html">
+                <a class="inner-link" href="/product/<%= item._id.toString()%>">
                   <span> <%= item.category%> </span>
                 </a>
                 <h2>
@@ -1599,7 +778,9 @@
                 </div>
                 <div class="pricing-meta">
                   <ul>
-                    <li class="old-price not-cut"><%= item.price%> VND</li>
+                    <li class="old-price not-cut price-cv">
+                      <%= item.price%> VND
+                    </li>
                     <!-- <li class="old-price"><%= item.price%> VND</li>
                     <li class="current-price"><%= item.price%> VND</li>
                     <li class="discount-price">-10%</li> -->
@@ -1644,14 +825,11 @@
                 </div>
                 <div class="testi-content">
                   <div class="testi-content-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt aliquid aperiam ex iste doloremque tenetur illum.
-                    Voluptas numquam asperiores soluta illum itaque
-                    necessitatibus obcaecati magni illo commodi. Facere, dolor
-                    placeat?
+                    Mình uống 4/6 loại trà bác gời rồi! Trà quá ngon trong tầm
+                    giá! Hy vọng tới đây sẽ giao lưu các loại trà khác với bác.
                   </div>
                   <div class="author-text">
-                    <h4>orando BLoom <span>demo@posthemes.com</span></h4>
+                    <h4>Hải <span>haile1@gmail.com</span></h4>
                   </div>
                 </div>
               </div>
@@ -1664,14 +842,12 @@
                 </div>
                 <div class="testi-content">
                   <div class="testi-content-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt aliquid aperiam ex iste doloremque tenetur illum.
-                    Voluptas numquam asperiores soluta illum itaque
-                    necessitatibus obcaecati magni illo commodi. Facere, dolor
-                    placeat?
+                    Mình dùng loại 900 rồi, công nhận tuy khác vị tân cương
+                    nhưng uống thơm và để lại mùi vị của chè nhiều hơn. Chè sạch
+                    là ok nhất rồi!
                   </div>
                   <div class="author-text">
-                    <h4>orando BLoom <span>demo@posthemes.com</span></h4>
+                    <h4>Vinh Hoàng <span>vinhhdle@gmail.com</span></h4>
                   </div>
                 </div>
               </div>
