@@ -178,38 +178,36 @@
               <!-- Section Title -->
               <div class="section-title">
                 <h2>Bán chạy nhất</h2>
-                <p>Thêm các sản phẩm bán chạy nhất vào danh sách hàng tuần</p>
+                <p>Danh sách các sản phẩm bán chạy nhất tuần này</p>
               </div>
               <!-- Section Title -->
             </div>
           </div>
           <!-- Best Sell Slider Carousel Start -->
           <div class="best-sell-slider owl-carousel owl-nav-style">
-            <!-- Single Item -->
+            <% bestSellers.forEach((listItem) => { %>
             <div class="list-product-2">
-              <article class="list-product mb-30px">
+              <% listItem.forEach((item) => { %>
+              <!-- Single Item -->
+              <article class="list-product mb-2">
                 <div class="img-block">
-                  <a href="single-product.html" class="thumbnail">
+                  <a
+                    href="/product/<%= item._id.toString()%>"
+                    class="thumbnail"
+                  >
                     <img
                       class="first-img"
-                      src="/assets/images/product-image/organic/product-1.jpg"
-                      alt=""
+                      src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                      alt="<%= item.name%>"
                     />
                     <img
                       class="second-img"
-                      src="/assets/images/product-image/organic/product-1.jpg"
-                      alt=""
+                      src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                      alt="<%= item.name%>"
                     />
                   </a>
                   <div class="quick-view">
-                    <a
-                      class="quick_view"
-                      href="#"
-                      data-link-action="quickview"
-                      title="Quick view"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                    >
+                    <a class="quick_view" href="#">
                       <i class="ion-ios-search-strong"></i>
                     </a>
                   </div>
@@ -218,13 +216,13 @@
                   <li class="new">New</li>
                 </ul>
                 <div class="product-decs">
-                  <a class="inner-link" href="shop-4-column.html"
-                    ><span>STUDIO DESIGN</span></a
-                  >
+                  <a class="inner-link" href="shop-4-column.html">
+                    <span> <%= item.category%> </span>
+                  </a>
                   <h2>
-                    <a href="single-product.html" class="product-link"
-                      >Juicy Couture Juicy Quilted Ter..</a
-                    >
+                    <a href="single-product.html" class="product-link">
+                      <%= item.name%>
+                    </a>
                   </h2>
                   <div class="rating-product">
                     <i class="ion-android-star"></i>
@@ -235,81 +233,7 @@
                   </div>
                   <div class="pricing-meta">
                     <ul>
-                      <li class="old-price">VND18.90</li>
-                      <li class="current-price">VND34.21</li>
-                      <li class="discount-price">-5%</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="add-to-link">
-                  <ul>
-                    <li class="cart">
-                      <a class="cart-btn" href="#">Thêm vào giỏ</a>
-                    </li>
-                    <li>
-                      <a href="wishlist.html"
-                        ><i class="ion-android-favorite-outline"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="compare.html"
-                        ><i class="ion-ios-shuffle-strong"></i
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
-              </article>
-              <article class="list-product">
-                <div class="img-block">
-                  <a href="single-product.html" class="thumbnail">
-                    <img
-                      class="first-img"
-                      src="/assets/images/product-image/organic/product-2.jpg"
-                      alt=""
-                    />
-                    <img
-                      class="second-img"
-                      src="/assets/images/product-image/organic/product-15.jpg"
-                      alt=""
-                    />
-                  </a>
-                  <div class="quick-view">
-                    <a
-                      class="quick_view"
-                      href="#"
-                      data-link-action="quickview"
-                      title="Quick view"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                    >
-                      <i class="ion-ios-search-strong"></i>
-                    </a>
-                  </div>
-                </div>
-                <ul class="product-flag">
-                  <li class="new">New</li>
-                </ul>
-                <div class="product-decs">
-                  <a class="inner-link" href="shop-4-column.html"
-                    ><span>STUDIO DESIGN</span></a
-                  >
-                  <h2>
-                    <a href="single-product.html" class="product-link"
-                      >New Balance Fresh Foam Ka..</a
-                    >
-                  </h2>
-                  <div class="rating-product">
-                    <i class="ion-android-star"></i>
-                    <i class="ion-android-star"></i>
-                    <i class="ion-android-star"></i>
-                    <i class="ion-android-star"></i>
-                    <i class="ion-android-star"></i>
-                  </div>
-                  <div class="pricing-meta">
-                    <ul>
-                      <li class="old-price">VND18.90</li>
-                      <li class="current-price">VND15.12</li>
-                      <li class="discount-price">-20%</li>
+                      <li class="old-price not-cut"><%= item.price%> VND</li>
                     </ul>
                   </div>
                 </div>
@@ -318,20 +242,12 @@
                     <li class="cart">
                       <a class="cart-btn" href="#">Thêm vào giỏ </a>
                     </li>
-                    <li>
-                      <a href="wishlist.html"
-                        ><i class="ion-android-favorite-outline"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="compare.html"
-                        ><i class="ion-ios-shuffle-strong"></i
-                      ></a>
-                    </li>
                   </ul>
                 </div>
               </article>
+              <% }) %>
             </div>
+            <% }) %>
           </div>
           <!-- Best Sell Slider Carousel End -->
         </div>
@@ -356,7 +272,7 @@
               <!-- Section Title -->
               <div class="section-title">
                 <h2>Sản phẩm nổi bật</h2>
-                <p>Thêm các sản phẩm nổi bật vào danh sách hàng tuần</p>
+                <p>Các sản phẩm nổi bật mỗi tuần</p>
               </div>
               <!-- Section Title -->
               <!-- Feature slide 2 start -->
@@ -1268,61 +1184,70 @@
           </div>
           <!-- Recent Product slider Start -->
           <div class="recent-product-slider owl-carousel owl-nav-style">
-            <% newProduct.forEach(function(item) { %>
-            <!-- Single Item -->
-            <article class="list-product">
-              <div class="img-block">
-                <a href="/product/<%= item._id.toString()%>" class="thumbnail">
-                  <img
-                    class="first-img"
-                    src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
-                    alt="<%= item.name%>"
-                  />
-                  <img
-                    class="second-img"
-                    src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
-                    alt="<%= item.name%>"
-                  />
-                </a>
-                <div class="quick-view">
-                  <a class="quick_view" href="#">
-                    <i class="ion-ios-search-strong"></i>
+            <% newProducts.forEach((listItem) => { %>
+            <div class="list-product-2">
+              <% listItem.forEach((item) => { %>
+              <!-- Single Item -->
+              <article class="list-product mb-2">
+                <div class="img-block">
+                  <a
+                    href="/product/<%= item._id.toString()%>"
+                    class="thumbnail"
+                  >
+                    <img
+                      class="first-img"
+                      src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                      alt="<%= item.name%>"
+                    />
+                    <img
+                      class="second-img"
+                      src="<%= item?.images[0]?.url|| 'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'%>"
+                      alt="<%= item.name%>"
+                    />
                   </a>
+                  <div class="quick-view">
+                    <a class="quick_view" href="#">
+                      <i class="ion-ios-search-strong"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <ul class="product-flag">
-                <li class="new">New</li>
-              </ul>
-              <div class="product-decs">
-                <a class="inner-link" href="shop-4-column.html">
-                  <span> <%= item.category%> </span>
-                </a>
-                <h2>
-                  <a href="single-product.html" class="product-link">
-                    <%= item.name%>
+                <% if (item.newProduct=='on') { %>
+                <ul class="product-flag">
+                  <li class="new">New</li>
+                </ul>
+                <% } %>
+                <div class="product-decs">
+                  <a class="inner-link" href="shop-4-column.html">
+                    <span> <%= item.category%> </span>
                   </a>
-                </h2>
-                <div class="rating-product">
-                  <i class="ion-android-star"></i>
-                  <i class="ion-android-star"></i>
-                  <i class="ion-android-star"></i>
-                  <i class="ion-android-star"></i>
-                  <i class="ion-android-star"></i>
+                  <h2>
+                    <a href="single-product.html" class="product-link">
+                      <%= item.name%>
+                    </a>
+                  </h2>
+                  <div class="rating-product">
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                  </div>
+                  <div class="pricing-meta">
+                    <ul>
+                      <li class="old-price not-cut"><%= item.price%> VND</li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="pricing-meta">
+                <div class="add-to-link">
                   <ul>
-                    <li class="old-price not-cut"><%= item.price%> VND</li>
+                    <li class="cart">
+                      <a class="cart-btn" href="#">Thêm vào giỏ </a>
+                    </li>
                   </ul>
                 </div>
-              </div>
-              <div class="add-to-link">
-                <ul>
-                  <li class="cart">
-                    <a class="cart-btn" href="#">Thêm vào giỏ </a>
-                  </li>
-                </ul>
-              </div>
-            </article>
+              </article>
+              <% }) %>
+            </div>
             <% }) %>
           </div>
           <!-- Recent product slider end -->
@@ -1786,10 +1711,21 @@
       let imgOwlRecentProduct = document.querySelectorAll(
         '.recent-product-slider .img-block'
       );
+      let imgOwlBestSaleProduct = document.querySelectorAll(
+        '.best-sell-slider .img-block'
+      );
 
-      let resz = setInterval(() => {
+      let resz1 = setInterval(() => {
         if (imgOwlRecentProduct[0].offsetWidth > 10) {
           for (let element of imgOwlRecentProduct) {
+            element.style.height = element.offsetWidth + 'px';
+          }
+          clearInterval(resz);
+        }
+      }, 1000);
+      let resz2 = setInterval(() => {
+        if (imgOwlBestSaleProduct[0].offsetWidth > 10) {
+          for (let element of imgOwlBestSaleProduct) {
             element.style.height = element.offsetWidth + 'px';
           }
           clearInterval(resz);

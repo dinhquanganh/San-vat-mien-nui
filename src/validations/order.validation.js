@@ -8,7 +8,7 @@ const create = {
     email: Joi.string().email(),
     deliveryAddress: Joi.string().required(),
     productList: Joi.array().required(),
-    note: Joi.string().max(200),
+    note: Joi.string().max(1000),
   }),
 };
 

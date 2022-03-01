@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("../layouts/head.ejs") -%>
+  </head>
+
+  <body>
+    <!-- Sidenav -->
+    <%- include("../layouts/sidebar.ejs") -%>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+      <!-- Topnav -->
+      <%- include("../layouts/navbar.ejs") -%>
+      <!-- Header -->
+      <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+          <div class="header-body">
+            <%- include("../layouts/breadcrumb.ejs") -%>
+          </div>
+        </div>
+      </div>
+      <!-- Page content -->
+      <div class="container-fluid mt--6">
+        <div class="row">
+          <div class="col">
+            <div class="card-wrapper">
+              <!-- Custom form validation -->
+              <div class="card">
+                <!-- Card header -->
+                <div class="card-header">
+                  <h3 class="mb-0">Tạo mới sản phẩm</h3>
+                </div>
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <p class="mb-0"></p>
+                    </div>
+                  </div>
+                  <!-- <hr /> -->
+                  <form class="needs-validation" novalidate method="post">
+                    <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                        <label
+                          class="form-control-label"
+                          for="validationCustomName"
+                          >Tên khách hàng</label
+                        >
+                        <input
+                          type="text"
+                          name="name"
+                          class="form-control"
+                          id="validationCustom01"
+                          placeholder="VD: Nguyễn Văn A"
+                          value=""
+                          required
+                        />
+                        <div class="invalid-feedback">Không được bỏ trống</div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label
+                          class="form-control-label"
+                          for="validationCustom02"
+                          >Số điện thoại</label
+                        >
+                        <input
+                          type="text"
+                          name="phoneNumber"
+                          class="form-control"
+                          id="phoneNumber"
+                          placeholder="VD: 0989000000"
+                          value=""
+                          required
+                        />
+                        <div class="invalid-feedback">Không được bỏ trống</div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label
+                          class="form-control-label"
+                          for="validationCustom02"
+                          >Email</label
+                        >
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="email"
+                          placeholder="VD: name@mail.com"
+                          value=""
+                        />
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label
+                          class="form-control-label"
+                          for="validationCustom02"
+                          >Tiền ship</label
+                        >
+                        <input
+                          type="number"
+                          name="shipPrice"
+                          class="form-control"
+                          id="shipPrice"
+                          placeholder="VD: 20000"
+                          value=""
+                        />
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label
+                          class="form-control-label"
+                          for="validationCustom02"
+                          >Địa chỉ</label
+                        >
+                        <input
+                          type="text"
+                          name="deliveryAddress"
+                          class="form-control"
+                          id="deliveryAddress"
+                          placeholder="VD: Thôn A, Phường B,..."
+                          value=""
+                          required
+                        />
+                        <div class="invalid-feedback">Không được bỏ trống</div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="form-control-label" for="product">
+                          Sản phẩm
+                        </label>
+                        <select
+                          id="product"
+                          name="product"
+                          class="form-control"
+                          data-toggle="select"
+                          multiple="multiple"
+                          data-live-search="true"
+                          data-live-search-placeholder="Tìm sản phẩm..."
+                          data-placeholder="Chọn 1 hoặc nhiều sản phẩm"
+                        >
+                          <option>Alerts</option>
+                          <option>Badges</option>
+                          <option>Buttons</option>
+                          <option>Cards</option>
+                          <option>Forms</option>
+                          <option>Modals</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label class="form-control-label" for="sda">
+                          Sản phẩm
+                        </label>
+                        <select
+                          id="sda"
+                          name="sda"
+                          class="form-control"
+                          data-toggle="select"
+                          data-placeholder="Chọn 1 hoặc nhiều sản phẩm"
+                        >
+                          <option>Alerts</option>
+                          <option>Badges</option>
+                          <option>Buttons</option>
+                          <option>Cards</option>
+                          <option>Forms</option>
+                          <option>Modals</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="note">Ghi chú</label>
+                      <textarea
+                        class="form-control"
+                        id="note"
+                        name="note"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-row ml-4">
+                      <div
+                        class="col-12 col-md-6 col-xl-3 custom-control custom-checkbox mb-3"
+                      >
+                        <input
+                          class="custom-control-input"
+                          name="newProduct"
+                          id="invalidCheck2"
+                          type="checkbox"
+                          checked
+                        />
+                        <label class="custom-control-label" for="invalidCheck2">
+                          Sản Phẩm Mới
+                        </label>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Tạo</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <%- include("../layouts/footer.ejs") -%>
+      </div>
+    </div>
+    <!-- Core Scripts -->
+    <%- include("../layouts/core-script.ejs") -%>
+    <!-- Optional JS -->
+    <script src="/admin/assets/vendor/select2/dist/js/select2.min.js"></script>
+    <script src="/admin/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/admin/assets/vendor/nouislider/distribute/nouislider.min.js"></script>
+    <script src="/admin/assets/vendor/quill/dist/quill.min.js"></script>
+    <script src="/admin/assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="/admin/assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="/admin/assets/js/validation-form.js"></script>
+    <script src="/admin/assets/js/quill-custom.js"></script>
+    <!-- Argon Scripts -->
+    <%- include("../layouts/argon-script.ejs") -%>
+  </body>
+</html>

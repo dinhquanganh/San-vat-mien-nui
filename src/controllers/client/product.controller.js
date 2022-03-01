@@ -17,9 +17,11 @@ const getProduct = catchAsync(async (req, res) => {
 
     let product = {
       name,
-      description: convertDeltaToHtml(
-        JSON.parse(replaceAll(description, '//endofline**n', `\\n`))
-      ),
+      description: description
+        ? convertDeltaToHtml(
+            JSON.parse(replaceAll(description, '//endofline**n', `\\n`))
+          )
+        : 'Chưa có mô tả cho sản phẩm này',
       _id,
       images,
       price,

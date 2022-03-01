@@ -1,7 +1,9 @@
 const httpStatus = require('http-status');
 const catchAsync = require('../../utils/catchAsync');
-const { orderService } = require('../../services');
+const { emailService, orderService } = require('../../services');
 const { mailContentNewOrder } = require('../../config/mailContent');
+// const email = 'sanvatmiennui22@gmail.com';
+const email = 'cegopadocasi@mentonit.net';
 
 const getOrderList = catchAsync(async (req, res) => {
   const orderList = await orderService.queryOrders();
@@ -27,18 +29,20 @@ const getOrderItem = catchAsync(async (req, res) => {
 });
 
 const addOrders = catchAsync(async (req, res) => {
+  console.log(req.body);
   let order = await orderService.create(req.body);
 
-  if (order.error) return res.status(httpStatus[400]).json('Error');
+  if (order.error)
+    return res.status(httpStatus[400]).json('Error: ' + order.error);
 
   await emailService.sendEmail(
-    'sanvatmiennui22@gmail.com',
-    'Bạn có đơn đặt hàng mới (Đây là mail test thử chức năng)',
+    email,
+    'Có đơn đặt hàng mới đang chờ bạn xử lý!',
     '',
-    mailContentNewOrder('Quang Anh')
+    mailContentNewOrder(req.body.name)
   );
 
-  return res.status(httpStatus.OK).json('Success');
+  return res.status(httpStatus.OK).json('Create successfully');
 });
 
 module.exports = {

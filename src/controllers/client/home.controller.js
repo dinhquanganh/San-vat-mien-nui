@@ -23,6 +23,17 @@ function shuffle(arr) {
   return arr;
 }
 
+function chunkArray(arr, n) {
+  const chunks = [];
+  const arrLengthToN = arr.length / n;
+
+  while (chunks.length < arrLengthToN) {
+    chunks.push(arr.splice(0, n));
+  }
+
+  return chunks;
+}
+
 const getDataHome = catchAsync(async (req, res) => {
   // res.setHeader(
   //   'Content-Security-Policy',
@@ -54,6 +65,16 @@ const getDataHome = catchAsync(async (req, res) => {
     newProduct: 'on',
   });
 
+  const bestSeller = await productService.queryProducts({
+    show: 'on',
+    bestSeller: 'on',
+  });
+
+  const featuredProduct = await productService.queryProducts({
+    show: 'on',
+    featuredProduct: 'on',
+  });
+
   const mapProduct = (product) => ({
     id: product._id,
     name: product.name,
@@ -68,6 +89,8 @@ const getDataHome = catchAsync(async (req, res) => {
   seedFruit.map(mapProduct);
   honeyMedicine.map(mapProduct);
   newProduct.map(mapProduct);
+  bestSeller.map(mapProduct);
+  featuredProduct.map(mapProduct);
 
   res.render('home', {
     title: 'Trang chủ',
@@ -75,7 +98,9 @@ const getDataHome = catchAsync(async (req, res) => {
     foodSpice,
     seedFruit,
     honeyMedicine,
-    newProduct: shuffle(newProduct),
+    newProducts: chunkArray(shuffle(newProduct), 2),
+    bestSellers: chunkArray(shuffle(bestSeller), 2),
+    featuredProducts: chunkArray(shuffle(featuredProduct), 2),
   });
 });
 

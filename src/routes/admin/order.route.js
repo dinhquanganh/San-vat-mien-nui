@@ -8,7 +8,12 @@ const router = express.Router();
 
 router.route('/').get(auth('getOrder'), orderController.getOrderList);
 router
-  .route('/addOrder')
+  .route('/add')
+  .get(auth('manageOrder'), (req, res) => {
+    res.render('create-order', {
+      title: 'Tạo đơn hàng',
+    });
+  })
   .post(validate(orderValidation.create), orderController.addOrders);
 
 module.exports = router;

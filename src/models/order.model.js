@@ -12,10 +12,12 @@ const orderSchema = mongoose.Schema(
     price: {
       type: Number,
       trim: true,
+      default: 0,
     },
     email: {
       type: String,
       trim: true,
+      default: '',
     },
     deliveryAddress: {
       type: String,
@@ -32,10 +34,18 @@ const orderSchema = mongoose.Schema(
       required: true,
     },
     status: {
-      type: Boolean,
+      type: String,
+      trim: true,
+      default: 'pending',
     },
     note: {
       type: String,
+      default: '',
+    },
+    shipPrice: {
+      type: Number,
+      trim: true,
+      default: 0,
     },
   },
   {
