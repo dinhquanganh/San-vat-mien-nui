@@ -5,12 +5,17 @@ const { mailContentNewOrder } = require('../../config/mailContent');
 // const email = 'sanvatmiennui22@gmail.com';
 const email = 'cegopadocasi@mentonit.net';
 
-const getOrderList = catchAsync(async (req, res) => {
+const getOrders = catchAsync(async (req, res) => {
   const orderList = await orderService.queryOrders();
-  console.log(orderList);
 
   res.render('order-list', {
     title: 'Danh sách đơn hàng',
+    breadcrumb: [
+      {
+        url: '/admin/order',
+        name: 'Đơn hàng',
+      },
+    ],
     orderList,
   });
 });
@@ -21,6 +26,16 @@ const getOrderItem = catchAsync(async (req, res) => {
 
     res.render('order-item', {
       title: 'Chỉnh sửa đơn hàng',
+      breadcrumb: [
+        {
+          url: '/admin/order',
+          name: 'Đơn hàng',
+        },
+        {
+          url: '/admin/order/' + req.params.orderId.toString(),
+          name: 'Chi tiết đơn hàng',
+        },
+      ],
       order,
     });
   } else {
@@ -46,7 +61,7 @@ const addOrders = catchAsync(async (req, res) => {
 });
 
 module.exports = {
-  getOrderList,
+  getOrders,
   getOrderItem,
   addOrders,
 };

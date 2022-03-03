@@ -213,7 +213,6 @@
                                         href="#"
                                         class="dropdown-item"
                                         data-dz-remove
-                                        onclick="removeImage()"
                                       >
                                         Remove
                                       </a>
@@ -351,6 +350,7 @@
     <script src="/admin/assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <script src="/admin/assets/js/validation-form.js"></script>
     <script src="/admin/assets/js/quill-custom.js"></script>
+    <script src="/admin/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 
     <!-- Argon Scripts -->
     <%- include("../layouts/argon-script.ejs") -%>
@@ -386,7 +386,6 @@
                 done('Empty files will not be uploaded.');
               } else done();
             },
-
             init: async function () {
               let myDropzone = this;
               console.log($this);
@@ -441,6 +440,59 @@
 
               this.on();
             },
+            removedfile(file) {
+              if (
+                file.previewElement != null &&
+                file.previewElement.parentNode != null
+              ) {
+                file.previewElement.parentNode.removeChild(file.previewElement);
+              }
+
+              let idFile = file.id;
+
+              (async () => {
+                let idProduct = '<%= id %>';
+                let result = await fetch(
+                  '/admin/product/api/' + idProduct + `/remove-image`,
+                  {
+                    method: 'DELETE',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: `Bearer ${getCookie('accessToken')}`,
+                    },
+                    body: JSON.stringify({
+                      idImage: idFile,
+                    }),
+                  }
+                );
+
+                let data = await result.json();
+
+                if (data == 'Deleted successfully') {
+                  swal({
+                    title: 'Thành công!',
+                    text: 'Ảnh đã được xóa!',
+                    type: 'success',
+                    buttonsStyling: !1,
+                    confirmButtonClass: 'btn btn-success',
+                    confirmButtonText: 'Đóng',
+                  }).then((t) => {
+                    location.reload();
+                  });
+                } else {
+                  swal({
+                    title: 'Thất bại!',
+                    text: 'Có lỗi xảy ra, vui lòng thử lại!',
+                    type: 'error',
+                    buttonsStyling: !1,
+                    confirmButtonClass: 'btn btn-danger',
+                    confirmButtonText: 'Đóng',
+                  });
+                }
+              })();
+
+              return this._updateMaxFilesReachedClass();
+            },
           };
 
           // Clear preview html
@@ -472,8 +524,20 @@
       })();
     </script>
     <script>
-      function removeImage() {
-        console.log('removed');
+      function getCookie(cname) {
+        let name = cname + '=';
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return '';
       }
     </script>
   </body>

@@ -6,12 +6,22 @@ const orderController = require('../../controllers/admin/order.controller');
 
 const router = express.Router();
 
-router.route('/').get(auth('getOrder'), orderController.getOrderList);
+router.route('/').get(auth('getOrder'), orderController.getOrders);
 router
   .route('/add')
   .get(auth('manageOrder'), (req, res) => {
     res.render('create-order', {
       title: 'Tạo đơn hàng',
+      breadcrumb: [
+        {
+          url: '/admin/order',
+          name: 'Đơn hàng',
+        },
+        {
+          url: '/admin/order/create',
+          name: 'Tạo đơn hàng',
+        },
+      ],
     });
   })
   .post(validate(orderValidation.create), orderController.addOrders);

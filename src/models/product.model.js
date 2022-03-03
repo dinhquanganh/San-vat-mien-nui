@@ -13,6 +13,10 @@ const productSchema = mongoose.Schema(
       type: Number,
       default: 0,
     },
+    salePrice: {
+      type: Number,
+      default: 0,
+    },
     unit: {
       type: String,
       default: '100g',
@@ -29,6 +33,10 @@ const productSchema = mongoose.Schema(
       required: true,
       default: 'tea',
       trim: true,
+    },
+    sale: {
+      type: String,
+      default: '',
     },
     show: {
       type: String,

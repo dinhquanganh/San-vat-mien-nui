@@ -33,13 +33,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-orange
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow"
                         >
                           <i class="ni ni-chart-pie-35"></i>
                         </div>
@@ -69,13 +63,7 @@
                       </div>
                       <div class="col-auto">
                         <div
-                          class="
-                            icon icon-shape
-                            bg-gradient-red
-                            text-white
-                            rounded-circle
-                            shadow
-                          "
+                          class="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
                         >
                           <i class="ni ni-active-40"></i>
                         </div>
@@ -151,11 +139,7 @@
                             <i class="fas fa-ellipsis-v"></i>
                           </a>
                           <div
-                            class="
-                              dropdown-menu
-                              dropdown-menu-right
-                              dropdown-menu-arrow
-                            "
+                            class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
                           >
                             <a
                               class="dropdown-item"
@@ -236,7 +220,7 @@
           })
             .then((res) => res.json())
             .then((data) => {
-              if (data.status == 'success') {
+              if (data.status == 'Deleted successfully') {
                 swal({
                   title: 'Thành công!',
                   text: 'Sản phẩm đã được xóa!',
@@ -250,7 +234,7 @@
               } else {
                 swal({
                   title: 'Thất bại!',
-                  text: 'Có lỗi xảy ra!',
+                  text: 'Có lỗi xảy ra, vui lòng thử lại!',
                   type: 'error',
                   buttonsStyling: !1,
                   confirmButtonClass: 'btn btn-danger',
@@ -266,7 +250,7 @@
                 type: 'error',
                 buttonsStyling: !1,
                 confirmButtonClass: 'btn btn-danger',
-                confirmButtonText: 'OK',
+                confirmButtonText: 'Đóng',
               });
             });
         });

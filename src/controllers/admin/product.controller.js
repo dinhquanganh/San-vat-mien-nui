@@ -2,6 +2,7 @@ const httpStatus = require('http-status');
 const catchAsync = require('../../utils/catchAsync');
 const { productService, emailService } = require('../../services');
 const cloudinary = require('../../config/cloudinary');
+const fs = require('fs');
 
 const uploadImageToCloudinary = async (listFile) => {
   try {
@@ -13,6 +14,10 @@ const uploadImageToCloudinary = async (listFile) => {
     );
 
     let imageResponses = await Promise.all(multiplePicturePromise);
+
+    listFile.forEach((picture, index) => {
+      fs.unlinkSync(picture.tempFilePath);
+    });
 
     imageResponses = imageResponses.map((image) => ({
       id: image.public_id,
@@ -42,10 +47,27 @@ const getProducts = catchAsync(async (req, res) => {
     }
   });
 
+  let titleName = 'Danh sách sản phẩm';
+  if (req.query.category == 'tea') {
+    titleName = 'Trà';
+  } else if (req.query.category == 'food-spice') {
+    titleName = 'Đồ ăn / gia vị';
+  } else if (req.query.category == 'seed-and-fruit') {
+    titleName = 'Hạt / hoa quả sấy';
+  } else if (req.query.category == 'honey-medicine') {
+    titleName = 'Mật ong / dược liệu';
+  }
+
   res.render('product-list', {
-    title: 'Danh sách sản phẩm',
+    title: titleName,
     products,
     totalShowProduct,
+    breadcrumb: [
+      {
+        url: '/admin/product',
+        name: 'Sản phẩm',
+      },
+    ],
   });
 });
 
@@ -101,6 +123,16 @@ const getProduct = catchAsync(async (req, res) => {
           value: '1liter',
         },
       ],
+      breadcrumb: [
+        {
+          url: '/admin/product',
+          name: 'Sản phẩm',
+        },
+        {
+          url: '/admin/product/' + product._id.toString(),
+          name: 'Chi tiết sản phẩm',
+        },
+      ],
     });
   } else {
     res.redirect('/admin/product');
@@ -116,30 +148,57 @@ const create = catchAsync(async (req, res) => {
     res.render('/admin/product/create', {
       title: 'Tạo mới sản phẩm',
       notification: '',
+      breadcrumb: [
+        {
+          url: '/admin/product',
+          name: 'Sản phẩm',
+        },
+        {
+          url: '/admin/product/create',
+          name: 'Tạo sản phẩm',
+        },
+      ],
     });
   }
 });
 
 const update = catchAsync(async (req, res) => {
   if (req.params?.productId) {
-    // res.setHeader(
-    //   'Content-Security-Policy',
-    //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
-    // );
-
+    let dataBody = req.body;
     let imageList = [];
     let product;
 
     if (req.files) {
       const listFile = Object.values(req.files);
       imageList = await uploadImageToCloudinary(listFile);
+
+      product = await productService.getProductById(req.params.productId);
+      dataBody.images = product.images
+        ? [...product.images, ...imageList]
+        : imageList;
+      dataBody = { ...product, ...dataBody };
+    } else {
+      dataBody = {
+        ...dataBody,
+        show: dataBody.show ? dataBody.show : '',
+        bestSeller: dataBody.bestSeller ? dataBody.bestSeller : '',
+        featuredProduct: dataBody.featuredProduct
+          ? dataBody.featuredProduct
+          : '',
+        newProduct: dataBody.newProduct ? dataBody.newProduct : '',
+      };
     }
 
-    product = await productService.updateProductById(
+    const result = await productService.updateProductById(
       req.params.productId,
-      req.body,
-      imageList
+      dataBody
     );
+
+    if (result.error) {
+      return res.status(httpStatus.NOT_FOUND).send({
+        error,
+      });
+    }
 
     res.redirect('/admin/product/' + req.params.productId);
     // return res.redirect(req.originalUrl);
@@ -148,7 +207,7 @@ const update = catchAsync(async (req, res) => {
 
 const deleteProduct = catchAsync(async (req, res) => {
   if (req.params?.productId) {
-    let { error, product } = await productService.deleteProductById(
+    let { error } = await productService.deleteProductById(
       req.params.productId
     );
 
@@ -158,7 +217,7 @@ const deleteProduct = catchAsync(async (req, res) => {
       });
 
     return res.send({
-      status: 'success',
+      status: 'Deleted successfully',
     });
   }
 
@@ -167,7 +226,7 @@ const deleteProduct = catchAsync(async (req, res) => {
   });
 });
 
-const deleteLinkImage = catchAsync(async (req, res) => {
+const findIdImageAndRemove = catchAsync(async (req, res) => {
   if (req.params?.productId) {
     const product = await productService.getProductById(req.params.productId);
     let imagesListProduct = product.images;
@@ -183,13 +242,22 @@ const deleteLinkImage = catchAsync(async (req, res) => {
 
     if (!check) return res.status(httpStatus.NOT_FOUND).json('Not found image');
 
-    await productService.updateProductById(
+    const productUpdate = {
+      ...product,
+      images: imagesListProduct,
+    };
+
+    const result = await productService.updateProductById(
       req.params.productId,
-      product,
-      imagesListProduct
+      productUpdate
     );
 
-    return res.status(httpStatus.OK).json('Deleted');
+    if (result.error) {
+      return res.status(httpStatus.NOT_FOUND).send({
+        error,
+      });
+    }
+    return res.status(httpStatus.OK).json('Deleted successfully');
   }
 });
 
@@ -200,5 +268,5 @@ module.exports = {
   update,
   getProductAPI,
   deleteProduct,
-  deleteLinkImage,
+  findIdImageAndRemove,
 };

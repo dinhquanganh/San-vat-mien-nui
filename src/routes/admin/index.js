@@ -4,7 +4,6 @@ const loginRoute = require('./login.route');
 const logoutRoute = require('./logout.route');
 const productRoute = require('./product.route');
 const orderRoute = require('./order.route');
-const uploadRoute = require('./upload.route');
 
 const router = express.Router();
 
@@ -28,10 +27,6 @@ const defaultRoutes = [
   {
     path: '/order',
     route: orderRoute,
-  },
-  {
-    path: '/upload',
-    route: uploadRoute,
   },
   {
     path: '*',

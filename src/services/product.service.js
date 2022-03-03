@@ -37,7 +37,7 @@ const getProductById = async (id) => Product.findById(id);
  * @param {Object} updateBody
  * @returns {Promise<Product>}
  */
-const updateProductById = async (productId, updateBody, imagelist) => {
+const updateProductById = async (productId, updateBody) => {
   const product = await getProductById(productId);
   if (!product) {
     return {
@@ -46,19 +46,7 @@ const updateProductById = async (productId, updateBody, imagelist) => {
     };
   }
 
-  Object.assign(product, {
-    ...updateBody,
-    show: updateBody.show ? updateBody.show : '',
-    bestSeller: updateBody.bestSeller ? updateBody.bestSeller : '',
-    featuredProduct: updateBody.featuredProduct
-      ? updateBody.featuredProduct
-      : '',
-    newProduct: updateBody.newProduct ? updateBody.newProduct : '',
-    images: imagelist.length
-      ? [...product.images, ...imagelist]
-      : product.images,
-  });
-
+  Object.assign(product, updateBody);
   await product.save();
 
   return {
@@ -71,9 +59,8 @@ const updateAllProduct = async () => {
   await Product.updateMany(
     {},
     {
-      bestSeller: 'on',
-      featuredProduct: 'on',
-      newProduct: 'on',
+      salePrice: 0,
+      sale: '',
     }
   );
 };

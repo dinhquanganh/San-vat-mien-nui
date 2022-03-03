@@ -5,7 +5,13 @@ const router = express.Router();
 
 router.get('/', auth('getDashboard'), (req, res) => {
   res.render('dashboard', {
-    title: 'Trang chủ',
+    title: 'Tổng quan',
+    breadcrumb: [
+      {
+        url: '/admin',
+        name: 'Tổng quan'
+      }
+    ]
   });
 });
 

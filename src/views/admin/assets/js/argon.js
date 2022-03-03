@@ -147,7 +147,7 @@ var Layout = (function () {
   $(window).on('load resize', function () {
     if ($('body').height() < 800) {
       $('body').css('min-height', '100vh');
-      $('#footer-main').addClass('footer-auto-bottom');
+      // $('#footer-main').addClass('footer-auto-bottom');
     }
   });
 })();
@@ -2078,7 +2078,6 @@ var Fullcalendar = (function () {
           currentEvent[0].description = currentDesc;
           currentEvent[0].className = [currentClass];
 
-          console.log(currentClass);
           $this.fullCalendar('updateEvent', currentEvent[0]);
           $('#edit-event').modal('hide');
         } else {
@@ -2558,13 +2557,11 @@ var QuillEditor = (function () {
     if (contentServer.value.length) {
       let contentServerConvert = '';
       let quillData = [];
-      console.log(contentServer.value);
       contentServerConvert = contentServer.value.replaceAll(
         `//endofline**n`,
         `\\n`
       );
       quillData = JSON.parse(contentServerConvert);
-      console.log('🚩 : init : quillData', quillData);
 
       quill.setContents(quillData);
     }
@@ -2575,8 +2572,6 @@ var QuillEditor = (function () {
         `\\n`,
         `//endofline**n`
       );
-      // console.log(contentServer.value.indexOf('"insert":"\\n"'));
-      console.log(contentServer.value);
     });
   }
 

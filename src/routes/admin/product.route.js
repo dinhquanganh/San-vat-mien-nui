@@ -6,7 +6,13 @@ const auth = require('../../middlewares/admin/auth');
 
 const router = express.Router();
 
-router.route('/').get(auth('manageProduct'), productController.getProducts);
+router
+  .route('/')
+  .get(
+    auth('manageProduct'),
+    validate(productValidation.getProducts),
+    productController.getProducts
+  );
 
 router
   .route('/create')
@@ -45,6 +51,16 @@ router
           value: '1liter',
         },
       ],
+      breadcrumb: [
+        {
+          url: '/admin/product',
+          name: 'Sản phẩm',
+        },
+        {
+          url: '/admin/product/create',
+          name: 'Tạo sản phẩm',
+        },
+      ],
     });
   })
   .post(
@@ -54,10 +70,12 @@ router
   );
 
 router
-  .route('/api/removeImage/:productId')
-  .post(productController.deleteLinkImage);
+  .route('/api/:productId')
+  .get(validate(productValidation.getProduct), productController.getProductAPI);
 
-router.route('/api/:productId').get(productController.getProductAPI);
+router
+  .route('/api/:productId/remove-image')
+  .delete(auth('manageProduct'), productController.findIdImageAndRemove);
 
 router
   .route('/:productId')
@@ -67,6 +85,10 @@ router
     validate(productValidation.updateProduct),
     productController.update
   )
-  .delete(auth('manageProduct'), productController.deleteProduct);
+  .delete(
+    auth('manageProduct'),
+    validate(productValidation.deleteProduct),
+    productController.deleteProduct
+  );
 
 module.exports = router;
