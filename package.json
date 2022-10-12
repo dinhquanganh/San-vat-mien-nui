@@ -1,6 +1,6 @@
 {
   "name": "san-vat-mien-nui",
-  "version": "0.1.0",
+  "version": "1.1.2",
   "description": "",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
@@ -8,9 +8,10 @@
   "author": "Ryder Dinh <ryderdinh>",
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "scripts": {
+    "start:nopm2": "node src/index.js",
     "start": "pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "test": "jest -i --colors --verbose --detectOpenHandles",
@@ -63,7 +64,7 @@
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
     "node-quill-converter": "^0.3.3",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.7.8",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pm2": "^5.1.0",
@@ -76,6 +77,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "coveralls": "^3.0.7",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.0.0",

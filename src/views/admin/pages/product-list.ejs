@@ -178,27 +178,10 @@
     <script src="/admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
     <script src="/admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="/admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
-    <script src="/admin/assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 
     <!-- Argon Scripts -->
     <%- include("../layouts/argon-script.ejs") -%>
     <script>
-      function getCookie(cname) {
-        let name = cname + '=';
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return '';
-      }
-
       function deleteProduct(id) {
         swal({
           title: 'Xóa sản phẩm?',
@@ -209,14 +192,14 @@
           confirmButtonClass: 'btn btn-danger',
           confirmButtonText: 'Xóa',
           cancelButtonClass: 'btn btn-secondary',
-          cancelButtonText: 'Hủy',
+          cancelButtonText: 'Hủy'
         }).then((t) => {
           fetch(`/admin/product/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${getCookie('accessToken')}`,
-            },
+              Authorization: `Bearer ${getCookie('accessToken')}`
+            }
           })
             .then((res) => res.json())
             .then((data) => {
@@ -227,7 +210,7 @@
                   type: 'success',
                   buttonsStyling: !1,
                   confirmButtonClass: 'btn btn-success',
-                  confirmButtonText: 'Đóng',
+                  confirmButtonText: 'Đóng'
                 }).then((t) => {
                   location.reload();
                 });
@@ -238,7 +221,7 @@
                   type: 'error',
                   buttonsStyling: !1,
                   confirmButtonClass: 'btn btn-danger',
-                  confirmButtonText: 'Đóng',
+                  confirmButtonText: 'Đóng'
                 });
               }
             })
@@ -250,7 +233,7 @@
                 type: 'error',
                 buttonsStyling: !1,
                 confirmButtonClass: 'btn btn-danger',
-                confirmButtonText: 'Đóng',
+                confirmButtonText: 'Đóng'
               });
             });
         });

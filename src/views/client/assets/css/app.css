@@ -35,6 +35,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.btn-hover {
+  cursor: pointer;
+}
 .footer-logo {
   width: 150px;
 }

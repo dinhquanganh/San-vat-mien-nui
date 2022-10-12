@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "621b5e69b963980b988f4441"
+  },
+  "role": "user",
+  "isEmailVerified": false,
+  "name": "San vat mien nui Admin",
+  "email": "admin@savaminu.com",
+  "password": "$2a$08$2fWVjGeNUDSxF/0RsaG5BOHiy9xdj8OlyZnhtPSr8yAM17tYKyKd2",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645960809327"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645960809327"
+    }
+  },
+  "__v": 0
+}]

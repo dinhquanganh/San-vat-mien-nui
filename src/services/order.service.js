@@ -17,62 +17,66 @@ const create = async (orderBody) => {
  * Query for orders
  * @returns {Promise<QueryResult>}
  */
-const queryOrders = async () => {
-  const orders = await Order.find();
+const queryOrders = async (filters = {}) => {
+  const orders = await Order.find(filters);
 
   return orders;
 };
 
-// /**
-//  * Get order by id
-//  * @param {ObjectId} id
-//  * @returns {Promise<Order>}
-//  */
-// const getOrderById = async (id) => Order.findById(id);
+/**
+ * Get order by id
+ * @param {ObjectId} id
+ * @returns {Promise<Order>}
+ */
+const getOrderById = async (id) => Order.findById(id);
 
-// /**
-//  * Update order by id
-//  * @param {ObjectId} orderId
-//  * @param {Object} updateBody
-//  * @returns {Promise<Order>}
-//  */
-// const updateOrderById = async (orderId, updateBody) => {
-//   const order = await getOrderById(orderId);
+/**
+ * Update order by id
+ * @param {ObjectId} orderId
+ * @param {Object} updateBody
+ * @returns {Promise<Order>}
+ */
+const updateOrderById = async (orderId, updateBody) => {
+  const order = await getOrderById(orderId);
 
-//   if (!order) {
-//     return {
-//       error: 'Order not found',
-//       data: {},
-//     };
-//   }
+  if (!order) {
+    return {
+      error: 'Order not found',
+      data: {}
+    };
+  }
 
-//   Object.assign(order, {
-//     ...updateBody,
-//     // eslint-disable-next-line no-prototype-builtins
-//     show: updateBody.hasOwnProperty('show') ? updateBody.show : '',
-//   });
-//   await order.save();
+  Object.assign(order, updateBody);
+  // await order.save();
+  await Order.findByIdAndUpdate(orderId, order);
 
-//   return {
-//     error: '',
-//     data: order,
-//   };
-// };
+  return {
+    error: '',
+    data: order
+  };
+};
 
 // /**
 //  * Delete order by id
 //  * @param {ObjectId} orderId
 //  * @returns {Promise<Order>}
 //  */
-// const deleteOrderById = async (orderId) => {
-//   const order = await getOrderById(orderId);
+const deleteOrderById = async (orderId) => {
+  const order = await getOrderById(orderId);
+  let error = '';
 
-//   if (!order) {
-//     throw new ApiError(httpStatus.NOT_FOUND, 'Order not found');
-//   }
-//   await order.remove();
+  if (!order) {
+    error = 'product not found';
+  }
+  await order.remove();
 
-//   return order;
-// };
+  return { order, error };
+};
 
-module.exports = { create, queryOrders };
+module.exports = {
+  create,
+  queryOrders,
+  updateOrderById,
+  getOrderById,
+  deleteOrderById
+};

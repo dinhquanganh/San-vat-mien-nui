@@ -9,6 +9,7 @@
     "plugin:security/recommended"
   ],
   "plugins": ["jest", "security"],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2018
   },

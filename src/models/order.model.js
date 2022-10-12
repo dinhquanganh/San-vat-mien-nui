@@ -7,49 +7,49 @@ const orderSchema = mongoose.Schema(
       required: true,
       trim: true,
       minlength: 1,
-      maxlength: 30,
+      maxlength: 30
     },
     price: {
       type: Number,
       trim: true,
-      default: 0,
+      default: 0
     },
     email: {
       type: String,
       trim: true,
-      default: '',
+      default: ''
     },
     deliveryAddress: {
       type: String,
       trim: true,
-      required: true,
+      required: true
     },
     phoneNumber: {
       type: String,
       trim: true,
-      required: true,
+      required: true
     },
     productList: {
       type: Array,
-      required: true,
+      default: []
     },
     status: {
       type: String,
       trim: true,
-      default: 'pending',
+      default: 'pending'
     },
     note: {
       type: String,
-      default: '',
+      default: ''
     },
     shipPrice: {
       type: Number,
       trim: true,
-      default: 0,
-    },
+      default: 0
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

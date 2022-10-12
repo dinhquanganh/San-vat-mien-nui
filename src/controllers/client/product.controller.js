@@ -15,7 +15,7 @@ const getProduct = catchAsync(async (req, res) => {
     let { name, description, _id, images, price, category, unit } =
       await productService.getProductById(req.params.id);
 
-    let product = {
+    const product = {
       name,
       description: description
         ? convertDeltaToHtml(
@@ -26,24 +26,24 @@ const getProduct = catchAsync(async (req, res) => {
       images,
       price,
       category,
-      unit,
+      unit
     };
 
-    res.render('product-detail', {
+    return res.render('product-detail', {
       title: product.name,
       page: 'product',
       product,
-      id: req.params.id.toString(),
+      id: req.params.id.toString()
     });
   }
+
   return res.redirect('/');
 });
 
 const searchProducts = catchAsync(async (req, res) => {
   let ids = req.query.id;
-  console.log(ids);
   let productList = await productService.queryProducts({
-    _id: ids,
+    _id: ids
   });
 
   res.json(productList);
@@ -51,5 +51,5 @@ const searchProducts = catchAsync(async (req, res) => {
 
 module.exports = {
   getProduct,
-  searchProducts,
+  searchProducts
 };

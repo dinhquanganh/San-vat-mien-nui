@@ -399,7 +399,7 @@
                     name: `${image.id.slice(5, image.id.length)}.${image.type}`,
                     size: image.size,
                     type: image.type,
-                    url: image.url,
+                    url: image.url
                     // previewElement: Dropzone.createElement(preview.html()),
                   };
 
@@ -458,11 +458,11 @@
                     method: 'DELETE',
                     headers: {
                       'Content-Type': 'application/json',
-                      Authorization: `Bearer ${getCookie('accessToken')}`,
+                      Authorization: `Bearer ${getCookie('accessToken')}`
                     },
                     body: JSON.stringify({
-                      idImage: idFile,
-                    }),
+                      idImage: idFile
+                    })
                   }
                 );
 
@@ -475,7 +475,7 @@
                     type: 'success',
                     buttonsStyling: !1,
                     confirmButtonClass: 'btn btn-success',
-                    confirmButtonText: 'Đóng',
+                    confirmButtonText: 'Đóng'
                   }).then((t) => {
                     location.reload();
                   });
@@ -486,13 +486,13 @@
                     type: 'error',
                     buttonsStyling: !1,
                     confirmButtonClass: 'btn btn-danger',
-                    confirmButtonText: 'Đóng',
+                    confirmButtonText: 'Đóng'
                   });
                 }
               })();
 
               return this._updateMaxFilesReachedClass();
-            },
+            }
           };
 
           // Clear preview html

@@ -25,14 +25,14 @@
                       <tr>
                         <th>Ảnh</th>
                         <th>Tên sản phẩm</th>
-                        <th>Giá</th>
+                        <th>Đơn giá</th>
                         <th>Số lượng</th>
                         <th>Thành tiền</th>
                         <th>Hành động</th>
                       </tr>
                     </thead>
                     <tbody class="cart-list">
-                      <!-- <tr class="cart-item">
+                      <tr class="cart-item">
                         <td class="product-thumbnail">
                           <a href="#"
                             ><img
@@ -60,7 +60,7 @@
                         <td class="product-remove">
                           <a href="#"><i class="fa fa-times"></i></a>
                         </td>
-                      </tr> -->
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -89,18 +89,23 @@
                         Giá trị giỏ hàng
                       </h4>
                     </div>
-                    <h5>Tổng giá trị sản phẩm <span>$260.00</span></h5>
+                    <h5>
+                      Tổng giá trị sản phẩm
+                      <span id="totalMoney">
+                        <span>0 VND</span>
+                      </span>
+                    </h5>
                     <div class="total-shipping">
                       <h5>Tiền vận chuyển</h5>
                       <ul>
                         <li>
-                          > Mặc định
+                          * Mặc định
                           <span class="price-cv">30000 VND</span>
                         </li>
                       </ul>
                     </div>
                     <h4 class="grand-totall-title">
-                      Tổng cộng <span>$260.00</span>
+                      Tổng cộng <span id="totalAll">0 VND</span>
                     </h4>
                     <a href="/checkout">Qua trang thanh toán</a>
                   </div>
@@ -115,12 +120,16 @@
       <%- include("../layouts/footer.ejs") -%>
     </div>
 
-    <script>
+    <script async>
       async function getCartData(query) {
         let data = await fetch(`/product/search?${query}`);
         data = await data.json();
         return data;
       }
+
+      let totalMoneyCart = 0;
+      const totalElement = document.querySelector('#totalAll');
+      const totalMoneyElement = document.querySelector('#totalMoney');
 
       let cartListItem = JSON.parse(localStorage.getItem('cart'));
       let queryProducts = '';
@@ -136,9 +145,11 @@
         (async () => {
           cartListData = await getCartData(queryProducts);
 
-          cartListData.forEach((item) => {
+          cartListData.reverse().forEach((item) => {
             cartListItem.forEach((cartItem) => {
               if (item._id.toString() == cartItem.productId) {
+                totalMoneyCart += item.price * cartItem.quantity;
+
                 cartListHTML += `
                       <tr class="cart-item">
                         <td class="product-thumbnail">
@@ -177,6 +188,14 @@
               }
             });
           });
+
+          totalMoneyElement.innerHTML = `
+            <span>${convertNumber(totalMoneyCart)} VND</span>
+          `;
+
+          totalElement.innerHTML = `
+            <span>${convertNumber(totalMoneyCart + 30000)} VND</span>
+          `;
 
           cartList.innerHTML = cartListHTML;
         })();

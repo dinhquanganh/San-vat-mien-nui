@@ -9,7 +9,7 @@ const uploadImageToCloudinary = async (listFile) => {
     const multiplePicturePromise = listFile.map((picture) =>
       cloudinary.uploader.upload(picture.tempFilePath, {
         file: picture.tempFilePath,
-        upload_preset: 'svmn_preset',
+        upload_preset: 'svmn_preset'
       })
     );
 
@@ -23,7 +23,7 @@ const uploadImageToCloudinary = async (listFile) => {
       id: image.public_id,
       url: image.secure_url,
       type: image.format,
-      size: image.bytes,
+      size: image.bytes
     }));
 
     return imageResponses;
@@ -65,9 +65,9 @@ const getProducts = catchAsync(async (req, res) => {
     breadcrumb: [
       {
         url: '/admin/product',
-        name: 'Sản phẩm',
-      },
-    ],
+        name: 'Sản phẩm'
+      }
+    ]
   });
 });
 
@@ -94,45 +94,45 @@ const getProduct = catchAsync(async (req, res) => {
       categoryList: [
         {
           name: 'Trà',
-          value: 'tea',
+          value: 'tea'
         },
         {
           name: 'Đồ ăn / Gia vị',
-          value: 'food-spice',
+          value: 'food-spice'
         },
         {
           name: 'Hạt / Hoa quả sấy',
-          value: 'seed-fruit',
+          value: 'seed-fruit'
         },
         {
           name: 'Mật ong / Dược liệu',
-          value: 'honey-medicine',
-        },
+          value: 'honey-medicine'
+        }
       ],
       unitList: [
         {
           name: '1kg',
-          value: 'kg',
+          value: 'kg'
         },
         {
           name: '100g',
-          value: '100g',
+          value: '100g'
         },
         {
           name: '1 lít',
-          value: '1liter',
-        },
+          value: '1liter'
+        }
       ],
       breadcrumb: [
         {
           url: '/admin/product',
-          name: 'Sản phẩm',
+          name: 'Sản phẩm'
         },
         {
           url: '/admin/product/' + product._id.toString(),
-          name: 'Chi tiết sản phẩm',
-        },
-      ],
+          name: 'Chi tiết sản phẩm'
+        }
+      ]
     });
   } else {
     res.redirect('/admin/product');
@@ -151,13 +151,13 @@ const create = catchAsync(async (req, res) => {
       breadcrumb: [
         {
           url: '/admin/product',
-          name: 'Sản phẩm',
+          name: 'Sản phẩm'
         },
         {
           url: '/admin/product/create',
-          name: 'Tạo sản phẩm',
-        },
-      ],
+          name: 'Tạo sản phẩm'
+        }
+      ]
     });
   }
 });
@@ -185,7 +185,7 @@ const update = catchAsync(async (req, res) => {
         featuredProduct: dataBody.featuredProduct
           ? dataBody.featuredProduct
           : '',
-        newProduct: dataBody.newProduct ? dataBody.newProduct : '',
+        newProduct: dataBody.newProduct ? dataBody.newProduct : ''
       };
     }
 
@@ -196,7 +196,7 @@ const update = catchAsync(async (req, res) => {
 
     if (result.error) {
       return res.status(httpStatus.NOT_FOUND).send({
-        error,
+        error
       });
     }
 
@@ -213,16 +213,16 @@ const deleteProduct = catchAsync(async (req, res) => {
 
     if (error)
       return res.status(httpStatus.NOT_FOUND).send({
-        error,
+        error
       });
 
     return res.send({
-      status: 'Deleted successfully',
+      status: 'Deleted successfully'
     });
   }
 
   return res.status(httpStatus.NOT_FOUND).send({
-    error: 'Not found',
+    error: 'Not found'
   });
 });
 
@@ -244,7 +244,7 @@ const findIdImageAndRemove = catchAsync(async (req, res) => {
 
     const productUpdate = {
       ...product,
-      images: imagesListProduct,
+      images: imagesListProduct
     };
 
     const result = await productService.updateProductById(
@@ -254,7 +254,7 @@ const findIdImageAndRemove = catchAsync(async (req, res) => {
 
     if (result.error) {
       return res.status(httpStatus.NOT_FOUND).send({
-        error,
+        error
       });
     }
     return res.status(httpStatus.OK).json('Deleted successfully');
@@ -268,5 +268,5 @@ module.exports = {
   update,
   getProductAPI,
   deleteProduct,
-  findIdImageAndRemove,
+  findIdImageAndRemove
 };

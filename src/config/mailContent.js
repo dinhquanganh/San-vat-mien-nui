@@ -1355,9 +1355,6 @@ const mailContentNewOrder = (name) => `
                   font-size: 14px;
                 "
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores molestias quas dolorum in quisquam consectetur sint
-                sapiente assumenda eligendi aliquid numquam et accusamus
                 <br /><br />
                 <br /><br />
                 Địa chỉ: Việt Nam
@@ -1435,5 +1432,5 @@ const mailContentNewOrder = (name) => `
 `;
 
 module.exports = {
-  mailContentNewOrder,
+  mailContentNewOrder
 };

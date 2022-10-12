@@ -23,19 +23,19 @@
                   <div class="col-lg-12">
                     <div class="billing-info mb-20px">
                       <label>Họ tên</label>
-                      <input type="text" name="name" />
+                      <input type="text" name="name" id="orderName" />
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="billing-info mb-20px">
                       <label>Số điện thoại</label>
-                      <input type="text" name="phoneNumber" />
+                      <input type="text" name="phoneNumber" id="orderPhone" />
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="billing-info mb-20px">
                       <label>Email</label>
-                      <input type="text" name="email" />
+                      <input type="text" name="email" id="orderEmail" />
                     </div>
                   </div>
                   <div class="col-lg-12">
@@ -45,6 +45,7 @@
                         class="billing-address"
                         placeholder="Nhập địa chỉ nhận hàng của bạn"
                         type="text"
+                        id="orderAddress"
                       />
                     </div>
                   </div>
@@ -54,8 +55,9 @@
                   <div class="additional-info">
                     <label>Ghi chú đơn hàng</label>
                     <textarea
-                      placeholder="Notes about your order, e.g. special notes for delivery. "
+                      placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: những lưu ý đặc biệt khi giao hàng."
                       name="order-note"
+                      id="orderNote"
                     ></textarea>
                   </div>
                 </div>
@@ -73,31 +75,18 @@
                       </ul>
                     </div>
                     <div class="your-order-middle">
-                      <ul>
-                        <li>
-                          <span class="order-middle-left"
-                            >Product Name X 1</span
-                          >
-                          <span class="order-price">$329 </span>
-                        </li>
-                        <li>
-                          <span class="order-middle-left"
-                            >Product Name X 1</span
-                          >
-                          <span class="order-price">$329 </span>
-                        </li>
-                      </ul>
+                      <ul id="order-list"></ul>
                     </div>
                     <div class="your-order-bottom">
                       <ul>
                         <li class="your-order-shipping">Phí giao hàng</li>
-                        <li>Miễn phí</li>
+                        <li><span class="price-cv">30000 </span>VND</li>
                       </ul>
                     </div>
                     <div class="your-order-total">
                       <ul>
                         <li class="order-total">Tổng</li>
-                        <li>$329</li>
+                        <li id="order-total">0 VND</li>
                       </ul>
                     </div>
                   </div>
@@ -130,8 +119,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="Place-order mt-25">
-                  <a class="btn-hover" href="#">Đặt hàng</a>
+                <div class="Place-order mt-25 btn-hover" onclick="orderNow()">
+                  <a>Đặt hàng</a>
                 </div>
               </div>
             </div>
@@ -191,12 +180,7 @@
                 <!-- Thumbnail Image End -->
                 <div class="quickview-wrap mt-15">
                   <div
-                    class="
-                      quickview-slide-active
-                      owl-carousel
-                      nav
-                      owl-nav-style owl-nav-style-2
-                    "
+                    class="quickview-slide-active owl-carousel nav owl-nav-style owl-nav-style-2"
                     role="tablist"
                   >
                     <a class="active" data-toggle="tab" href="#pro-1"
@@ -312,6 +296,154 @@
       </div>
     </div>
     <!-- Modal end -->
+
     <%- include("../layouts/script.ejs") -%>
+
+    <script>
+      (() => {
+        let cartListItem = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (!cartListItem?.length) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Không có sản phẩm nào!'
+          });
+
+          window.location.href = '/';
+        }
+      })();
+    </script>
+
+    <script>
+      async function getCartData(query) {
+        let data = await fetch(`/product/search?${query}`);
+        data = await data.json();
+        return data;
+      }
+
+      let totalMoney = 0;
+      const orderTotalElement = document.querySelector('#order-total');
+
+      const orderListElement = document.querySelector('#order-list');
+      const orderListItem = JSON.parse(localStorage.getItem('cart'));
+      let queryProducts = '';
+      let orderListData = [];
+
+      let orderListHTML = '';
+
+      if (orderListItem) {
+        orderListItem.forEach((item) => {
+          queryProducts += `id=${item.productId}&`;
+        });
+
+        (async () => {
+          orderListData = await getCartData(queryProducts);
+
+          orderListData.forEach((item) => {
+            orderListItem.forEach((orderItem) => {
+              if (item._id.toString() == orderItem.productId) {
+                totalMoney += item.price * orderItem.quantity;
+
+                orderListHTML += `
+                        <li>
+                          <span class="order-middle-left">
+                            ${item.name} x ${orderItem.quantity}
+                          </span>
+                          <span class="order-price price-cv">
+                            ${orderItem.quantity * item.price} VND
+                          </span>
+                        </li>
+                      `;
+              }
+            });
+          });
+
+          orderTotalElement.innerHTML = `
+                  <span>${convertNumber(totalMoney + 30000)} VND</span>
+                `;
+
+          orderListElement.innerHTML = orderListHTML;
+        })();
+      } else {
+        console.log(false);
+      }
+
+      function orderNow() {
+        const orderName = document.querySelector('#orderName').value;
+        const orderPhone = document.querySelector('#orderPhone').value;
+        const orderEmail = document.querySelector('#orderEmail').value;
+        const orderAddress = document.querySelector('#orderAddress').value;
+        const orderNote = document.querySelector('#orderNote').value;
+
+        (async function () {
+          Swal.fire({
+            title: 'Bạn chắc chắn muốn đặt đơn hàng này?',
+            confirmButtonText: 'Chắc chắn',
+            showLoaderOnConfirm: true,
+            showCancelButton: true,
+            cancelButtonText: 'Huỷ',
+            preConfirm: (login) => {
+              return fetch('/checkout', {
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                  productList: orderListItem,
+                  user: {
+                    name: orderName,
+                    phoneNumber: orderPhone,
+                    email: orderEmail || '',
+                    deliveryAddress: orderAddress,
+                    note: orderNote || ''
+                  }
+                })
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(response.statusText);
+                  }
+                  return response.json();
+                })
+                .catch((error) => {
+                  Swal.showValidationMessage(`Request failed: ${error}`);
+                });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+          }).then((result) => {
+            console.log(result);
+            if (result.value?.message === 'success') {
+              Swal.fire({
+                icon: 'success',
+                title: 'Đặt hàng thành công!',
+                html: 'Đang quay lại trang chủ trong <b></b> giây.',
+                timer: 2000,
+                didOpen: () => {
+                  Swal.showLoading();
+                  const b = Swal.getHtmlContainer().querySelector('b');
+                  timerInterval = setInterval(() => {
+                    b.textContent = Swal.getTimerLeft();
+                  }, 500);
+                }
+              });
+
+              localStorage.setItem('cart', '[]');
+
+              setTimeout(() => {
+                window.location.href = '/';
+              }, 2000);
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Xảy ra lỗi! Vui lòng thử lại sau ít phút!',
+                timer: 1500
+              });
+            }
+          });
+        })();
+      }
+    </script>
   </body>
 </html>

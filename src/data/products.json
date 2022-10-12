@@ -1,0 +1,1132 @@
+[{
+  "_id": {
+    "$oid": "61e526ddd623696fc08302c3"
+  },
+  "price": 300000,
+  "description": "[{\"insert\":\"- Mô tả: Bạch trà Tiên thuộc họ camellia taliensis, gần giống với trà Shan Tuyết lá lớn nhưng mang nhiều đặc điểm của một giống trà lạ, Trà Bạch Tiên cổ thụ thường mọc trong rừng nguyên sinh ở độ cao trên 1.700m, thân cây to và cao 20-30m nên việc thu hái rất khó khăn và nguy hiểm. Loại này chỉ có ở vùng núi thuộc dãy Hoàng Liên Sơn và Tây Côn Lĩnh kéo dài từ phần đất từ tỉnh Côn Minh, Vân Nam của Trung Quốc sang đến địa phận tỉnh Lào Cai, Hà Giang của Việt Nam, do vậy sản phẩm này có thể nó quý như \\\"vàng\\\" vì độ hiếm và ít của nó, thêm vào đó với các dưỡng chất vượt trội và hương vị đặc biệt, Bạch trà tiên có phủ lớp lông trắng mịn, xòe ra những cánh nhỏ. Khi pha bạch trà có màu nước vàng tươi sáng, trong suốt, có vị thơm của mùi hoa và mật ong, Bạch trà Tiên có vị ngọt thanh, hương thơm thanh dịu, cảm giác như ngửi mùi hương của hoa và vị ngọt của mật ong rừng, trà không đắng chát ngay cả khi được ngâm lâu, là hàng cực phẩm.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n-  Công dụng:  Người thưởng trà nhận xét đây là loại trà có hương vị nhẹ, tinh tế, hơi ngọt đi vào các giác quan mà không cần tác động mạnh vào lưỡi. Trải qua nhiều công đoạn từ lựa chọn búp chè kỹ lưỡng, hái, phơi, sấy khá phức tạp để giữ lại nhiều chất dinh dưỡng nhất có thể nên loại trà này không chỉ ngon mà còn rất tốt cho cơ thể.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/u4vao5w1zn3imbi47nvj",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642407677/svmn/u4vao5w1zn3imbi47nvj.jpg",
+      "type": "jpg",
+      "size": 381618
+    },
+    {
+      "id": "svmn/jfzubiovv4kwol4tiqwg",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642407678/svmn/jfzubiovv4kwol4tiqwg.jpg",
+      "type": "jpg",
+      "size": 211192
+    },
+    {
+      "id": "svmn/frbmfbkiuzukxj8qbemf",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642407679/svmn/frbmfbkiuzukxj8qbemf.jpg",
+      "type": "jpg",
+      "size": 747436
+    }
+  ],
+  "name": "Bạch trà tiên",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642407645652"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52853d623696fc08302d3"
+  },
+  "price": 250000,
+  "description": "[{\"insert\":\"- Mô tả:  Đặc điểm của bạch trà là có lớp lông tơ bên ngoài màu trắng phủ kín búp trà. Đây là loại trà có chất lượng cao nhất chỉ gồm chồi chứ không có bất kỳ những vụn lá nên trông trà sau khi chế biến rất bắt mắt, búp nào ra búp đó\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Người thưởng trà nhận xét đây là loại trà có hương vị nhẹ, tinh tế, hơi ngọt đi vào các giác quan mà không cần tác động mạnh vào lưỡi. Trải qua nhiều công đoạn từ lựa chọn búp chè kỹ lưỡng, hái, phơi, sấy khá phức tạp để giữ lại nhiều chất dinh dưỡng nhất có thể nên loại trà này không chỉ ngon mà còn rất tốt cho cơ thể.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [],
+  "name": "Bạch trà ( trà búp )",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408019223"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 0,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e528c4d623696fc08302dd"
+  },
+  "price": 180000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà đuôi rồng ( đây là chồi của cây trà rừng, mọc hoang rải rác trên đỉnh dãy núi Tây Côn Lĩnh thuộc địa bàn tỉnh Hà Giang, cây mọc ở độ cao gần 2000 mét so với mực nước biển ), Hàng năm trà đuôi rồng chỉ được khai thác 1 vụ duy nhất vào tháng 11 âm lịch tới tháng 2 âm lịch năm sau.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Cái hay của trà đuôi rồng là mùi thơm đầy mê hoặc và vị ngọt thanh, quyến rũ, bám rất lâu ở cuống họng và trong hơi thở, đấy cũng là lý do khiến cho thứ trà rừng này được xếp vào hàng đặc sản của vùng đất Hà Giang. Đây sẽ là 1 trải nghiệm về hương vị vô cùng thú vị cho những người yêu trà. Trà đuôi rồng rất bền nước, bạn có thể pha tới 7-8 nước mà trà vẫn thơm và ngọt\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/rdbq2qpwz17op3vi1qxl",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408150/svmn/rdbq2qpwz17op3vi1qxl.jpg",
+      "type": "jpg",
+      "size": 51233
+    },
+    {
+      "id": "svmn/cdghpuqvjn8a6k8situ5",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408152/svmn/cdghpuqvjn8a6k8situ5.jpg",
+      "type": "jpg",
+      "size": 64095
+    },
+    {
+      "id": "svmn/qg9apkcjmle2jkbvsbfd",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408151/svmn/qg9apkcjmle2jkbvsbfd.jpg",
+      "type": "jpg",
+      "size": 296563
+    },
+    {
+      "id": "svmn/tk38ab6ztg7jdhzljisc",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408150/svmn/tk38ab6ztg7jdhzljisc.jpg",
+      "type": "jpg",
+      "size": 72736
+    },
+    {
+      "id": "svmn/ryyg9qlfureeonipdzdo",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408151/svmn/ryyg9qlfureeonipdzdo.jpg",
+      "type": "jpg",
+      "size": 887751
+    },
+    {
+      "id": "svmn/nd7n6vmzsozsaicaef6v",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408152/svmn/nd7n6vmzsozsaicaef6v.jpg",
+      "type": "jpg",
+      "size": 98497
+    },
+    {
+      "id": "svmn/pgrua9ave1k6chactdwk",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408150/svmn/pgrua9ave1k6chactdwk.jpg",
+      "type": "jpg",
+      "size": 129148
+    }
+  ],
+  "name": "Trà đuôi rồng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408132937"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52954d623696fc08302ea"
+  },
+  "price": 90000,
+  "description": "[{\"insert\":\"- Mô tả:  //endofline**n\\t-\\tHồng trà hay còn gọi là trà đen, trà đỏ, được tạo nên từ quá trình lên men toàn phần, o.x.y hóa 100% những búp trà xanh non của cây trà Shan Tuyết cổ thụ Hà Giang.//endofline**n\\t-  Hồng trà có hương vị khá mạnh, và là một trong những loại trà được yêu thích nhất hiện nay.//endofline**n\\t- Hồng trà là nguyên liệu chính làm nên món trà sữa mà giới trẻ rất ưa chuộng.//endofline**n\\t- Vị ngọt của hồng trà sẽ là sự lựa chọn phù hợp cho những ai không thích vị đắng chát như vị của trà xanh//endofline**n//endofline**n- Công dụng: Trà uống không mất ngủ, không chát vì đã loại bỏ tanin và cafein từ 75-85%. rà lựa chọn này rất phù hợp với nữ bởi vị ngọt, mùi hương êm ái, dễ chịu, ngọt ngào, giống như tấm lòng người tặng. Trà khô, nước trà, bã trà đều thoảng mùi hương hoa. Mùa đông, nếu để một ít trà khô trong túi áo rét, hơi ấm từ người giúp trà tỏa mùi thơm lắm. Mỗi lần thơm, lại thoáng nhớ nhau. //endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/vhn1ffepmzzvq9wmsrux",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408289/svmn/vhn1ffepmzzvq9wmsrux.jpg",
+      "type": "jpg",
+      "size": 37170
+    },
+    {
+      "id": "svmn/enzi0rsljqodbcxp8qm0",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408308/svmn/enzi0rsljqodbcxp8qm0.jpg",
+      "type": "jpg",
+      "size": 158580
+    },
+    {
+      "id": "svmn/rlt4t4tim3kurbkxk1ny",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408307/svmn/rlt4t4tim3kurbkxk1ny.jpg",
+      "type": "jpg",
+      "size": 113414
+    },
+    {
+      "id": "svmn/xr718tnz0sjrornxvfyw",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408294/svmn/xr718tnz0sjrornxvfyw.jpg",
+      "type": "jpg",
+      "size": 954993
+    },
+    {
+      "id": "svmn/bsvkr3fjbmfphsd2wvru",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408312/svmn/bsvkr3fjbmfphsd2wvru.jpg",
+      "type": "jpg",
+      "size": 482366
+    }
+  ],
+  "name": "Hồng trà",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408276469"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e529b4d623696fc08302f7"
+  },
+  "price": 90000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà được thu hái từ những búp và lá non của cây trà Shan Tuyết cổ thụ vùng Hà Giang, trà có mùi thơm, vị chát dịu và hậu ngọt kéo dài, đem lại cảm giác tỉnh táo, sảng khoái cho người thưởng thức\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/qo4siwbm7icgsq7auruh",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408387/svmn/qo4siwbm7icgsq7auruh.jpg",
+      "type": "jpg",
+      "size": 83941
+    },
+    {
+      "id": "svmn/yjjreeoukezfzua8fhly",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408387/svmn/yjjreeoukezfzua8fhly.jpg",
+      "type": "jpg",
+      "size": 117038
+    },
+    {
+      "id": "svmn/h7kjfbybblhi31skemyp",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408389/svmn/h7kjfbybblhi31skemyp.jpg",
+      "type": "jpg",
+      "size": 64121
+    },
+    {
+      "id": "svmn/gkmr3eg7sjhnhtqo4kn4",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408392/svmn/gkmr3eg7sjhnhtqo4kn4.jpg",
+      "type": "jpg",
+      "size": 302940
+    },
+    {
+      "id": "svmn/ydtojaytvszqtpvflcgf",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408392/svmn/ydtojaytvszqtpvflcgf.jpg",
+      "type": "jpg",
+      "size": 319707
+    },
+    {
+      "id": "svmn/spxvt6n8xkawcpyu0i1d",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408387/svmn/spxvt6n8xkawcpyu0i1d.jpg",
+      "type": "jpg",
+      "size": 226498
+    },
+    {
+      "id": "svmn/yxbl4hfmdjbzzzriauqm",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408387/svmn/yxbl4hfmdjbzzzriauqm.jpg",
+      "type": "jpg",
+      "size": 285624
+    },
+    {
+      "id": "svmn/jtvwrx1rlxcdi0lgf5e1",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408388/svmn/jtvwrx1rlxcdi0lgf5e1.jpg",
+      "type": "jpg",
+      "size": 64334
+    },
+    {
+      "id": "svmn/s7h3nw4oxvmvewkm4jvu",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408399/svmn/s7h3nw4oxvmvewkm4jvu.png",
+      "type": "png",
+      "size": 936548
+    }
+  ],
+  "name": "Trà xanh loại 1",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408372967"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e529fed623696fc0830304"
+  },
+  "price": 50000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà được thu hái từ những búp và lá non của cây trà Shan Tuyết cổ thụ vùng Hà Giang, trà có mùi thơm, vị chát dịu và hậu ngọt kéo dài, đem lại cảm giác tỉnh táo, sảng khoái cho người thưởng thức\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/liwwslpr5rnrg8t6mdsw",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408461/svmn/liwwslpr5rnrg8t6mdsw.jpg",
+      "type": "jpg",
+      "size": 95593
+    },
+    {
+      "id": "svmn/avwhsczybd4sqswr1lio",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408462/svmn/avwhsczybd4sqswr1lio.jpg",
+      "type": "jpg",
+      "size": 355435
+    },
+    {
+      "id": "svmn/r8hgqd30chtwzntla5zp",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408460/svmn/r8hgqd30chtwzntla5zp.jpg",
+      "type": "jpg",
+      "size": 70166
+    },
+    {
+      "id": "svmn/yjuhsxztpokda0aamj8t",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408461/svmn/yjuhsxztpokda0aamj8t.jpg",
+      "type": "jpg",
+      "size": 64121
+    }
+  ],
+  "name": "Trà xanh loại 2",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408446653"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52a8cd623696fc0830311"
+  },
+  "price": 70000,
+  "description": "[{\"attributes\":{\"bold\":true},\"insert\":\"- Mô tả:  HOA TRÀ SHAN TUYẾT CỔ THỤ SẤY KHÔ\"},{\"insert\":\"//endofline**n \\t\\t👉Một món ngon của trà Shan Tuyết cổ thụ có lẽ phải nói đến là đó hoa trà.//endofline**n \\t\\t- Từ những nụ hoa tươi, sau khi được thu hái trên những cây trà Shan Tuyết cổ thụ hàng trăm năm tuổi, qua nhiều công đoạn xao sấy liên tục từ 10-12 tiếng nhằm giữ được hương sắc tốt nhất của hoa trà.//endofline**n\\t\\t- Hoa trà có mùi thơm của mật, khi uống có vị ngọt thanh mát.//endofline**n\\t\\t- Thưởng thức hoa trà Shan Tuyết cổ thụ sấy khô mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo.//endofline**n//endofline**n\"},{\"attributes\":{\"bold\":true},\"insert\":\"- Công dụng:  \"},{\"insert\":\" //endofline**n\\t- Thưởng thức hoa trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. //endofline**n\\t- Trà hoa giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. //endofline**n\\t- Uống trà hoa Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. //endofline**n\\t- Hạn chế nguy cơ mắc các bệnh về gan. //endofline**n \\t- Tốt cho răng miệng, phòng chống dị ứng.//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/hvpb0dwda9p4kuxtosda",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408603/svmn/hvpb0dwda9p4kuxtosda.jpg",
+      "type": "jpg",
+      "size": 93045
+    },
+    {
+      "id": "svmn/zz1ffbthcqvzeb2akyps",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408602/svmn/zz1ffbthcqvzeb2akyps.jpg",
+      "type": "jpg",
+      "size": 87637
+    }
+  ],
+  "name": "Hoa trà Shan Tuyết Sấy Khô",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408588141"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52af9d623696fc083031e"
+  },
+  "price": 160000,
+  "description": "[{\"insert\":\"- Mô tả:  \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"\\t\\t\\t\\t\\t- Trà Lam gác bếp không chỉ mang vị của trà xanh mà còn có thêm độ ngọt của ống lam và mùi khói của gác bếp, tất cả hòa quện vào nhau tạo nên hương vị đặc trưng không lẫn với bất kỳ loại trà nào.//endofline**n\\t\\t\\t\\t\\t- Trà Lam gác bếp được chế biến rất công phu, mọi khâu đều được làm hoàn toàn thủ công bằng tay nên nó tạo ra sự độc đáo mà không loại trà nào có được//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/ac3aph0lwisd5w4zbm5w",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408749/svmn/ac3aph0lwisd5w4zbm5w.jpg",
+      "type": "jpg",
+      "size": 77818
+    },
+    {
+      "id": "svmn/emagil9e5gekshlwcifz",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408758/svmn/emagil9e5gekshlwcifz.jpg",
+      "type": "jpg",
+      "size": 587107
+    },
+    {
+      "id": "svmn/ibtanwljowfau3ptjzan",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408752/svmn/ibtanwljowfau3ptjzan.jpg",
+      "type": "jpg",
+      "size": 904011
+    },
+    {
+      "id": "svmn/fh02va3nneywhwnasyr3",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408754/svmn/fh02va3nneywhwnasyr3.jpg",
+      "type": "jpg",
+      "size": 66359
+    },
+    {
+      "id": "svmn/cljjcsf54e12aylwemue",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408749/svmn/cljjcsf54e12aylwemue.jpg",
+      "type": "jpg",
+      "size": 77448
+    },
+    {
+      "id": "svmn/ucerz95kmi4eijmkqid8",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408750/svmn/ucerz95kmi4eijmkqid8.jpg",
+      "type": "jpg",
+      "size": 84748
+    },
+    {
+      "id": "svmn/j0lbzsxrraairqyzqd07",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408749/svmn/j0lbzsxrraairqyzqd07.jpg",
+      "type": "jpg",
+      "size": 63700
+    }
+  ],
+  "name": "Trà ống lam",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408697832"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52b82d623696fc083032b"
+  },
+  "price": 60000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà Chít là những nhánh trà cổ lão Shan tuyết giống lá to bản được tinh chọn vào chính vụ thu khi trời đất giao hòa theo tiêu chuẩn: nhánh trà sung mãn, có đủ chồi non, búp và ba lá dài 10cm đến 15cm, Trà Chít thuộc dòng trà hông trà cổ thụ, càng để lâu năm dùng càng trong và đỏ nâu. Pha được nhiều lần. Hương trà thơm nhẹ mùi sương ban mai, vị trà mát ngọ\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Trà Chít có lượng cafein thấp nên không gây kích thích, có tác dụng tiêu thực như một vị thuốc quý, và đặc biệt giải say rượu rất chi là hay. Khi uống ngụm thứ nhất ta cảm thấy có vị của trà lâu năm, ngụm thứ 2 bắt đầu có cảm giác của vị ngọt, ngụm thứ 3 cảm giác ngọt ở cổ họng, ngụm thứ 4 vị ngọt sâu, và sau đó cảm giác rất là khó tả, cảm giác sung sướng và thấy vui vì ta đã cảm nhận hết được sự tinh túy của trà Việt. Cảm giác núi rừng, hơi sương của ban mai, làn gió mát lạnh của nhiệt độ cao... Làm cho con người ta thật sảng khoái và nhẹ nhàng.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [],
+  "name": "Trà bó",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408834122"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 0,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52bcbd623696fc0830330"
+  },
+  "price": 135000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà Shan Tuyết Tà Xùa bản Mống Vàng được người dân tộc H'mông tại bản Mống Vàng, xã Tà Xùa, huyện Bắc Yên, tỉnh Sơn La thu hái từ những cây trà cổ thụ hàng trăm năm tuổi, trà được chế biến theo phương pháp hoàn toàn thủ công ( xao tay bằng chảo gang ) nên cho hương vị rất đặc trưng, thoảng nhẹ mùi khói và thơm đượm, chát dịu sau đó là vị ngọt hậu kéo dài.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/fwkvus9gkiomsezneiwz",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408926/svmn/fwkvus9gkiomsezneiwz.jpg",
+      "type": "jpg",
+      "size": 286744
+    },
+    {
+      "id": "svmn/zaqsmk4mwj57lyewltqm",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408934/svmn/zaqsmk4mwj57lyewltqm.jpg",
+      "type": "jpg",
+      "size": 355435
+    },
+    {
+      "id": "svmn/w5mtcqk9chmhzjj96fad",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408924/svmn/w5mtcqk9chmhzjj96fad.jpg",
+      "type": "jpg",
+      "size": 77664
+    },
+    {
+      "id": "svmn/s5ryhwz3j9pbao8c82cp",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408929/svmn/s5ryhwz3j9pbao8c82cp.jpg",
+      "type": "jpg",
+      "size": 241796
+    },
+    {
+      "id": "svmn/pbmkbszfza2oipgmya5y",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642408926/svmn/pbmkbszfza2oipgmya5y.jpg",
+      "type": "jpg",
+      "size": 286744
+    }
+  ],
+  "name": "Trà Tà Xùa bản Mống Vàng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408907492"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52c20d623696fc083033d"
+  },
+  "price": 95000,
+  "description": "[{\"insert\":\"- Mô tả:  Trà Shan Tuyết Tà Xùa bản Bẹ được người dân tộc H'mông tại bản Bẹ, xã Tà Xùa, huyện Bắc Yên, tỉnh Sơn La thu hái từ những cây trà cổ thụ hàng trăm năm tuổi, nên cho hương vị rất đặc trưng, thơm đượm, chát dịu sau đó là vị ngọt hậu kéo dài.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/q4i3eesihg4bd6zpyjgx",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409002/svmn/q4i3eesihg4bd6zpyjgx.jpg",
+      "type": "jpg",
+      "size": 298936
+    }
+  ],
+  "name": "Trà Tà Xùa bản Bẹ",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642408992492"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52e8385aa5f5d1c121c61"
+  },
+  "price": 60000,
+  "description": "[{\"insert\":\"- Mô tả:   Trà Shan Tuyết Tà Xùa bản Chung Chinh được người dân tộc H'mông tại bản Bẹ, xã Tà Xùa, huyện Bắc Yên, tỉnh Sơn La thu hái từ những cây trà cổ thụ hàng trăm năm tuổi, nên cho hương vị rất đặc trưng, thơm đượm, chát dịu sau đó là vị ngọt hậu kéo dài.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/pgm4qetjes02kaoyaxc3",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409620/svmn/pgm4qetjes02kaoyaxc3.jpg",
+      "type": "jpg",
+      "size": 307640
+    }
+  ],
+  "name": "Trà Tà Xùa bản Chung Chinh",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642409603567"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52f248fa20506a49f3d5e"
+  },
+  "price": 75000,
+  "description": "[{\"insert\":\"- Mô tả:   Trà Shan Tuyết Háng Đồng được người dân tộc H'mông tại xã Háng Đồng ( giáp Tà Xùa ), huyện Bắc Yên, tỉnh Sơn La thu hái từ những cây trà cổ thụ hàng trăm năm tuổi, nên cho hương vị rất đặc trưng, thơm đượm, chát dịu sau đó là vị ngọt hậu kéo dài.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  Thưởng thức trà Shan Tuyết cổ thụ mỗi ngày sẽ xua tan cảm giác mệt mỏi, giúp tinh thần sảng khoái, tỉnh táo. \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Trà giúp giảm lượng cholesterol trong máu, giúp ngăn ngừa bệnh tim mạch, đặc biệt tốt cho sức khỏe của người già, người mắc bệnh tim mạch. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Uống trà Shan Tuyết cổ thụ hàng ngày giúp làm giảm nguy cơ mắc bệnh tiểu đường bởi nó làm giảm lượng đường trong máu, ngừa ung thư. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Hạn chế nguy cơ mắc các bệnh về gan. \"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Tốt cho răng miệng, phòng chống dị ứng.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/zmitivxp4thcmn93mxm2",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409787/svmn/zmitivxp4thcmn93mxm2.jpg",
+      "type": "jpg",
+      "size": 410922
+    },
+    {
+      "id": "svmn/qcznzaq8bev43qruiihf",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409786/svmn/qcznzaq8bev43qruiihf.jpg",
+      "type": "jpg",
+      "size": 315642
+    }
+  ],
+  "name": "Trà Shan Tuyết Háng Đồng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642409764335"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645820886224"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "on",
+  "featuredProduct": "on",
+  "newProduct": "on"
+},{
+  "_id": {
+    "$oid": "61e52f828fa20506a49f3d69"
+  },
+  "price": 60000,
+  "description": "[{\"insert\":\"- Mô tả:  Bánh trà phổ nhĩ sống được chế biến từ nguyên liệu là những búp trà Shan Tuyết cổ thụ vùng Hà Giang, trà sau khi được thu hái sẽ được phơi khô rồi ép khuôn với trọng lượng 357gr, rất thuận lợi khi bảo quản và sử dụng.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n- Công dụng:  \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 1. Tăng mức năng lượng. ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 2. Tốt cho sức khỏe tim mạch. ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 3. Đào thải độc tố cho cơ thể ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 4. Ngăn ngừa ung thư ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 5. Bảo vệ sức khỏe của xương. ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 6. Công dụng của trà Phổ Nhĩ trong giảm cân. ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 7. Công dụng của trà Phổ Nhĩ là giảm stress. ...\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" 8. Ngăn ngừa bệnh tật.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "tea",
+  "show": "on",
+  "images": [
+    {
+      "id": "svmn/xlfesj9le6zrm9qqikvg",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409868/svmn/xlfesj9le6zrm9qqikvg.jpg",
+      "type": "jpg",
+      "size": 85033
+    },
+    {
+      "id": "svmn/yyyxoxoxg6pb9gjtxr7d",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409868/svmn/yyyxoxoxg6pb9gjtxr7d.jpg",
+      "type": "jpg",
+      "size": 388105
+    },
+    {
+      "id": "svmn/zdbqfezzbh19uwyldfc0",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1642409869/svmn/zdbqfezzbh19uwyldfc0.jpg",
+      "type": "jpg",
+      "size": 276261
+    }
+  ],
+  "name": "Bánh trà phổ nhĩ sống",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1642409858010"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646313193736"
+    }
+  },
+  "__v": 1,
+  "unit": "100g",
+  "bestSeller": "",
+  "featuredProduct": "on",
+  "newProduct": "on",
+  "sale": "",
+  "salePrice": 0
+},{
+  "_id": {
+    "$oid": "62194f70e1e081312c38ba06"
+  },
+  "price": 900000,
+  "unit": "kg",
+  "description": "[{\"insert\":\" Hiện tại trên thị trường có nhiều loại thịt trâu gác bếp trôi nổi không rõ nguồn gốc xuất xứ, có giá rất rẻ quý khách hàng nên lưu ý tránh mua phải hàng giả, hàng nhái kém chất lượng. Tại cơ sở chúng tôi, toàn bộ quy trình đều được kiểm định chặt chẽ Có giấy chứng nhật đạt VSATTT bộ y tế cấp. Quý khách hàng hoàn toàn yên tâm về chất lượng sản phẩm Thịt Trâu Gác Bếp Tây Bắc của chúng tôi!//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/y7ip0wboh0okjzlowkwp",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645825932/svmn/y7ip0wboh0okjzlowkwp.jpg",
+      "type": "jpg",
+      "size": 103215
+    },
+    {
+      "id": "svmn/arnwmkx9enfeqijmmrqu",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645825932/svmn/arnwmkx9enfeqijmmrqu.jpg",
+      "type": "jpg",
+      "size": 46524
+    }
+  ],
+  "name": "Thịt trâu khô gác bếp",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645825904918"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645825992670"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "62195023e1e081312c38ba21"
+  },
+  "price": 300000,
+  "unit": "100g",
+  "description": "[{\"insert\":\" Hạt Dổi, cùng với hạt Mắc Khén là 1 trong 2 loại gia vị đặc trưng bậc nhất của ẩm thực Tây Bắc chúng tôi! Hạt Dổi có mùi thơm đặc trưng, nói thật là khó tả lắm. Xưa nay đồng bào Thái ở Tây Bắc sử dụng hạt Dổi làm gia vị chấm, và gia vị ướp các món ăn cổ truyền như thịt Bò/Trâu/Lợn khô, hoặc các món như Lạp Xưởng! Ngoài ra có khá nhiều món cực kì hợp với Hạt Dổi//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/a6rprpf4y9pcpnulvayl",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826093/svmn/a6rprpf4y9pcpnulvayl.jpg",
+      "type": "jpg",
+      "size": 118656
+    },
+    {
+      "id": "svmn/xoktv00xlwtwafdxrdld",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826093/svmn/xoktv00xlwtwafdxrdld.jpg",
+      "type": "jpg",
+      "size": 73702
+    }
+  ],
+  "name": "Hạt dổi rừng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645826083633"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645826693609"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "621952b1f5819457e8f55532"
+  },
+  "price": 350000,
+  "unit": "kg",
+  "description": "[{\"insert\":\" Mắc khén là một loại gia vị nổi tiếng tại vùng nối tây bắc công dụng tương tự như hạt tiêu trên thị trường Việt Nam. Nó có mùi rất thơm và đặc trưng. Mắc khén là một cây thuộc thân gỗ cao và ra hoa thành những chùm. Vào tháng 11 hằng năm thì những hoa này bắt đậu thành quả chín và cũng là thời điểm để thu hoạch//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [],
+  "name": "Mắc khén ( hạt tiêu rừng )",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645826737550"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645826737550"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "621952eff5819457e8f55538"
+  },
+  "price": 350000,
+  "unit": "kg",
+  "description": "[{\"insert\":\" Măng khô là món ăn khá quen thuộc đối với người dân Việt Nam, đặc biệt là ở các tỉnh vùng núi phía Bắc. Trong đó, Tuyên Quang, Hà Giang, Cao Bằng, Bắc Cạn là những tỉnh nổi tiếng với đặc sản này. Măng là món ăn quen thuộc với rất nhiều người. Ở bất cứ vùng quê nào người ta cũng có thể mời nhau vài đũa măng ngọt lịm.//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "",
+  "images": [
+    {
+      "id": "svmn/lrg3tsgwkhvknytabn93",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826816/svmn/lrg3tsgwkhvknytabn93.jpg",
+      "type": "jpg",
+      "size": 125423
+    },
+    {
+      "id": "svmn/jnafxjjdc6evyddmkzaa",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826816/svmn/jnafxjjdc6evyddmkzaa.jpg",
+      "type": "jpg",
+      "size": 360084
+    },
+    {
+      "id": "svmn/bro5o2a5hz5xxbo4q8sz",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826816/svmn/bro5o2a5hz5xxbo4q8sz.jpg",
+      "type": "jpg",
+      "size": 60664
+    },
+    {
+      "id": "svmn/bwu4fbygvclg1i1z8bdj",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826816/svmn/bwu4fbygvclg1i1z8bdj.jpg",
+      "type": "jpg",
+      "size": 77753
+    },
+    {
+      "id": "svmn/tu4aujn1pwixr6pizrgw",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826816/svmn/tu4aujn1pwixr6pizrgw.jpg",
+      "type": "jpg",
+      "size": 41328
+    }
+  ],
+  "name": "Măng nứa khô",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645826799547"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646317192257"
+    }
+  },
+  "__v": 1,
+  "sale": "",
+  "salePrice": 0
+},{
+  "_id": {
+    "$oid": "62195331f5819457e8f5554a"
+  },
+  "price": 400000,
+  "unit": "kg",
+  "description": "[{\"insert\":\" Măng khô là món ăn khá quen thuộc đối với người dân Việt Nam, đặc biệt là ở các tỉnh vùng núi phía Bắc. Trong đó, Tuyên Quang,Hà Giang, Cao Bằng, Bắc Cạn là những tỉnh nổi tiếng với đặc sản này. Măng là món ăn quen thuộc với rất nhiều người. Ở bất cứ vùng quê nào người ta cũng có thể mời nhau vài đũa măng ngọt lịm.//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "",
+  "images": [
+    {
+      "id": "svmn/pjue3tyrfwktbsg17oyf",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826869/svmn/pjue3tyrfwktbsg17oyf.jpg",
+      "type": "jpg",
+      "size": 125423
+    },
+    {
+      "id": "svmn/tif5ttnegpuyfztua35b",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826869/svmn/tif5ttnegpuyfztua35b.jpg",
+      "type": "jpg",
+      "size": 360084
+    },
+    {
+      "id": "svmn/h7xvufmqy3qqtbpyn2i6",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826869/svmn/h7xvufmqy3qqtbpyn2i6.jpg",
+      "type": "jpg",
+      "size": 60664
+    },
+    {
+      "id": "svmn/mxamwezfjdksyupq0ev2",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826869/svmn/mxamwezfjdksyupq0ev2.jpg",
+      "type": "jpg",
+      "size": 77753
+    },
+    {
+      "id": "svmn/bpzjbjyn5ddosczhq5kx",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826869/svmn/bpzjbjyn5ddosczhq5kx.jpg",
+      "type": "jpg",
+      "size": 41328
+    }
+  ],
+  "name": "Măng nứa khô / sợ, rối",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645826865010"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1646317202849"
+    }
+  },
+  "__v": 1,
+  "sale": "",
+  "salePrice": 0
+},{
+  "_id": {
+    "$oid": "62195373f5819457e8f5555a"
+  },
+  "price": 400000,
+  "unit": "kg",
+  "description": "[{\"insert\":\"- Mô tả:  Nấm hương rừng Hà Giang có vị thơm đặc trưng, chứa rất nhiều đạm, vitamin C, B, và giàu khoáng chất, có nhiều tác dụng tuyệt vời cho cơ thể\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Công dụng:  Là loại thực phẩm giàu sắt, nấm hương giúp bổ sung sắt cho cơ thể hiệu quả. Nó được coi là một thực phẩm tuyệt vời dành cho những người bị thiếu sắt dẫn đến thiếu máu, cho người cao huyết áp, trẻ em suy dinh dưỡng. Không chỉ dừng lại ở đó, một số nghiên cứu chỉ ra rằng thành phần có trong nấm hương rừng giúp tăng miễn dịch hiệu quả. Đồng thời ức chế sự phát triển của một số loại ung thư, giảm lượng cholesterol trong máu, trợ giúp tiêu hóa,\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "food-spice",
+  "show": "",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "",
+  "images": [
+    {
+      "id": "svmn/e6fs4xkb1thllp2guobo",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645826953/svmn/e6fs4xkb1thllp2guobo.jpg",
+      "type": "jpg",
+      "size": 75824
+    }
+  ],
+  "name": "Nấm hương rừng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645826931218"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645826957846"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "62195481efd4f30ad48bb735"
+  },
+  "price": 800000,
+  "unit": "1liter",
+  "description": "[{\"insert\":\"- Mô tả:  Ong khoái là loài ong hoang dã sống ở khu vực đồi núi nên chúng rất hung dữ, có thể tấn công bất kì kẻ thù xâm phạm tổ của chúng. Tổ mật ong khoái nguyên chất thường được tìm thấy ở trên vách núi, trên cành cây cao. Ong khoái có kích thước khá lớn nên tổ có hình dạng bánh rất to, mỗi tổ có thể có tới 4 - 9 lít mật ong. Mật ong khoái có thể khai thác quanh năm nhưng mật ngon nhất, chất lượng nhất là vào tháng 3 đến tháng 6. Màu của mật ong khoái thường có màu vàng chanh ở đầu mùa và vàng sậm ở cuối mùa, mật thơm nhẹ mùi đặc trưng của hoa rừng tự nhiên và vị ngọt thanh hơi chua rất đặc biệt, không thể lẫn với các loại mật khác.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Công dụng: \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Mật ong khoái có hàm lượng chất dinh dưỡng cao có tác dụng rất tốt cho sức khỏe, giúp hỗ trợ điều trị bệnh hiệu quả như:- Bệnh đau dạ dày, ho, nhiệt miệng, cảm cúm.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Giúp giải độc, cân bằng huyết áp, điều hòa đường huyết\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Trị viêm khớp, làm lành vết thương, kháng khuẩn\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Cải thiện chức năng gan và hỗ trợ điều trị ung thư.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Cung cấp năng lượng cho cơ thể\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Tăng cường sức đề kháng, hệ miễn dịch cho cơ thể\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" - Luôn giữ cho cơ bắp dẻo dai, giảm mệt mỏi.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"//endofline**n\"}]",
+  "category": "honey-medicine",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/tmkpvxhe0rjwzl3viwxs",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827221/svmn/tmkpvxhe0rjwzl3viwxs.jpg",
+      "type": "jpg",
+      "size": 97255
+    },
+    {
+      "id": "svmn/lw36lhkvvdwchqgkw4y7",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827222/svmn/lw36lhkvvdwchqgkw4y7.jpg",
+      "type": "jpg",
+      "size": 292836
+    },
+    {
+      "id": "svmn/m6qoc585ydldcutgkesc",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827221/svmn/m6qoc585ydldcutgkesc.jpg",
+      "type": "jpg",
+      "size": 111445
+    },
+    {
+      "id": "svmn/zf2evzrpbn8cjtxwlrot",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827222/svmn/zf2evzrpbn8cjtxwlrot.jpg",
+      "type": "jpg",
+      "size": 752178
+    },
+    {
+      "id": "svmn/ekhcmqih84dfubbwrhf9",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827222/svmn/ekhcmqih84dfubbwrhf9.jpg",
+      "type": "jpg",
+      "size": 136458
+    }
+  ],
+  "name": "Mật ong khoái rừng",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645827201762"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645827246431"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "6219552eefd4f30ad48bb752"
+  },
+  "price": 600000,
+  "unit": "1liter",
+  "description": "[{\"insert\":\"- Mô tả:  Mật ong Bạc Hà do các chú ong thợ tinh nhuệ hút mật từ hoa bạc hà, được khai thác từ tháng 9 đến hết tháng 12 trên Cao Nguyên đá Đồng Văn. Khi cây bạc hà bắt đầu nở hoa, đàn ong đến cánh rừng hoa bạc hà để hút mật. Mật ong bạc hà có màu vàng xanh tự nhiên rất đẹp, hương vị mật thơm mát, có giá trị dinh dưỡng cao\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Công dụng: \"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Mật ong bạc hà giúp bồi bổ sức khỏe, nâng cao sinh lực, có tác dụng tốt với các bệnh viêm họng, hô hấp, bệnh tim mạch, tiểu đường, viêm loét dạ dày, đại tràng, suy nhược cơ thể …\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Ngoài ra, nó còn có tác dụng tăng cường sức khỏe cho người già, trẻ em, người bệnh, người mới ốm dậy, phụ nữ có thai và sau khi sinh nở.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Việc dùng mật ong bạc hà hàng ngày còn giúp tăng sức đề kháng, cải thiện hệ thống tiêu hóa. Đặc biệt hiệu quả trong việc chữa ho, viêm họng cho trẻ em.\"},{\"attributes\":{\"indent\":1,\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "honey-medicine",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/bu4uuu5lhannp25u2t5x",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827389/svmn/bu4uuu5lhannp25u2t5x.jpg",
+      "type": "jpg",
+      "size": 187380
+    },
+    {
+      "id": "svmn/ep4ckzqojigheh9zbnqk",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827389/svmn/ep4ckzqojigheh9zbnqk.jpg",
+      "type": "jpg",
+      "size": 185398
+    },
+    {
+      "id": "svmn/knfeglfwm76zdwnvjpsl",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827388/svmn/knfeglfwm76zdwnvjpsl.jpg",
+      "type": "jpg",
+      "size": 28997
+    },
+    {
+      "id": "svmn/lp4sllsukakxnb0zbaje",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827389/svmn/lp4sllsukakxnb0zbaje.jpg",
+      "type": "jpg",
+      "size": 70722
+    },
+    {
+      "id": "svmn/omf8zntblu5chgvyy6sa",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827389/svmn/omf8zntblu5chgvyy6sa.jpg",
+      "type": "jpg",
+      "size": 83321
+    }
+  ],
+  "name": "Mật ong bạc hà",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645827374447"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645827395691"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "621955caefd4f30ad48bb765"
+  },
+  "price": 1200000,
+  "unit": "kg",
+  "description": "[{\"insert\":\"- Mô tả: //endofline**nTam thất là loại thảo dược được sử dụng trong đông y từ xa xưa có công dụng bảo vệ sức khỏe cũng như chữa bệnh. Rễ, thân, lá của tam thất đều có những tác dụng khác nhau. Hoa tam thất có màu xanh nhạt, hình dáng nhỏ đường kính khoảng 3cm tới 5cm, nhiều bông chụm lại giống súp lơ.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"Khi nở, hoa bung to hơn, thường nở vào tháng 4, tháng 5 trong năm. Hoa tam thất giữ nguyên chùm hoặc rời từng bông, ở giữa hoa có nhụy và đài hoa.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"Theo đông y, hoa tam thất có tính mát và có tác dụng làm mát, thanh lọc, giải nhiệt cơ thể.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\"- Công dụng:  //endofline**n Hoa tam thất có tính mát, vị ngọt, sử dụng để uống nước giúp thanh nhiệt, bình can, bổ huyết.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Ổn định huyết áp: Đối với những người huyết áp cao hoặc huyết áp thấp, sử dụng hoa tam thất mang lại tác dụng tốt và tránh gặp tai biến.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Chữa bệnh mất ngủ cho người bị mất ngủ kinh niên, ngủ không sâu giấc. Sử dụng nụ hoa tam thất thường xuyên giúp có giấc ngủ ngon hơn và đảm bảo sức khỏe.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" An thần, điều hòa giấc ngủ\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Ngoài ra, hoa tam thất còn giúp phòng chống bệnh ung thư, điều trị bệnh về gan\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"},{\"insert\":\" Giúp phụ nữ sau sinh lợi sữa.\"},{\"attributes\":{\"list\":\"bullet\"},\"insert\":\"//endofline**n\"}]",
+  "category": "honey-medicine",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/z7gpyzkuy0gavmki2yqj",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827543/svmn/z7gpyzkuy0gavmki2yqj.jpg",
+      "type": "jpg",
+      "size": 83770
+    },
+    {
+      "id": "svmn/tlkkxwdumtly7wbiecll",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827543/svmn/tlkkxwdumtly7wbiecll.jpg",
+      "type": "jpg",
+      "size": 59154
+    },
+    {
+      "id": "svmn/m5qydbyoquafpjau5byo",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827543/svmn/m5qydbyoquafpjau5byo.jpg",
+      "type": "jpg",
+      "size": 53697
+    },
+    {
+      "id": "svmn/jdlgk7slmdiwtvdvv4zk",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827543/svmn/jdlgk7slmdiwtvdvv4zk.png",
+      "type": "png",
+      "size": 157991
+    },
+    {
+      "id": "svmn/dmgqxipsk7ykzroykxwy",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827543/svmn/dmgqxipsk7ykzroykxwy.png",
+      "type": "png",
+      "size": 157991
+    }
+  ],
+  "name": "Nụ hoa tam thất loại 1",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645827530703"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645827552277"
+    }
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "621956e1d19cc02b60ea3046"
+  },
+  "price": 900000,
+  "unit": "kg",
+  "description": "",
+  "category": "honey-medicine",
+  "show": "on",
+  "bestSeller": "",
+  "featuredProduct": "",
+  "newProduct": "on",
+  "images": [
+    {
+      "id": "svmn/zgzvlpcvzfbqeeyyd5vt",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827818/svmn/zgzvlpcvzfbqeeyyd5vt.jpg",
+      "type": "jpg",
+      "size": 83770
+    },
+    {
+      "id": "svmn/rr24v0x7mahf5rxngyju",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827817/svmn/rr24v0x7mahf5rxngyju.jpg",
+      "type": "jpg",
+      "size": 59154
+    },
+    {
+      "id": "svmn/trm1upserhj2elzg5q4f",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827817/svmn/trm1upserhj2elzg5q4f.jpg",
+      "type": "jpg",
+      "size": 53697
+    },
+    {
+      "id": "svmn/yestz1c5zfndcb5mcf2r",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827818/svmn/yestz1c5zfndcb5mcf2r.png",
+      "type": "png",
+      "size": 157991
+    },
+    {
+      "id": "svmn/kdfxqybo9hwnov189ihk",
+      "url": "https://res.cloudinary.com/pu/image/upload/v1645827818/svmn/kdfxqybo9hwnov189ihk.png",
+      "type": "png",
+      "size": 157991
+    }
+  ],
+  "name": "Nụ hoa tam thất loại 2",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1645827809166"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1645828109537"
+    }
+  },
+  "__v": 1
+}]

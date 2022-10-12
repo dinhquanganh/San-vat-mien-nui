@@ -162,7 +162,10 @@
                   <tbody>
                     <% orderList.forEach(orderItem =>{ %>
                     <tr>
-                      <td><%= orderItem.createAt %></td>
+                      <td>
+                        <%= (new
+                        Date(`${orderItem.createdAt}`)).toLocaleString() %>
+                      </td>
                       <td><%= orderItem.name %></td>
                       <td><%= orderItem.phoneNumber %></td>
                       <td>
@@ -203,14 +206,15 @@
                           >
                             <a
                               class="dropdown-item"
-                              href="/admin/order-list/<%= orderItem._id.toString() %>"
+                              href="/admin/order/<%= orderItem._id.toString() %>"
                               >Chỉnh sửa</a
                             >
-                            <a
+                            <div
                               class="dropdown-item"
-                              href="/admin/order-list/delete/<%= orderItem._id.toString() %>"
-                              >Xóa</a
+                              onclick="deleteOrder('<%= orderItem._id.toString()%>')"
                             >
+                              Xóa
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -239,5 +243,62 @@
     <script src="/admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
     <!-- Argon Scripts -->
     <%- include("../layouts/argon-script.ejs") -%>
+    <script>
+      function deleteOrder(id) {
+        swal({
+          title: 'Xóa đơn đặt hàng?',
+          text: 'Lưu ý: Không thể hoàn tác hành động này!',
+          type: 'warning',
+          showCancelButton: !0,
+          buttonsStyling: !1,
+          confirmButtonClass: 'btn btn-danger',
+          confirmButtonText: 'Xóa',
+          cancelButtonClass: 'btn btn-secondary',
+          cancelButtonText: 'Hủy'
+        }).then((t) => {
+          fetch(`/admin/order/${id}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${getCookie('accessToken')}`
+            }
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status == 'Deleted successfully') {
+                swal({
+                  title: 'Thành công!',
+                  text: 'Đơn hàng đã được xóa!',
+                  type: 'success',
+                  buttonsStyling: !1,
+                  confirmButtonClass: 'btn btn-success',
+                  confirmButtonText: 'Đóng'
+                }).then((t) => {
+                  location.reload();
+                });
+              } else {
+                swal({
+                  title: 'Thất bại!',
+                  text: 'Có lỗi xảy ra, vui lòng thử lại!',
+                  type: 'error',
+                  buttonsStyling: !1,
+                  confirmButtonClass: 'btn btn-danger',
+                  confirmButtonText: 'Đóng'
+                });
+              }
+            })
+            .catch((err) => {
+              swal({
+                title: 'Thất bại!',
+                text: 'Có lỗi xảy ra, vui lòng thử lại sau!',
+                type: 'error',
+                buttonsStyling: !1,
+                confirmButtonClass: 'btn btn-danger',
+                confirmButtonText: 'Đóng'
+              });
+            });
+        });
+      }
+    </script>
   </body>
 </html>

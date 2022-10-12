@@ -16,7 +16,7 @@ function shuffle(arr) {
     // eslint-disable-next-line no-param-reassign
     [arr[currentIndex], arr[randomIndex]] = [
       arr[randomIndex],
-      arr[currentIndex],
+      arr[currentIndex]
     ];
   }
 
@@ -37,42 +37,46 @@ function chunkArray(arr, n) {
 const getDataHome = catchAsync(async (req, res) => {
   // res.setHeader(
   //   'Content-Security-Policy',
-  //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src * 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *; frame-src *; frame-ancestors *; base-uri *; form-action *; block-all-mixed-content; upgrade-insecure-requests;"
+  //   "default-src *; script-src * 'unsafe-inline'; img-src * data:; style-src *
+  // 'unsafe-inline'; connect-src *; font-src *; object-src *; media-src *;
+  // frame-src *;
+  // frame-ancestors *; base-uri *; form-action *; block-all-mixed-content;
+  // upgrade-insecure-requests;"
   // );
 
   const tea = await productService.queryProducts({
     show: 'on',
-    category: 'tea',
+    category: 'tea'
   });
 
   const foodSpice = await productService.queryProducts({
     show: 'on',
-    category: 'food-spice',
+    category: 'food-spice'
   });
 
   const seedFruit = await productService.queryProducts({
     show: 'on',
-    category: 'seed-fruit',
+    category: 'seed-fruit'
   });
 
   const honeyMedicine = await productService.queryProducts({
     show: 'on',
-    category: 'honey-medicine',
+    category: 'honey-medicine'
   });
 
   const newProduct = await productService.queryProducts({
     show: 'on',
-    newProduct: 'on',
+    newProduct: 'on'
   });
 
   const bestSeller = await productService.queryProducts({
     show: 'on',
-    bestSeller: 'on',
+    bestSeller: 'on'
   });
 
   const featuredProduct = await productService.queryProducts({
     show: 'on',
-    featuredProduct: 'on',
+    featuredProduct: 'on'
   });
 
   const mapProduct = (product) => ({
@@ -81,7 +85,7 @@ const getDataHome = catchAsync(async (req, res) => {
     price: product.price,
     images: product.images,
     category: product.category,
-    newProduct: product.newProduct,
+    newProduct: product.newProduct
   });
 
   tea.map(mapProduct);
@@ -100,10 +104,10 @@ const getDataHome = catchAsync(async (req, res) => {
     honeyMedicine,
     newProducts: chunkArray(shuffle(newProduct), 2),
     bestSellers: chunkArray(shuffle(bestSeller), 2),
-    featuredProducts: chunkArray(shuffle(featuredProduct), 2),
+    featuredProducts: chunkArray(shuffle(featuredProduct), 2)
   });
 });
 
 module.exports = {
-  getDataHome,
+  getDataHome
 };

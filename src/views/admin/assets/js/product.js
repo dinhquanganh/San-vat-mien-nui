@@ -6,5 +6,4 @@ products.forEach((product) => {
     totalShowProduct++;
   }
 });
-console.log(totalShowProduct);
 document.querySelector('#total-show-product').innerHTML = totalShowProduct;
