@@ -46,6 +46,14 @@ const orderSchema = mongoose.Schema(
       type: Number,
       trim: true,
       default: 0
+    },
+    total: {
+      type: Number,
+      default: 0
+    },
+    ers1: {
+      type: Boolean,
+      default: false
     }
   },
   {

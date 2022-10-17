@@ -164,7 +164,7 @@ var Charts = (function () {
   var $toggle = $('[data-toggle="chart"]');
   var mode = 'light'; //(themeMode) ? themeMode : 'light';
   var fonts = {
-    base: 'Open Sans',
+    base: 'Open Sans'
   };
 
   // Colors
@@ -178,7 +178,7 @@ var Charts = (function () {
       600: '#8898aa',
       700: '#525f7f',
       800: '#32325d',
-      900: '#212529',
+      900: '#212529'
     },
     theme: {
       default: '#172b4d',
@@ -187,11 +187,11 @@ var Charts = (function () {
       info: '#11cdef',
       success: '#2dce89',
       danger: '#f5365c',
-      warning: '#fb6340',
+      warning: '#fb6340'
     },
     black: '#12263F',
     white: '#FFFFFF',
-    transparent: 'transparent',
+    transparent: 'transparent'
   };
 
   // Methods
@@ -210,42 +210,42 @@ var Charts = (function () {
           defaultFontFamily: fonts.base,
           defaultFontSize: 13,
           layout: {
-            padding: 0,
+            padding: 0
           },
           legend: {
             display: false,
             position: 'bottom',
             labels: {
               usePointStyle: true,
-              padding: 16,
-            },
+              padding: 16
+            }
           },
           elements: {
             point: {
               radius: 0,
-              backgroundColor: colors.theme['primary'],
+              backgroundColor: colors.theme['primary']
             },
             line: {
               tension: 0.4,
               borderWidth: 4,
               borderColor: colors.theme['primary'],
               backgroundColor: colors.transparent,
-              borderCapStyle: 'rounded',
+              borderCapStyle: 'rounded'
             },
             rectangle: {
-              backgroundColor: colors.theme['warning'],
+              backgroundColor: colors.theme['warning']
             },
             arc: {
               backgroundColor: colors.theme['primary'],
               borderColor: mode == 'dark' ? colors.gray[800] : colors.white,
-              borderWidth: 4,
-            },
+              borderWidth: 4
+            }
           },
           tooltips: {
             enabled: true,
             mode: 'index',
-            intersect: false,
-          },
+            intersect: false
+          }
         },
         doughnut: {
           cutoutPercentage: 83,
@@ -266,9 +266,9 @@ var Charts = (function () {
             });
 
             return content;
-          },
-        },
-      },
+          }
+        }
+      }
     };
 
     // yAxes
@@ -283,7 +283,7 @@ var Charts = (function () {
         zeroLineWidth: 0,
         zeroLineColor: 'rgba(0,0,0,0)',
         zeroLineBorderDash: [2],
-        zeroLineBorderDashOffset: [2],
+        zeroLineBorderDashOffset: [2]
       },
       ticks: {
         beginAtZero: true,
@@ -292,8 +292,8 @@ var Charts = (function () {
           if (!(value % 10)) {
             return value;
           }
-        },
-      },
+        }
+      }
     });
 
     // xAxes
@@ -301,12 +301,12 @@ var Charts = (function () {
       gridLines: {
         drawBorder: false,
         drawOnChartArea: false,
-        drawTicks: false,
+        drawTicks: false
       },
       ticks: {
-        padding: 20,
+        padding: 20
       },
-      maxBarThickness: 10,
+      maxBarThickness: 10
     });
 
     return options;
@@ -446,7 +446,7 @@ var Charts = (function () {
       if ($this.is('[data-update]')) {
         updateOptions($this);
       }
-    },
+    }
   });
 
   // Return
@@ -454,7 +454,7 @@ var Charts = (function () {
   return {
     colors: colors,
     fonts: fonts,
-    mode: mode,
+    mode: mode
   };
 })();
 
@@ -534,13 +534,13 @@ var Navbar = (function () {
   $collapse.on({
     'show.bs.collapse': function () {
       accordion($(this));
-    },
+    }
   });
 
   $dropdown.on({
     'hide.bs.dropdown': function () {
       closeDropdown($(this));
-    },
+    }
   });
 })();
 
@@ -570,13 +570,13 @@ var NavbarCollapse = (function () {
     $collapse.on({
       'hide.bs.collapse': function () {
         hideNavbarCollapse($collapse);
-      },
+      }
     });
 
     $collapse.on({
       'hidden.bs.collapse': function () {
         hiddenNavbarCollapse($collapse);
-      },
+      }
     });
   }
 })();
@@ -605,7 +605,7 @@ var Popover = (function () {
       template:
         '<div class="popover ' +
         $popoverClass +
-        '" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
+        '" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
     };
 
     $this.popover(options);
@@ -643,7 +643,7 @@ var ScrollTo = (function () {
       ? $this.data('scroll-to-offset')
       : 0;
     var options = {
-      scrollTop: $($el).offset().top - offset,
+      scrollTop: $($el).offset().top - offset
     };
 
     // Animate scroll to the selected section
@@ -789,7 +789,7 @@ function initMap() {
     zoom: 12,
     scrollwheel: false,
     center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
   map = new google.maps.Map(map, mapOptions);
@@ -798,7 +798,7 @@ function initMap() {
     position: myLatlng,
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Hello World!',
+    title: 'Hello World!'
   });
 
   var contentString =
@@ -806,7 +806,7 @@ function initMap() {
     '<p>A beautiful premium dashboard for Bootstrap 4.</p></div>';
 
   var infowindow = new google.maps.InfoWindow({
-    content: contentString,
+    content: contentString
   });
 
   google.maps.event.addListener(marker, 'click', function () {
@@ -843,44 +843,44 @@ function initMap() {
       {
         featureType: 'administrative',
         elementType: 'labels.text.fill',
-        stylers: [{ color: '#444444' }],
+        stylers: [{ color: '#444444' }]
       },
       {
         featureType: 'landscape',
         elementType: 'all',
-        stylers: [{ color: '#f2f2f2' }],
+        stylers: [{ color: '#f2f2f2' }]
       },
       {
         featureType: 'poi',
         elementType: 'all',
-        stylers: [{ visibility: 'off' }],
+        stylers: [{ visibility: 'off' }]
       },
       {
         featureType: 'road',
         elementType: 'all',
-        stylers: [{ saturation: -100 }, { lightness: 45 }],
+        stylers: [{ saturation: -100 }, { lightness: 45 }]
       },
       {
         featureType: 'road.highway',
         elementType: 'all',
-        stylers: [{ visibility: 'simplified' }],
+        stylers: [{ visibility: 'simplified' }]
       },
       {
         featureType: 'road.arterial',
         elementType: 'labels.icon',
-        stylers: [{ visibility: 'off' }],
+        stylers: [{ visibility: 'off' }]
       },
       {
         featureType: 'transit',
         elementType: 'all',
-        stylers: [{ visibility: 'off' }],
+        stylers: [{ visibility: 'off' }]
       },
       {
         featureType: 'water',
         elementType: 'all',
-        stylers: [{ color: color }, { visibility: 'on' }],
-      },
-    ],
+        stylers: [{ color: color }, { visibility: 'on' }]
+      }
+    ]
   };
 
   map = new google.maps.Map(map, mapOptions);
@@ -889,7 +889,7 @@ function initMap() {
     position: myLatlng,
     map: map,
     animation: google.maps.Animation.DROP,
-    title: 'Hello World!',
+    title: 'Hello World!'
   });
 
   var contentString =
@@ -897,7 +897,7 @@ function initMap() {
     '<p>A beautiful premium dashboard for Bootstrap 4.</p></div>';
 
   var infowindow = new google.maps.InfoWindow({
-    content: contentString,
+    content: contentString
   });
 
   google.maps.event.addListener(marker, 'click', function () {
@@ -947,8 +947,8 @@ var BarStackedChart = (function () {
             randomScalingFactor(),
             randomScalingFactor(),
             randomScalingFactor(),
-            randomScalingFactor(),
-          ],
+            randomScalingFactor()
+          ]
         },
         {
           label: 'Dataset 2',
@@ -960,8 +960,8 @@ var BarStackedChart = (function () {
             randomScalingFactor(),
             randomScalingFactor(),
             randomScalingFactor(),
-            randomScalingFactor(),
-          ],
+            randomScalingFactor()
+          ]
         },
         {
           label: 'Dataset 3',
@@ -973,10 +973,10 @@ var BarStackedChart = (function () {
             randomScalingFactor(),
             randomScalingFactor(),
             randomScalingFactor(),
-            randomScalingFactor(),
-          ],
-        },
-      ],
+            randomScalingFactor()
+          ]
+        }
+      ]
     };
 
     // Options
@@ -984,21 +984,21 @@ var BarStackedChart = (function () {
     var options = {
       tooltips: {
         mode: 'index',
-        intersect: false,
+        intersect: false
       },
       responsive: true,
       scales: {
         xAxes: [
           {
-            stacked: true,
-          },
+            stacked: true
+          }
         ],
         yAxes: [
           {
-            stacked: true,
-          },
-        ],
-      },
+            stacked: true
+          }
+        ]
+      }
     };
 
     // Init chart
@@ -1006,7 +1006,7 @@ var BarStackedChart = (function () {
     var barStackedChart = new Chart($this, {
       type: 'bar',
       data: data,
-      options: options,
+      options: options
     });
 
     // Save to jQuery object
@@ -1054,29 +1054,29 @@ var DoughnutChart = (function () {
               randomScalingFactor(),
               randomScalingFactor(),
               randomScalingFactor(),
-              randomScalingFactor(),
+              randomScalingFactor()
             ],
             backgroundColor: [
               Charts.colors.theme['danger'],
               Charts.colors.theme['warning'],
               Charts.colors.theme['success'],
               Charts.colors.theme['primary'],
-              Charts.colors.theme['info'],
+              Charts.colors.theme['info']
             ],
-            label: 'Dataset 1',
-          },
-        ],
+            label: 'Dataset 1'
+          }
+        ]
       },
       options: {
         responsive: true,
         legend: {
-          position: 'top',
+          position: 'top'
         },
         animation: {
           animateScale: true,
-          animateRotate: true,
-        },
-      },
+          animateRotate: true
+        }
+      }
     });
 
     // Save to jQuery object
@@ -1124,29 +1124,29 @@ var PieChart = (function () {
               randomScalingFactor(),
               randomScalingFactor(),
               randomScalingFactor(),
-              randomScalingFactor(),
+              randomScalingFactor()
             ],
             backgroundColor: [
               Charts.colors.theme['danger'],
               Charts.colors.theme['warning'],
               Charts.colors.theme['success'],
               Charts.colors.theme['primary'],
-              Charts.colors.theme['info'],
+              Charts.colors.theme['info']
             ],
-            label: 'Dataset 1',
-          },
-        ],
+            label: 'Dataset 1'
+          }
+        ]
       },
       options: {
         responsive: true,
         legend: {
-          position: 'top',
+          position: 'top'
         },
         animation: {
           animateScale: true,
-          animateRotate: true,
-        },
-      },
+          animateRotate: true
+        }
+      }
     });
 
     // Save to jQuery object
@@ -1187,12 +1187,12 @@ var PointsChart = (function () {
             {
               gridLines: {
                 color: Charts.colors.gray[200],
-                zeroLineColor: Charts.colors.gray[200],
+                zeroLineColor: Charts.colors.gray[200]
               },
-              ticks: {},
-            },
-          ],
-        },
+              ticks: {}
+            }
+          ]
+        }
       },
       data: {
         labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -1202,10 +1202,10 @@ var PointsChart = (function () {
             data: [10, 18, 28, 23, 28, 40, 36, 46, 52],
             pointRadius: 10,
             pointHoverRadius: 15,
-            showLine: false,
-          },
-        ],
-      },
+            showLine: false
+          }
+        ]
+      }
     });
 
     // Save to jQuery object
@@ -1246,22 +1246,22 @@ var SalesChart = (function () {
             {
               gridLines: {
                 color: Charts.colors.gray[700],
-                zeroLineColor: Charts.colors.gray[700],
+                zeroLineColor: Charts.colors.gray[700]
               },
-              ticks: {},
-            },
-          ],
-        },
+              ticks: {}
+            }
+          ]
+        }
       },
       data: {
         labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
           {
             label: 'Performance',
-            data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
-          },
-        ],
-      },
+            data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+          }
+        ]
+      }
     });
 
     // Save to jQuery object
@@ -1302,22 +1302,22 @@ var SalesChart = (function () {
             {
               gridLines: {
                 color: Charts.colors.gray[200],
-                zeroLineColor: Charts.colors.gray[200],
+                zeroLineColor: Charts.colors.gray[200]
               },
-              ticks: {},
-            },
-          ],
-        },
+              ticks: {}
+            }
+          ]
+        }
       },
       data: {
         labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
           {
             label: 'Performance',
-            data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
-          },
-        ],
-      },
+            data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+          }
+        ]
+      }
     });
 
     // Save to jQuery object
@@ -1357,10 +1357,10 @@ var BarsChart = (function () {
         datasets: [
           {
             label: 'Sales',
-            data: [25, 20, 30, 22, 17, 29],
-          },
-        ],
-      },
+            data: [25, 20, 30, 22, 17, 29]
+          }
+        ]
+      }
     });
 
     // Save to jQuery object
@@ -1399,22 +1399,22 @@ var LineChart = (function () {
             {
               gridLines: {
                 color: Charts.colors.gray[200],
-                zeroLineColor: Charts.colors.gray[200],
+                zeroLineColor: Charts.colors.gray[200]
               },
-              ticks: {},
-            },
-          ],
-        },
+              ticks: {}
+            }
+          ]
+        }
       },
       data: {
         labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [
           {
             label: 'Performance',
-            data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
-          },
-        ],
-      },
+            data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+          }
+        ]
+      }
     });
 
     // Save to jQuery object
@@ -1439,12 +1439,12 @@ if ($('[data-toggle="widget-calendar"]')[0]) {
     theme: false,
     buttonIcons: {
       prev: ' ni ni-bold-left',
-      next: ' ni ni-bold-right',
+      next: ' ni ni-bold-right'
     },
     header: {
       right: 'next',
       center: 'title, ',
-      left: 'prev',
+      left: 'prev'
     },
     defaultDate: '2018-12-01',
     editable: true,
@@ -1453,72 +1453,72 @@ if ($('[data-toggle="widget-calendar"]')[0]) {
         title: 'Call with Dave',
         start: '2018-11-18',
         end: '2018-11-18',
-        className: 'bg-red',
+        className: 'bg-red'
       },
 
       {
         title: 'Lunch meeting',
         start: '2018-11-21',
         end: '2018-11-22',
-        className: 'bg-orange',
+        className: 'bg-orange'
       },
 
       {
         title: 'All day conference',
         start: '2018-11-29',
         end: '2018-11-29',
-        className: 'bg-green',
+        className: 'bg-green'
       },
 
       {
         title: 'Meeting with Mary',
         start: '2018-12-01',
         end: '2018-12-01',
-        className: 'bg-blue',
+        className: 'bg-blue'
       },
 
       {
         title: 'Winter Hackaton',
         start: '2018-12-03',
         end: '2018-12-03',
-        className: 'bg-red',
+        className: 'bg-red'
       },
 
       {
         title: 'Digital event',
         start: '2018-12-07',
         end: '2018-12-09',
-        className: 'bg-warning',
+        className: 'bg-warning'
       },
 
       {
         title: 'Marketing event',
         start: '2018-12-10',
         end: '2018-12-10',
-        className: 'bg-purple',
+        className: 'bg-purple'
       },
 
       {
         title: 'Dinner with Family',
         start: '2018-12-19',
         end: '2018-12-19',
-        className: 'bg-red',
+        className: 'bg-red'
       },
 
       {
         title: 'Black Friday',
         start: '2018-12-23',
         end: '2018-12-23',
-        className: 'bg-blue',
+        className: 'bg-blue'
       },
 
       {
         title: 'Cyber Week',
         start: '2018-12-02',
         end: '2018-12-02',
-        className: 'bg-yellow',
-      },
-    ],
+        className: 'bg-yellow'
+      }
+    ]
   });
 
   //Display Current Date as Calendar widget header
@@ -1548,14 +1548,15 @@ var DatatableBasic = (function () {
     var options = {
       keys: !0,
       select: {
-        style: 'multi',
+        style: 'multi'
       },
       language: {
         paginate: {
           previous: "<i class='fas fa-angle-left'>",
-          next: "<i class='fas fa-angle-right'>",
-        },
+          next: "<i class='fas fa-angle-right'>"
+        }
       },
+      ordering: false
     };
 
     // Init the datatable
@@ -1606,9 +1607,10 @@ var DatatableButtons = (function () {
       language: {
         paginate: {
           previous: "<i class='fas fa-angle-left'>",
-          next: "<i class='fas fa-angle-right'>",
-        },
+          next: "<i class='fas fa-angle-right'>"
+        }
       },
+      ordering: false
     };
 
     // Init the datatable
@@ -1668,7 +1670,7 @@ var Dropzones = function () {
           }
           currentFile = file;
         });
-      },
+      }
     };
 
     // Clear preview html
@@ -1713,7 +1715,7 @@ var Datepicker = (function () {
   function init($this) {
     var options = {
       disableTouchKeyboard: true,
-      autoclose: false,
+      autoclose: false
     };
 
     $this.datepicker(options);
@@ -1778,8 +1780,8 @@ var noUiSlider = (function () {
         //step: 1000,
         range: {
           min: [parseInt(minValue)],
-          max: [parseInt(maxValue)],
-        },
+          max: [parseInt(maxValue)]
+        }
       });
 
       c.noUiSlider.on('update', function (a, b) {
@@ -1797,13 +1799,13 @@ var noUiSlider = (function () {
     noUiSlider.create(c, {
       start: [
         parseInt(d.getAttribute('data-range-value-low')),
-        parseInt(e.getAttribute('data-range-value-high')),
+        parseInt(e.getAttribute('data-range-value-high'))
       ],
       connect: !0,
       range: {
         min: parseInt(c.getAttribute('data-range-value-min')),
-        max: parseInt(c.getAttribute('data-range-value-max')),
-      },
+        max: parseInt(c.getAttribute('data-range-value-max'))
+      }
     }),
       c.noUiSlider.on('update', function (a, b) {
         f[b].textContent = a[b];
@@ -1862,7 +1864,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-red',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1872,7 +1874,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-orange',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1882,7 +1884,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-green',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1892,7 +1894,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-blue',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1902,7 +1904,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-red',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1912,7 +1914,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-warning',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1922,7 +1924,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-purple',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1932,7 +1934,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-red',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1942,7 +1944,7 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-blue',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
         },
 
         {
@@ -1952,8 +1954,8 @@ var Fullcalendar = (function () {
           allDay: true,
           className: 'bg-yellow',
           description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-        },
+            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
+        }
       ],
       // Full calendar options
       // For more options read the official docs: https://fullcalendar.io/docs
@@ -1962,11 +1964,11 @@ var Fullcalendar = (function () {
         header: {
           right: '',
           center: '',
-          left: '',
+          left: ''
         },
         buttonIcons: {
           prev: 'calendar--prev',
-          next: 'calendar--next',
+          next: 'calendar--next'
         },
         theme: false,
         selectable: true,
@@ -2004,7 +2006,7 @@ var Fullcalendar = (function () {
           $('.edit-event--id').val(event.id);
           $('.edit-event--title').val(event.title);
           $('.edit-event--description').val(event.description);
-        },
+        }
       };
 
     // Initalize the calendar plugin
@@ -2036,7 +2038,7 @@ var Fullcalendar = (function () {
             if (this.Stored[i] == id) return true;
           }
           return false;
-        },
+        }
       };
 
       if (eventTitle != '') {
@@ -2048,7 +2050,7 @@ var Fullcalendar = (function () {
             start: $('.new-event--start').val(),
             end: $('.new-event--end').val(),
             allDay: true,
-            className: $('.event-tag input:checked').val(),
+            className: $('.event-tag input:checked').val()
           },
           true
         );
@@ -2100,7 +2102,7 @@ var Fullcalendar = (function () {
             buttonsStyling: false,
             confirmButtonClass: 'btn btn-danger',
             confirmButtonText: 'Yes, delete it!',
-            cancelButtonClass: 'btn btn-secondary',
+            cancelButtonClass: 'btn btn-secondary'
           }).then((result) => {
             if (result.value) {
               // Delete event
@@ -2112,7 +2114,7 @@ var Fullcalendar = (function () {
                 text: 'The event has been deleted.',
                 type: 'success',
                 buttonsStyling: false,
-                confirmButtonClass: 'btn btn-primary',
+                confirmButtonClass: 'btn btn-primary'
               });
             }
           });
@@ -2174,7 +2176,7 @@ var VectorMap = (function () {
         600: '#8898aa',
         700: '#525f7f',
         800: '#32325d',
-        900: '#212529',
+        900: '#212529'
       },
       theme: {
         default: '#172b4d',
@@ -2183,11 +2185,11 @@ var VectorMap = (function () {
         info: '#11cdef',
         success: '#2dce89',
         danger: '#f5365c',
-        warning: '#fb6340',
+        warning: '#fb6340'
       },
       black: '#12263F',
       white: '#FFFFFF',
-      transparent: 'transparent',
+      transparent: 'transparent'
     };
 
   // Methods
@@ -2206,7 +2208,7 @@ var VectorMap = (function () {
         IN: 200,
         RO: 600,
         RU: 300,
-        US: 2920,
+        US: 2920
       },
       options = {
         map: map,
@@ -2222,75 +2224,75 @@ var VectorMap = (function () {
             'fill-opacity': 0.8,
             stroke: 'none',
             'stroke-width': 0,
-            'stroke-opacity': 1,
+            'stroke-opacity': 1
           },
           hover: {
             fill: colors.gray[300],
             'fill-opacity': 0.8,
-            cursor: 'pointer',
+            cursor: 'pointer'
           },
           selected: {
-            fill: 'yellow',
+            fill: 'yellow'
           },
-          selectedHover: {},
+          selectedHover: {}
         },
         markerStyle: {
           initial: {
             fill: colors.theme.warning,
-            'stroke-width': 0,
+            'stroke-width': 0
           },
           hover: {
             fill: colors.theme.info,
-            'stroke-width': 0,
-          },
+            'stroke-width': 0
+          }
         },
         markers: [
           {
             latLng: [41.9, 12.45],
-            name: 'Vatican City',
+            name: 'Vatican City'
           },
           {
             latLng: [43.73, 7.41],
-            name: 'Monaco',
+            name: 'Monaco'
           },
           {
             latLng: [35.88, 14.5],
-            name: 'Malta',
+            name: 'Malta'
           },
           {
             latLng: [1.3, 103.8],
-            name: 'Singapore',
+            name: 'Singapore'
           },
           {
             latLng: [1.46, 173.03],
-            name: 'Kiribati',
+            name: 'Kiribati'
           },
           {
             latLng: [-21.13, -175.2],
-            name: 'Tonga',
+            name: 'Tonga'
           },
           {
             latLng: [15.3, -61.38],
-            name: 'Dominica',
+            name: 'Dominica'
           },
           {
             latLng: [-20.2, 57.5],
-            name: 'Mauritius',
+            name: 'Mauritius'
           },
           {
             latLng: [26.02, 50.55],
-            name: 'Bahrain',
-          },
+            name: 'Bahrain'
+          }
         ],
         series: {
           regions: [
             {
               values: series,
               scale: [colors.gray[400], colors.gray[500]],
-              normalizeFunction: 'polynomial',
-            },
-          ],
-        },
+              normalizeFunction: 'polynomial'
+            }
+          ]
+        }
       };
 
     // Init map
@@ -2329,7 +2331,7 @@ var Lavalamp = (function () {
       enableHover: true,
       margins: true,
       autoUpdate: true,
-      duration: 200,
+      duration: 200
     };
 
     $this.lavalamp(options);
@@ -2371,7 +2373,7 @@ var SortList = (function () {
   function getOptions($list) {
     var options = {
       valueNames: $list.data('list-values'),
-      listClass: $list.data('list-class') ? $list.data('list-class') : 'list',
+      listClass: $list.data('list-class') ? $list.data('list-class') : 'list'
     };
 
     return options;
@@ -2414,7 +2416,7 @@ var Notify = (function () {
         icon: icon,
         title: ' Bootstrap Notify',
         message: 'Turning standard Bootstrap alerts into awesome notifications',
-        url: '',
+        url: ''
       },
       {
         element: 'body',
@@ -2422,11 +2424,11 @@ var Notify = (function () {
         allow_dismiss: true,
         placement: {
           from: placement,
-          align: align,
+          align: align
         },
         offset: {
           x: 15, // Keep this as default
-          y: 15, // Unless there'll be alignment issues as this value is targeted in CSS
+          y: 15 // Unless there'll be alignment issues as this value is targeted in CSS
         },
         spacing: 10,
         z_index: 1080,
@@ -2438,7 +2440,7 @@ var Notify = (function () {
           // enter: animIn,
           // exit: animOut
           enter: animIn,
-          exit: animOut,
+          exit: animOut
         },
         template:
           '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert">' +
@@ -2452,7 +2454,7 @@ var Notify = (function () {
           // '</div>' +
           // '<a href="{3}" target="{4}" data-notify="url"></a>' +
           '<button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-          '</div>',
+          '</div>'
       }
     );
   }
@@ -2501,7 +2503,7 @@ var OnScreen = (function () {
       tolerance: 200,
       throttle: 50,
       toggleClass: 'on-screen',
-      debug: false,
+      debug: false
     };
 
     $this.onScreen(options);
@@ -2542,16 +2544,16 @@ var QuillEditor = (function () {
           ['link', 'blockquote', 'image'],
           [
             {
-              list: 'ordered',
+              list: 'ordered'
             },
             {
-              list: 'bullet',
-            },
-          ],
-        ],
+              list: 'bullet'
+            }
+          ]
+        ]
       },
       placeholder: placeholder,
-      theme: 'snow',
+      theme: 'snow'
     });
 
     if (contentServer.value.length) {
@@ -2641,7 +2643,7 @@ var Tags = (function () {
 
   function init($this) {
     var options = {
-      tagClass: 'badge badge-primary',
+      tagClass: 'badge badge-primary'
     };
 
     $this.tagsinput(options);

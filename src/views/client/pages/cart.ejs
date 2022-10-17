@@ -173,7 +173,10 @@
                         <td class="product-thumbnail">
                           <a href="#"
                             ><img
-                              src="${item.images[0].url}"
+                              src="${
+                                item?.images[0]?.url ||
+                                'https://e7.pngegg.com/pngimages/88/823/png-clipart-logo-product-design-brand-trademark-new-product-promotion-blue-text.png'
+                              }"
                               alt="${item.name}"
                               style="width: 98px; height: 98px; object-fit: cover;"
                           /></a>

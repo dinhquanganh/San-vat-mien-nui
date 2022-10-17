@@ -18,7 +18,7 @@ const create = async (orderBody) => {
  * @returns {Promise<QueryResult>}
  */
 const queryOrders = async (filters = {}) => {
-  const orders = await Order.find(filters);
+  const orders = await Order.find(filters).sort({ createdAt: -1 });
 
   return orders;
 };
@@ -56,11 +56,11 @@ const updateOrderById = async (orderId, updateBody) => {
   };
 };
 
-// /**
-//  * Delete order by id
-//  * @param {ObjectId} orderId
-//  * @returns {Promise<Order>}
-//  */
+/**
+ * Delete order by id
+ * @param {ObjectId} orderId
+ * @returns {Promise<Order>}
+ */
 const deleteOrderById = async (orderId) => {
   const order = await getOrderById(orderId);
   let error = '';

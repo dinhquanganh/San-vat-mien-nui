@@ -28,10 +28,17 @@ const order = catchAsync(async (req, res) => {
     if (product.error !== 'Product not found') {
       productListNewOrder = [...productListNewOrder, orderItem];
       await orderService.updateOrderById(newOrder._id, {
-        productList: productListNewOrder
+        productList: productListNewOrder 
       });
     }
   });
+
+  await emailService.sendEmail(
+    'sanvatmiennui22@gmail.com',
+    'Có đơn đặt hàng mới đang chờ bạn xử lý!',
+    '',
+    mailContentNewOrder(newOrder.name)
+  );
 
   if (newOrder.email) {
     await emailService.sendEmail(

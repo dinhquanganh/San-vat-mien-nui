@@ -30,6 +30,7 @@ router
 router
   .route('/:orderId')
   .get(auth('getOrder'), orderController.getOrderItem)
+  .post(auth('manageOrder'), orderController.updateOrder)
   .delete(auth('manageOrder'), orderController.deleteOrder);
 
 module.exports = router;

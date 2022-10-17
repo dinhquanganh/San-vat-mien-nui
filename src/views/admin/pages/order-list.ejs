@@ -57,7 +57,9 @@
                         <h5 class="card-title text-uppercase text-muted mb-0">
                           Hoàn thành
                         </h5>
-                        <span class="h2 font-weight-bold mb-0">2,356</span>
+                        <span class="h2 font-weight-bold mb-0"
+                          ><%= overviewTab.received%></span
+                        >
                       </div>
                       <div class="col-auto">
                         <div
@@ -85,7 +87,9 @@
                         <h5 class="card-title text-uppercase text-muted mb-0">
                           Đã gửi
                         </h5>
-                        <span class="h2 font-weight-bold mb-0">2,356</span>
+                        <span class="h2 font-weight-bold mb-0">
+                          <%= overviewTab.sent%>
+                        </span>
                       </div>
                       <div class="col-auto">
                         <div
@@ -113,7 +117,9 @@
                         <h5 class="card-title text-uppercase text-muted mb-0">
                           Chưa xử lý
                         </h5>
-                        <span class="h2 font-weight-bold mb-0">2,356</span>
+                        <span class="h2 font-weight-bold mb-0">
+                          <%= overviewTab.pending%></span
+                        >
                       </div>
                       <div class="col-auto">
                         <div
@@ -143,6 +149,9 @@
           <div class="col">
             <div class="card">
               <!-- Card header -->
+              <% orderList.forEach(orderItem =>{ %>
+              <td><%= orderItem.status %></td>
+              <%})%>
               <div class="card-header">
                 <h3 class="mb-0"><%= title %></h3>
                 <p class="text-sm mb-0"></p>
@@ -151,6 +160,7 @@
                 <table class="table table-flush" id="datatable-buttons">
                   <thead class="thead-light">
                     <tr>
+                      <th>STT</th>
                       <th>Ngày đặt</th>
                       <th>Tên khách hàng</th>
                       <th>Số điện thoại</th>
@@ -160,8 +170,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% orderList.forEach(orderItem =>{ %>
+                    <% orderList.forEach((orderItem,indx) =>{ %>
                     <tr>
+                      <td><%= indx+1 %></td>
                       <td>
                         <%= (new
                         Date(`${orderItem.createdAt}`)).toLocaleString() %>
@@ -180,7 +191,7 @@
                           <i class="bg-success"></i>
                           <span class="status">đã nhận</span>
                           <% } else if (orderItem.status=='cancelled') { %>
-                          <i class="bg-secondary"></i>
+                          <i class="bg-gray"></i>
                           <span class="status">đã hủy</span>
                           <% } else { %>
                           <i class="bg-danger"></i>
@@ -188,7 +199,7 @@
                           <% } %>
                         </span>
                       </td>
-                      <td><%= orderItem.price %></td>
+                      <td><%= orderItem.total %></td>
                       <td class="text-right">
                         <div class="dropdown">
                           <a
