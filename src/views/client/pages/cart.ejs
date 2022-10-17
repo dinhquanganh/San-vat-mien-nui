@@ -120,6 +120,24 @@
       <%- include("../layouts/footer.ejs") -%>
     </div>
 
+    <%- include("../layouts/script.ejs") -%>
+
+    <script>
+      (() => {
+        let cartListItem = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (!cartListItem?.length) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Không có sản phẩm nào!'
+          });
+
+          window.location.href = '/';
+        }
+      })();
+    </script>
+
     <script async>
       async function getCartData(query) {
         let data = await fetch(`/product/search?${query}`);
@@ -222,6 +240,5 @@
         location.reload();
       }
     </script>
-    <%- include("../layouts/script.ejs") -%>
   </body>
 </html>
