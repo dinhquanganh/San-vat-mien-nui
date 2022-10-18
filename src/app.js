@@ -15,6 +15,7 @@ const { jwtStrategy } = require('./config/passport');
 const { authLimiter } = require('./middlewares/rateLimiter');
 const routesAdmin = require('./routes/admin');
 const routesClient = require('./routes/client');
+let redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const routesApi = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
@@ -37,7 +38,7 @@ app.use('/admin', express.static(path.join(__dirname, '/views/admin')));
 // set security HTTP headers
 app.use(
   helmet({
-    contentSecurityPolicy: false,
+    contentSecurityPolicy: false
   })
 );
 
@@ -69,6 +70,9 @@ passport.use('jwt', jwtStrategy);
 if (config.env === 'production') {
   app.use('/v1/auth', authLimiter);
 }
+
+// Don't redirect if the hostname is `localhost:port`
+app.use(redirectToHTTPS([/localhost:(\d{4})/], undefined, 301));
 
 // admin routes
 app.use('/admin', routesAdmin);
